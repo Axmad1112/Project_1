@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Announcement
+from .models import Announcement, Agent, Blog
 
-admin.site.register(Announcement)
+
+for i in (Announcement,Agent,Blog):
+    admin.site.register(i)
 # Register your models here.
 

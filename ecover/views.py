@@ -1,20 +1,24 @@
 from django.shortcuts import render
-
+from ecover.models import Announcement, Blog, Agent
 
 def index(request):
-    return render(request, "index.html")
+    announcements = Announcement.objects.all()
+    agents = Agent.objects.all()
+    return render(request, "index.html", {'announcements': announcements,'agents': agents})
 
 def about(request):
     return render(request, "about.html")
 
 def agent(request):
-    return render(request, "agent.html")
+    agents = Agent.objects.all()
+    return render(request, "agent.html", {'agents': agents})
 
 def blog_single(request):
     return render(request, "blog-single.html")
 
 def blog(request):
-    return render(request, "blog.html")
+    blogs = Blog.objects.all
+    return render(request, "blog.html", {'blogs': blogs})
 
 def contact(request):
     return render(request, "contact.html")
@@ -26,7 +30,8 @@ def properties_single(request):
     return render(request, "properties-single.html")
 
 def properties(request):
-    return render(request, "properties.html")
+    announcements = Announcement.objects.all()
+    return render(request, "properties.html", {'announcements': announcements})
 
 def services(request):
     return render(request, "services.html")

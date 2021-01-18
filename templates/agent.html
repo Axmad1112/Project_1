@@ -25,6 +25,19 @@
         </div>
         <div class="row justify-content-center">
         	<div class="col-md-3 ftco-animate">
+				{% for agent in agents %}
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="{{ agent.image.url }}" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="properties.html">{{ agent.name }}</a></h3>
+								<p class="h-info"><span class="location">Listing</span> <span class="details">{{ agent.properties }} Properties</span></p>
+	    				</div>
+    			</div>
+				{% endfor %}
+        	</div>
+        	{% comment %} <div class="col-md-3 ftco-animate">
         		<div class="agent">
     					<div class="img">
 		    				<img src="{% static 'images/team-1.j' %}pg" class="img-fluid" alt="Colorlib Template">
@@ -34,19 +47,8 @@
 		    				</div>
 	    				</div>
     				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-2.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Mike Bochs</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
+        	</div> {% endcomment %}
+        	{% comment %} <div class="col-md-3 ftco-animate">
         		<div class="agent">
     					<div class="img">
 		    				<img src="{% static 'images/team-3.j' %}pg" class="img-fluid" alt="Colorlib Template">
@@ -126,6 +128,6 @@
         	</div>
         </div>
     	</div>
-    </section>
+    </section> {% endcomment %}
 
 {% endblock content%}

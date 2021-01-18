@@ -40,9 +40,9 @@
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
 		                      <select name="" id="" class="form-control">
-		                        <option value="">Residence</option>
-		                        <option value="">Offices</option>
-		                        <option value="">Commercial</option>
+		                        <option value="" style="color: green; background: #21243D;">Residence</option>
+		                        <option value="" style="color: green; background: #21243D;">Offices</option>
+		                        <option value="" style="color: green; background: #21243D;">Commercial</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -63,21 +63,21 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="" id="" class="form-control" style="color: 000;">
-		                        <option value="">$5,000</option>
-		                        <option value="">$10,000</option>
-		                        <option value="">$50,000</option>
-		                        <option value="">$100,000</option>
-		                        <option value="">$200,000</option>
-		                        <option value="">$300,000</option>
-		                        <option value="">$400,000</option>
-		                        <option value="">$500,000</option>
-		                        <option value="">$600,000</option>
-		                        <option value="">$700,000</option>
-		                        <option value="">$800,000</option>
-		                        <option value="">$900,000</option>
-		                        <option value="">$1,000,000</option>
-		                        <option value="">$2,000,000</option>
+		                      <select name="" id="" class="form-control">
+		                        <option value="" style="color: green; background: #21243D;">$5,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$10,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$50,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$100,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$200,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$300,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$400,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$500,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$600,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$700,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$800,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$900,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$1,000,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$2,000,000</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -152,37 +152,40 @@
         <div class="row ftco-animate">
           <div class="col-md-12">
             <div class="carousel-properties owl-carousel">
+                {% for  announcement in announcements %}
               <div class="item">
-                <div class="property-wrap ftco-animate">
-		        			<a href="#" class="img" style="background-image: url({% static 'images/work-1.jpg' %});">
-		        				<div class="rent-sale">
-		        					<span class="sale">Sale</span>
-		        				</div>
-		        				<p class="price"><span class="orig-price">$300,000</span></p>
-		        			</a>
-		        			<div class="text">
-		        				<ul class="property_list">
-		        					<li><span class="flaticon-bed"></span>3</li>
-		        					<li><span class="flaticon-bathtub"></span>2</li>
-		        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-		        				</ul>
-		        				<h3><a href="#">The Blue Sky Home</a></h3>
-		        				<span class="location">Oakland</span>
-		        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-		        					<span class="fa fa-link"></span>
-		        				</a>
-		        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-		        					<div class="d-flex align-items-center">
-			        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-			        					<h3 class="ml-2">John Dorf</h3>
-			        				</div>
-			        				<span class="text-right">2 weeks ago</span>
-		        				</div>
-		        			</div>
-		        		</div>
+        		<div class="property-wrap ftco-animate">
+        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+        				<div class="rent-sale">
+        					<span class="{% if announcement.type == 'sale' %}sale{% endif %}">{{ announcement.type }}</span>
+        				</div>
+        				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
+        			</a>
+        			<div class="text">
+        				<ul class="property_list">
+        					<li><span class="flaticon-bed"></span>3</li>
+        					<li><span class="flaticon-bathtub"></span>2</li>
+        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
+        				</ul>
+        				<h3><a href="#">{{ announcement.title }}</a></h3>
+        				<span class="location">{{ announcement.region}}</span>
+        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
+        					<span class="fa fa-link"></span>
+        				</a>
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        					<div class="d-flex align-items-center">
+	        					<div class="img" style="background-image: url('{{ announcement.image_person.url }}');"></div>
+	        					<h3 class="ml-2">{{ announcement.person_name }}</h3>
+	        				</div>
+	        				<span class="text-right">{{ announcement.date }}</span>
+        				</div>
+        			</div>
+        		</div>
+		        </div>
+				{% endfor %}
               </div>
-              <div class="item">
-                <div class="property-wrap ftco-animate">
+                {% comment %} <div class="item">
+                	<div class="property-wrap ftco-animate">
 		        			<a href="#" class="img" style="background-image: url({% static 'images/work-2.jpg' %});">
 		        				<div class="rent-sale">
 		        					<span class="rent">Rent</span>
@@ -208,9 +211,9 @@
 			        				<span class="text-right">2 weeks ago</span>
 		        				</div>
 		        			</div>
-		        		</div>
-              </div>
-              <div class="item">
+		        	</div>
+              	</div> {% endcomment %}
+              {% comment %} <div class="item">
                 <div class="property-wrap ftco-animate">
 		        			<a href="#" class="img" style="background-image: url({% static 'images/work-3.jpg' %});">
 		        				<div class="rent-sale">
@@ -296,7 +299,7 @@
 		        				</div>
 		        			</div>
 		        		</div>
-              </div>
+              </div> {% endcomment %}
             </div>
           </div>
         </div>
@@ -469,21 +472,6 @@
                   	<span class="fa fa-quote-left"></span>
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                  	<span class="fa fa-quote-left"></span>
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
                     	<div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})"></div>
                     	<div class="pl-3">
 		                    <p class="name">Roger Scott</p>
@@ -554,17 +542,19 @@
         </div>
         <div class="row">
         	<div class="col-md-3 ftco-animate">
+        		{% for agent in agents %}
         		<div class="agent">
     					<div class="img">
-		    				<img src="{% static 'images/team-1.jpg' %}" class="img-fluid" alt="Colorlib Template">
-		    				<div class="desc">
-		    					<h3><a href="properties.html">Carlos Henderson</a></h3>
-									<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-		    				</div>
+		    				<img src="{{ agent.image.url }}" class="img-fluid" alt="Colorlib Template">
 	    				</div>
-    				</div>
+	    				<div class="desc">
+	    					<h3><a href="properties.html">{{ agent.name }}</a></h3>
+								<p class="h-info"><span class="location">Listing</span> <span class="details">{{ agent.properties }} Properties</span></p>
+	    				</div>
+    			</div>
+				{% endfor %}
         	</div>
-        	<div class="col-md-3 ftco-animate">
+        	{% comment %} <div class="col-md-3 ftco-animate">
         		<div class="agent">
     					<div class="img">
 		    				<img src="{% static 'images/team-2.jpg' %}" class="img-fluid" alt="Colorlib Template">
@@ -596,7 +586,7 @@
 								<p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
 	    				</div>
     				</div>
-        	</div>
+        	</div> {% endcomment %}
         </div>
     	</div>
     </section>
@@ -611,21 +601,23 @@
           </div>
         </div>
         <div class="row d-flex">
+           {% for blog in blogs %}
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="blog-single.html" class="block-20 img" style="background-image: url('{% static 'images/image_1.jpg' %}');">
+                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('blog.image.url');">
 	              </a>
 	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
+                  <div><a href="#">{{ blog.date }}</a></div>
                   <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ blog.number }}</a></div>
                 </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
+	              <h3 class="heading"><a href="#">{{ blog.text }}</a></h3>
               </div>
             </div>
           </div>
-          <div class="col-md-3 d-flex ftco-animate">
+          {% endfor %}
+          {% comment %} <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
                 <a href="blog-single.html" class="block-20 img" style="background-image: url('{% static 'images/image_2.jpg' %}');">
@@ -665,10 +657,9 @@
                 </div>
 	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
               </div>
-            </div>
+            </div> {% endcomment %}
           </div>
         </div>
       </div>
     </section>		
-
 {% endblock content %}
