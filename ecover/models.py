@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime, date
+from django.contrib.auth.models import User
 
 class Region(models.Model):
     name = models.CharField(max_length=20)
@@ -9,7 +10,7 @@ class Region(models.Model):
 
 class Announcement(models.Model):
     title = models.CharField(max_length=10)
-    region = models.ForeignKey(Region,on_delete = models.CASCADE)
+    region = models.ForeignKey(Region,on_delete = models.CASCADE, default='Termiz')
     district = models.CharField(max_length=20)
     addres = models.CharField(max_length=30)
     price = models.FloatField()

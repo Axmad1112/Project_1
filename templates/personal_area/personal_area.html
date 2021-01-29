@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+  </head>
+  <body>
+
+  {% url 'index' as index %}
+  {% url 'about' as about %}
+  {% url 'agent' as agent %}
+  {% url 'blog' as blog %}
+  {% url 'contact' as contact %}
+  {% url 'properties' as properties %}
+  {% url 'services' as services %}
+  {% url '<username>' as user %}
+
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'index'%}">Ecoverde</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item {% if request.path == index %} active {% endif %}">
+              <a href="{% url 'index' %}" class="nav-link">Home</a>
+            </li>
+	          <li class="nav-item {% if request.path == about %} active {% endif %}">
+              <a href="{% url 'about' %}" class="nav-link">About</a>
+            </li>
+	          <li class="nav-item {% if request.path == agent %} active {% endif %}">
+              <a href="{% url 'agent' %}" class="nav-link">Agent</a>
+            </li>
+	          <li class="nav-item {% if request.path == services %} active {% endif %}">
+              <a href="{% url 'services' %}" class="nav-link">Services</a>
+            </li>
+	          <li class="nav-item {% if request.path == properties %} active {% endif %}">
+              <a href="{% url 'properties' %}" class="nav-link">Properties</a>
+            </li>
+	          <li class="nav-item {% if request.path == blog %} active {% endif %}">
+              <a href="{% url 'blog' %}" class="nav-link">Blog</a>
+            </li>
+	          <li class="nav-item {% if request.path == contact %} active {% endif %}">
+              <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            </li>
+            
+              <li class="nav-item">
+                  <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+              </li>
+          
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'images/bg_1.jpg' %}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate pb-0 text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>Announcement <i class="fa fa-chevron-right"></i></span></p>
+          <h1 class="mb-3 bread">E'lonlaringiz</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ftco-section ftco-agent">
+    	<div class="container">
+    		
+        {% if announcements %}
+		{% for announcement in announcements %}
+		{% csrf_token %}
+        	<div class="col-md-4">
+			
+        		<div class="property-wrap ftco-animate">
+        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+        				<div class="rent-sale">
+        					<span class="{% if announcement.type == 'sale' %}sale{% endif %}">{{ announcement.type }}</span>
+        				</div>
+        				<p class="price"><span class="orig-price">{{ announcement.price }}</span></p>
+        			</a>
+        			<div class="text">
+        				<ul class="property_list">
+        					<li><span class="flaticon-bed"></span>3</li>
+        					<li><span class="flaticon-bathtub"></span>2</li>
+        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
+        				</ul>
+        				<h3><a href="#">{{ announcement.title }}</a></h3>
+        				<span class="location">{{ announcement.region }}</span>
+        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
+        					<span class="fa fa-link"></span>
+        				</a>
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        					<div class="d-flex align-items-center">
+	        					<div class="img" style="background-image: url('{{ announcement.image_person.url }}');"></div>
+                    {% for i in user %}
+                    <h3 class="ml-2">{{ i.first_name }} {{ i.last_name }}</h3>
+                    {% endfor %}
+	        				</div>
+	        				<span class="text-right">{{ announcement.date }}</span>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        {% endfor %}
+        {% else %}
+        <h4>E'lonlar mavjud emas!</h4>
+        {% endif %}
+      </div>
+  </section> 
+  <footer class="ftco-footer ftco-section">
+	<div class="container">
+	  <div class="row mb-5">
+		<div class="col-md">
+		  <div class="ftco-footer-widget mb-4">
+			<h2 class="ftco-heading-2">Ecoverde</h2>
+			<p>Far far away, behind the word mountains, far from the countries.</p>
+			<ul class="ftco-footer-social list-unstyled mt-5">
+			  <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+			  <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+			  <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="col-md">
+		  <div class="ftco-footer-widget mb-4 ml-md-4">
+			<h2 class="ftco-heading-2">Community</h2>
+			<ul class="list-unstyled">
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Search Properties</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>For Agents</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reviews</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>FAQs</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="col-md">
+		  <div class="ftco-footer-widget mb-4 ml-md-4">
+			<h2 class="ftco-heading-2">About Us</h2>
+			<ul class="list-unstyled">
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Our Story</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Meet the team</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="col-md">
+		   <div class="ftco-footer-widget mb-4">
+			<h2 class="ftco-heading-2">Company</h2>
+			<ul class="list-unstyled">
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+			  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="col-md">
+		  <div class="ftco-footer-widget mb-4">
+			  <h2 class="ftco-heading-2">Have a Questions?</h2>
+			  <div class="block-23 mb-3">
+				<ul>
+				  <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+				  <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+				  <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+				</ul>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-md-12 text-center">
+  
+		  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+		</div>
+	  </div>
+	</div>
+  </footer>
+  
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+  
+</body>
+</html>
+     

@@ -18,6 +18,7 @@
     
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
   </head>
   <body>
 
@@ -28,6 +29,7 @@
   {% url 'contact' as contact %}
   {% url 'properties' as properties %}
   {% url 'services' as services %}
+  
 
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -38,13 +40,36 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item {% if request.path == index %} active {% endif %}"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-	          <li class="nav-item {% if request.path == about %} active {% endif %}"><a href="{% url 'about' %}" class="nav-link">About</a></li>
-	          <li class="nav-item {% if request.path == agent %} active {% endif %}"><a href="{% url 'agent' %}" class="nav-link">Agent</a></li>
-	          <li class="nav-item {% if request.path == services %} active {% endif %}"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
-	          <li class="nav-item {% if request.path == properties %} active {% endif %}"><a href="{% url 'properties' %}" class="nav-link">Properties</a></li>
-	          <li class="nav-item {% if request.path == blog %} active {% endif %}"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
-	          <li class="nav-item {% if request.path == contact %} active {% endif %}"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+	          <li class="nav-item {% if request.path == index %} active {% endif %}">
+              <a href="{% url 'index' %}" class="nav-link">Home</a>
+            </li>
+	          <li class="nav-item {% if request.path == about %} active {% endif %}">
+              <a href="{% url 'about' %}" class="nav-link">About</a>
+            </li>
+	          <li class="nav-item {% if request.path == agent %} active {% endif %}">
+              <a href="{% url 'agent' %}" class="nav-link">Agent</a>
+            </li>
+	          <li class="nav-item {% if request.path == services %} active {% endif %}">
+              <a href="{% url 'services' %}" class="nav-link">Services</a>
+            </li>
+	          <li class="nav-item {% if request.path == properties %} active {% endif %}">
+              <a href="{% url 'properties' %}" class="nav-link">Properties</a>
+            </li>
+	          <li class="nav-item {% if request.path == blog %} active {% endif %}">
+              <a href="{% url 'blog' %}" class="nav-link">Blog</a>
+            </li>
+	          <li class="nav-item {% if request.path == contact %} active {% endif %}">
+              <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+              </li>
+            {% else %}
+               <li class="nav-item">
+                  <a href="{% url 'sign_in' %}" class="nav-link">Login</a>
+              </li>
+            {% endif %}
 	        </ul>
 	      </div>
 	    </div>
@@ -56,6 +81,7 @@
 
     {% endblock content %}
 
+  
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
