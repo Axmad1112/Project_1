@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Add announcement {% endblock %}
+
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title_id">Title</label>
+        <input type="text" name="title" id="title_id"><br>
+        <label for="content_id">Content</label>
+        <textarea name="content" id="content_id" cols="30" rows="10"></textarea><br>
+        <label for="region_id">Region</label>
+        <select name="region" id="region_id" class="region">
+            <option disabled selected>Select the region</option>
+            {% for region in regions %}
+            <option value="">{{region.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="hidden" name="region_id" id="viloyat_id">
+        <label for="district_id">District</label>
+        <select name="district" id="district_id">
+            <option disabled selected>Select the district</option>
+        </select><br>
+        <input type="hidden" name="district_id" id="tuman_id">
+        <label for="address_id">Address</label>
+        <input type="text" name="address" id="address_id"><br>
+        <label for="type_id">Type</label>
+        <select name="type" id="type_id">
+            <option disabled selected>Select type</option>
+            {% for type in types %}
+            <option>{{type.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="hidden" name="type_id" id="turi">
+        <label for="status_id">Status</label>
+        <select name="status" id="status_id">
+            <option disabled selected>Select status</option>
+            {% for status in statuses %}
+            <option>{{status.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="hidden" name="status_id" id="xolati">
+        <label for="view_id">Views</label>
+        <select name="view" id="view_id">
+            <option disabled selected>Select view</option>
+            {% for view in views %}
+            <option>{{view.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="hidden" name="view_id" id="korinish">
+        <label for="price_id">Price</label>
+        <input type="number" name="price" id="price_id"><br>
+        <label for="features_id">Features</label>
+        <textarea name="features" id="features_id" cols="30" rows="10"></textarea><br>
+        <label for="img">Image</label>
+        <input type="file" name="image" id="img"><br>
+        <label for="phone_id">Phone number</label>
+        <input type="text" name="phone" id="phone_id"><br>
+        <button type="submit">OK</button>
+    </form>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script>
+        
+        $(document).ready(function(){
+			var tuman_ids = [], selectedRegionIndex = 0;
+			var t = '{{ districts|safe }}';
+			var tumanlar = JSON.parse(t);
+            $("select.region").change(function(){
+                tuman_ids = [];
+				selectedRegionIndex = $(".region option:selected").index();
+				if (selectedRegionIndex > 1) selectedRegionIndex++;
+				var tuman = [];
+				for (var i = 0; i < tumanlar.length; i++){
+					if (selectedRegionIndex == tumanlar[i].fields.region_id) {tuman_ids.push(tumanlar[i].pk);tuman.push(tumanlar[i].fields.name);}
+                }
+				var tuman_options = "";
+				for (var i = 0; i < tuman.length; i++){
+					tuman_options += "<option>" + tuman[i] + "</option>";
+				}
+				$("#district_id").html(tuman_options);
+				$("#viloyat_id").val(selectedRegionIndex);
+                selectedDistrictIndex = $("#district_id option:selected").index();
+				$("#tuman_id").val(tuman_ids[selectedDistrictIndex]);
+			});
+            
+            $("#district_id").change(function(){
+                selectedDistrictIndex = $("#district_id option:selected").index();
+                console.log(selectedDistrictIndex);
+				$("#tuman_id").val(tuman_ids[selectedDistrictIndex]);
+            });
+            
+            $("#type_id").change(function(){
+                selectedTypeIndex = $("#type_id option:selected").index();
+				$("#turi").val(selectedTypeIndex);
+            });
+            
+            $("#status_id").change(function(){
+                selectedStatusIndex = $("#status_id option:selected").index();
+				$("#xolati").val(selectedStatusIndex);
+            });
+            
+            $("#view_id").change(function(){
+                selectedViewIndex = $("#view_id option:selected").index();
+				$("#korinish").val(selectedViewIndex);
+			});
+        });
+        
+    </script>
+{% endblock %}

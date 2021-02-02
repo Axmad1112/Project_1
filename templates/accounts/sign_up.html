@@ -12,17 +12,17 @@
 
 		<!-- Main css -->
 		<link rel="stylesheet" href="{% static 'css/style1.css' %}">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	</head>
 	<body style="background-image: url('{% static 'images/body-bg.jpg' %}')">
 
 		<div class="main">
 			{% if messages %}
 				{% for m in messages %}
-					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<div class="alert alert-warning alert-dismissible fade show" style="position: absolute; width: 100%; z-index: 20; top: -75px;" role="alert">
 						{{ m }}
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
+							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 				{% endfor %}
@@ -30,32 +30,39 @@
 			<div class="container" style="background-image: url('{% static 'images/container-bg.png' %}')">
 			
 				<div class="signup-content">
-					<form method="POST" id="signup-form" class="signup-form">
+					<form method="POST" id="signup-form" class="signup-form" action="{% url 'sign_up' %}">
 						{% csrf_token %}
 						<h2>Ro'yxatdan o'tish </h2>
 						<p class="desc"></p>
 						<div class="form-group">
-							<input type="text" class="form-input"  name="first_name" id="name" placeholder="First Name"/>
+							{{ form.first_name}}
+							{% comment %} <input type="text" class="form-input"  name="first_name" id="name" placeholder="First Name"/> {% endcomment %}
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-input"  name="last_name" id="name" placeholder="Last Name"/>
+							{{ form.last_name}}
+							{% comment %} <input type="text" class="form-input"  name="last_name" id="name" placeholder="Last Name"/> {% endcomment %}
 						</div>						
 						<div class="form-group">
-							<input type="text" class="form-input"  name="username" id="name" placeholder="User Name"/>
+							{{ form.username}}
+							{% comment %} <input type="text" class="form-input"  name="username" id="name" placeholder="User Name"/> {% endcomment %}
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
+							{{ form.email}}
+							{% comment %} <input type="email" class="form-input" name="email" id="email" placeholder="Email"/> {% endcomment %}
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-input" name="password1" id="password" placeholder="Password"/>
+							{{ form.password1}}
+							{% comment %} <input type="text" class="form-input" name="password1" id="password" placeholder="Password"/> {% endcomment %}
 							<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-input" name="password2" id="password" placeholder="Password again"/>
+							{{ form.password2}}
+							{% comment %} <input type="text" class="form-input" name="password2" id="password" placeholder="Password again"/> {% endcomment %}
 							<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
 						</div>
 						<div class="form-group">
-							<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+							{{ form.checkbox}}
+							{% comment %} <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" /> {% endcomment %}
 							<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
 						</div>
 						<div class="form-group">
@@ -69,6 +76,10 @@
 		</div>
 
 		<!-- JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 		<script src="{% static 'js/jquery1.min.js' %}"></script>
 		<script src="{% static 'js/main1.js' %}"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
