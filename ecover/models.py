@@ -21,7 +21,14 @@ class Type(models.Model):
     def __str__(self):
         return self.name
 
-class Views(models.Model):
+class View(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+
+class Status(models.Model):
     name = models.CharField(max_length=20)
 
     def __str__(self):
@@ -30,16 +37,17 @@ class Views(models.Model):
 
 class Announcement(models.Model):
     title = models.CharField(max_length=10)
-    region = models.ForeignKey(Region, on_delete = models.CASCADE, default='Termiz')
+    region = models.ForeignKey(Region, on_delete = models.CASCADE)
     district = models.ForeignKey(District, on_delete = models.CASCADE)
-    addres = models.CharField(max_length=30)
-    price = models.FloatField()
+    address = models.CharField(max_length=30)
     type = models.ForeignKey(Type, on_delete = models.CASCADE, blank=True)
-    views = models.ForeignKey(Views, on_delete = models.CASCADE, blank=True) 
-    text = models.TextField(max_length=60)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    view = models.ForeignKey(View, on_delete = models.CASCADE, blank=True) 
+    content = models.TextField(max_length=60)
     image = models.ImageField(upload_to='picture')
-    image_person = models.ImageField(upload_to='image_person')
+    price = models.FloatField()
     person_name = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20)
     date = models.DateField(auto_now=True)
 
     def __str__(self):
@@ -56,7 +64,7 @@ class Agent(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=20)
-    date = models.DateField(auto_now=False,)
+    date = models.DateField(auto_now=True)
     number = models.IntegerField()
     text = models.TextField(max_length=50)
     image = models.ImageField(upload_to='blog_rasm')

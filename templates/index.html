@@ -157,7 +157,7 @@
         		<div class="property-wrap ftco-animate">
         			<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
         				<div class="rent-sale">
-        					<span class="{% if announcement.type == 'sale' %}sale{% endif %}">{{ announcement.type }}</span>
+        					<span class="{% if announcement.type == 'sale' %} sale {% else %} rent {% endif %}">{{ announcement.status }}</span>
         				</div>
         				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
         			</a>
@@ -174,7 +174,7 @@
         				</a>
         				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
         					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url('{{ announcement.image_person.url }}');"></div>
+	        					<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
 	        					<h3 class="ml-2">{{ announcement.person_name }}</h3>
 	        				</div>
 	        				<span class="text-right">{{ announcement.date }}</span>

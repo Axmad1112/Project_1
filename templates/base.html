@@ -70,16 +70,17 @@
 	          <li class="nav-item {% if request.path == contact %} active {% endif %}">
               <a href="{% url 'contact' %}" class="nav-link">Contact</a>
             </li>
+
            
             {% if user.is_authenticated %}
               <li class="nav-item" >
                 <div class="dropdown">
                   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <a href="#" class="nav-link">{{ user.username }}</a>
+                    <a href="personal" class="nav-link">{{ user.username }}</a>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="personal">E'lonlar</a>
-                    <a class="dropdown-item" href="#">Edit</a>
+                    <a class="dropdown-item" href="../personal">E'lonlar</a>
+                    <a href="../{{user.username}}/add" class="dropdown-item">Add Announcement</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
                   </div>
                 </div>

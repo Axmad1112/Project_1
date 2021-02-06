@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ecover.urls')),
     path('accounts/', include('accounts.urls')),
-    path('<username>', include('personal_area.urls'))
+    path('<username>/', include('personal_area.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

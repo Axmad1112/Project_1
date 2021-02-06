@@ -110,7 +110,7 @@
         		<div class="property-wrap ftco-animate">
         			<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
         				<div class="rent-sale">
-        					<span class="{% if announcement.type == 'sale' %}sale{% endif %}">{{ announcement.type }}</span>
+        					<span class="{% if announcement.type == 'sale' %}sale {% else %}rent{% endif %}">{{ announcement.status }}</span>
         				</div>
         				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
         			</a>
