@@ -151,39 +151,45 @@
         </div>
         <div class="row ftco-animate">
           <div class="col-md-12">
-            <div class="carousel-properties owl-carousel">
-                {% for  announcement in announcements %}
-              <div class="item">
-        		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
-        				<div class="rent-sale">
-        					<span class="{% if announcement.type == 'sale' %} sale {% else %} rent {% endif %}">{{ announcement.status }}</span>
-        				</div>
-        				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
-        			</a>
-        			<div class="text">
-        				<ul class="property_list">
-        					<li><span class="flaticon-bed"></span>3</li>
-        					<li><span class="flaticon-bathtub"></span>2</li>
-        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-        				</ul>
-        				<h3><a href="#">{{ announcement.title }}</a></h3>
-        				<span class="location">{{ announcement.region}}</span>
-        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        					<span class="fa fa-link"></span>
-        				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-        					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
-	        					<h3 class="ml-2">{{ announcement.person_name }}</h3>
-	        				</div>
-	        				<span class="text-right">{{ announcement.date }}</span>
-        				</div>
-        			</div>
-        		</div>
-		        </div>
-				{% endfor %}
-              </div>
+		  	
+				
+					<div class="carousel-properties owl-carousel">
+					{% for announcement in announcements %}
+						<div class="item">
+							<div class="property-wrap ftco-animate">
+							{% if announcement.image %}
+								<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+							{% endif %}
+									<div class="rent-sale">
+										<span class="{% if announcement.type == 'For sale' %} sale {% else %} rent {% endif %}">{{ announcement.status }}</span>
+									</div>
+									<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
+								</a>
+								<div class="text">
+									<ul class="property_list">
+										<li><span class="flaticon-bed"></span>3</li>
+										<li><span class="flaticon-bathtub"></span>2</li>
+										<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
+									</ul>
+									<h3><a href="#">{{ announcement.title }}</a></h3>
+									<span class="location">{{ announcement.region}}</span>
+									<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
+										<span class="fa fa-link"></span>
+									</a>
+									<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+										<div class="d-flex align-items-center">
+											<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
+											<h3 class="ml-2">{{ announcement.person_name }}</h3>
+										</div>
+										<span class="text-right">{{ announcement.date }}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				
+			
                 {% comment %} <div class="item">
                 	<div class="property-wrap ftco-animate">
 		        			<a href="#" class="img" style="background-image: url({% static 'images/work-2.jpg' %});">

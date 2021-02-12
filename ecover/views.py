@@ -4,7 +4,7 @@ from ecover.models import Announcement, Blog, Agent
 def index(request):
     announcements = Announcement.objects.all()
     agents = Agent.objects.all()
-    return render(request, "index.html", {'announcements': announcements,'agents': agents})
+    return render(request, "index.html", {'announcements': announcements, 'agents': agents})
 
 def about(request):
     return render(request, "about.html")

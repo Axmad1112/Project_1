@@ -104,14 +104,17 @@
 					</div>
 				</div>
         <div class="row">
-		 {% for announcement in announcements %}
+		{% for announcement in announcements %}
         	<div class="col-md-4">
 			
         		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
-        				<div class="rent-sale">
-        					<span class="{% if announcement.type == 'sale' %}sale {% else %}rent{% endif %}">{{ announcement.status }}</span>
-        				</div>
+				
+					{% if announcement.image %}
+						<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+					{% endif %}
+					<div class="rent-sale">
+        				<span class="{% if announcement.type == 'sale' %}sale {% else %}rent{% endif %}">{{ announcement.status }}</span>
+        			</div>
         				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
         			</a>
         			<div class="text">
@@ -127,15 +130,17 @@
         				</a>
         				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
         					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url('{{ announcement.image_person.url }}');"></div>
+	        					<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
 	        					<h3 class="ml-2">{{ announcement.person_name }}</h3>
 	        				</div>
 	        				<span class="text-right">{{ announcement.date }}</span>
         				</div>
         			</div>
+				
         		</div>
+			
         	</div>
-		 {% endfor %}
+		{% endfor %}
         	{% comment %} <div class="col-md-4">
         		<div class="property-wrap ftco-animate">
         			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-2.jpg' %});">

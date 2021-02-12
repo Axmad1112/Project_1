@@ -30,6 +30,7 @@
   {% url 'contact' as contact %}
   {% url 'properties' as properties %}
   {% url 'services' as services %}
+  {% url 'add' as add%}
   
 
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -41,15 +42,16 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            
-	          <li class="nav-item {% if request.path == index %} active {% endif %}">
-              <a  class="nav-link" {% if user.is_authenticated %} 
+              
+	            <li class="nav-item {% if request.path == index %} active {% endif %}">
+                <a  class="nav-link" 
+                {% if user.is_authenticated %} 
                 href="../{{ user.username }}"
-              {% else %}
+                {% else %}
                 href="/"
-              {% endif %}
-              >Home</a>
-            </li>
+                {% endif %}
+                >Home</a>
+              </li>
             
 
 	          <li class="nav-item {% if request.path == about %} active {% endif %}">
@@ -61,6 +63,11 @@
 	          <li class="nav-item {% if request.path == services %} active {% endif %}">
               <a href="{% url 'services' %}" class="nav-link">Services</a>
             </li>
+            {% if not request.user.is_authenticated %}
+            <li class="nav-item {% if request.path == add %} active {% endif %}">
+              <a href="{% url 'sign_in' %}" class="nav-link">Add Announcement</a>
+            </li>
+            {% endif %}
 	          <li class="nav-item {% if request.path == properties %} active {% endif %}">
               <a href="{% url 'properties' %}" class="nav-link">Properties</a>
             </li>
@@ -72,16 +79,16 @@
             </li>
 
            
-            {% if user.is_authenticated %}
+            {% if request.user.is_authenticated %}
               <li class="nav-item" >
                 <div class="dropdown">
                   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <a href="personal" class="nav-link">{{ user.username }}</a>
+                    <a href="personal" class="nav-link">{{ request.user }}</a>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../personal">E'lonlar</a>
-                    <a href="../{{user.username}}/add" class="dropdown-item">Add Announcement</a>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                    <a class="dropdown-item" href="../{{request.user}}">E'lonlar</a>
+                    <a href="../{{request.user}}/add" class="dropdown-item">E'lon berish</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a>
                   </div>
                 </div>
               </li>
@@ -165,7 +172,7 @@
           <div class="col-md-12 text-center">
 	
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>

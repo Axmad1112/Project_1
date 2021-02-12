@@ -44,7 +44,7 @@ class Announcement(models.Model):
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     view = models.ForeignKey(View, on_delete = models.CASCADE, blank=True) 
     content = models.TextField(max_length=60)
-    image = models.ImageField(upload_to='picture')
+    image = models.ImageField(upload_to='picture', blank=True, null=True)
     price = models.FloatField()
     person_name = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)

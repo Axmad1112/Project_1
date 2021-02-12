@@ -4,13 +4,16 @@ from ecover.models import Announcement, Region, District, Type, Status, View
 import json
 from django.core import serializers
 from PIL import Image
-from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
+
 
 def personal(request, username):
-    announcements = Announcement.objects.filter(person_name=username)
-    user = User.objects.filter(username=username)
-    return render(request, "personal_area/personal_area.html", {'announcements': announcements, 'user': user})
-
+    if request.user.is_authenticated:
+        announcements = Announcement.objects.filter(person_name=request.user)
+        user = User.objects.filter(username=username)
+        return render(request, "personal_area/personal_area.html", {'announcements': announcements, 'user': user})
+    else:
+        return HttpResponse("Bunday sahifa topilmadi !!!")
     
 def add(request, username):
     regions = Region.objects.all()
@@ -20,7 +23,7 @@ def add(request, username):
     statuses = Status.objects.all()
     views = View.objects.all()
 
-    if request.method == 'POST':
+    if request.method == 'POST' or request.FILES:
         title = request.POST['title']
         region_id = request.POST['region_id']
         district_id = request.POST['district_id']
@@ -34,7 +37,7 @@ def add(request, username):
         person_name = request.POST['person_name']
         phone = request.POST['phone']
 
-        announcements = Announcement(
+        announcement = Announcement(
             title=title,
             region_id=region_id,
             district_id=district_id,
@@ -48,7 +51,7 @@ def add(request, username):
             person_name=person_name,
             phone=phone
         )
-        announcements.save()
+        announcement.save()
       
     return render(request, 'add.html',
         {
