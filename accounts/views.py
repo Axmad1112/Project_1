@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .forms import loginForm, registerForm
+from .forms import loginForm, registerForm, EditForm
 
 def sign_up(request):
     if request.method == 'POST':
@@ -61,3 +61,41 @@ def sign_in(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def UserChangeView(UpdateView):
+    if request.method == 'POST':
+        edit_form = EditFormForm(request.POST)
+        if register_form.is_valid():
+            first_name = edit_form.cleaned_data['first_name']
+            last_name = edit_form.cleaned_data['last_name']
+            username = edit_form.cleaned_data['username']
+            email = edit_form.cleaned_data['email']
+            password1 = edit_form.cleaned_data['password1']
+            password2 = edit_form.cleaned_data['password2']
+
+            
+
+            if password1==password2:
+                if User.objects.filter(username=username).exists():
+                    messages.info(request,"Foydalanuvchi nomi mavjud boshqa nom kiritng !!!")
+                    return redirect('sign_up')
+                elif User.objects.filter(email=email).exists():
+                    messages.info(request, 'Elektron pochta mavjud')
+                    return redirect('edit_profile')
+                else:
+                    user = User.objects.update_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
+                    user.save()
+            else:
+                messages.info(request,"Parollar bir biriga to'g'ri kelmaydi !!!")
+                return redirect('edit_profile')
+           
+            user = auth.authenticate(username=username, password=password1)
+            auth.login(request, user)
+               
+            return redirect('../../' + username)
+    else:
+        edit_form = registerForm()   
+    return render(request, 'personal_area/personal_area', {'form': edit_form })
+
+
+

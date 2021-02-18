@@ -161,10 +161,15 @@
 								<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
 							{% endif %}
 									<div class="rent-sale">
-										<span class="{% if announcement.type == 'For sale' %} sale {% else %} rent {% endif %}">{{ announcement.status }}</span>
+										{% if announcement.status.id == 1 %}
+										<span class="sale">{{ announcement.status }}</span>
+										{% else %}
+										<span class="rent">{{ announcement.status }}</span>
+										{% endif %}
 									</div>
-									<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
+									<p class="price"><span class="orig-price">$ {{ announcement.price}}</span></p>
 								</a>
+							
 								<div class="text">
 									<ul class="property_list">
 										<li><span class="flaticon-bed"></span>3</li>

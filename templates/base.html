@@ -30,7 +30,6 @@
   {% url 'contact' as contact %}
   {% url 'properties' as properties %}
   {% url 'services' as services %}
-  {% url 'add' as add%}
   
 
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -88,6 +87,7 @@
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="../{{request.user}}">E'lonlar</a>
                     <a href="../{{request.user}}/add" class="dropdown-item">E'lon berish</a>
+                    <a href="../{{request.user}}/edit_profile" class="dropdown-item">Edit</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a>
                   </div>
                 </div>

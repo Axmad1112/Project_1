@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from ecover.models import Announcement, Blog, Agent
+from django.contrib.auth.models import User
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
+
+
 
 def index(request):
     announcements = Announcement.objects.all()
@@ -30,8 +35,19 @@ def properties_single(request):
     return render(request, "properties-single.html")
 
 def properties(request):
-    announcements = Announcement.objects.all()
-    return render(request, "properties.html", {'announcements': announcements})
+    announcements = Announcement.objects.all().order_by('-date')
+    page = request.GET.get('page',1)
+    paginator = Paginator(announcements,3)
+    try:
+        announcements = paginator.page(page)
+    except PageNotAnInteger:
+        announcements = paginator.page(1)
+    except EmptyPage:
+        announcements = paginator.page(paginator,num_pages)
+    return render(request, 'properties.html', {'announcements': announcements })
 
 def services(request):
     return render(request, "services.html")
+
+
+

@@ -17,11 +17,11 @@
   </section>
   <section class="ftco-section ftco-agent">
 
-    <form method="POST" style="width: 400px; margin: 0 auto;">
+    <form method="POST" style="width: 400px; margin: 0 auto;" enctype="multipart/form-data">
         {% csrf_token %}
         <label for="title_id">Title</label>
         <input type="text" name="title" id="title_id"><br>
-{% comment %} <------------------------------------------> {% endcomment %}
+
         <label for="region_id">Region</label>
         <select name="region" id="region_id" class="region">
             <option disabled selected>Select the region</option>
@@ -31,15 +31,13 @@
         </select><br>
         <input type="hidden" name="region_id" id="viloyat_id">
 
-{% comment %} <------------------------------------------> {% endcomment %}
+
         <label for="district_id">District</label>
         <select name="district" id="district_id">
             <option disabled selected>Select the district</option>
         </select><br>
         <input type="hidden" name="district_id" id="tuman_id">
- {% comment %} <------------------------------------------> {% endcomment %}
-
-        <label for="address_id">Address</label>
+         <label for="address_id">Address</label>
         <input type="text" name="address" id="address_id"><br>
  {% comment %} <------------------------------------------> {% endcomment %}       
         <label for="type_id">Type</label>
@@ -73,7 +71,7 @@
  {% comment %} <------------------------------------------> {% endcomment %}
 
         <label for="content_id">Content</label>
-        <textarea name="content" id="content_id" cols="30" rows="10"></textarea>
+        <textarea name="content" id="content_id" cols="30" rows="10"></textarea><br>
  {% comment %} <------------------------------------------> {% endcomment %}
         
         <label for="image_id">Image</label>
@@ -88,10 +86,9 @@
         <label for="phone_id">Phone number</label>
         <input type="number" name="phone" id="phone_id"><br>
 
-{% comment %} <-------------------------------------------> {% endcomment %}
 
-         <label for="person_name">Person_name</label>
-        <input type="text" name="person_name" id="person_name_id">
+        
+        {% comment %} {{ form.as_p}} {% endcomment %}
 
         <button type="submit">OK</button>
     </form>
@@ -126,7 +123,6 @@
                 console.log(selectedDistrictIndex);
 				$("#tuman_id").val(tuman_id[selectedDistrictIndex]);
             });
-            
             $("#type_id").change(function(){
                 selectedTypeIndex = $("#type_id option:selected").index();
 				$("#turi_id").val(selectedTypeIndex);

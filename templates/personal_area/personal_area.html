@@ -104,17 +104,29 @@
     	<div class="container">
     		
         {% if announcements %}
-			{% for announcement in announcements %}
+			
 			{% csrf_token %}
+			<div class="row">
+			{% for announcement in announcements %}
 				<div class="col-md-4">
 				
 					<div class="property-wrap ftco-animate">
+						{% if announcement.image %}
 						<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+						{% endif %}
+						
 							<div class="rent-sale">
-								<span class="{% if announcement.type == 'sale' %}sale {% else %} rent {% endif %}">{{ announcement.status }}</span>
+							{% if announcement.status.id == 1 %}
+								<span class="sale">{{ announcement.status }}</span>
+							{% else %}	
+								<span class="rent">{{ announcement.status }}</span>
+							{% endif %}
 							</div>
+											
 							<p class="price"><span class="orig-price">$ {{ announcement.price }}</span></p>
 						</a>
+						
+					
 						<div class="text">
 							<ul class="property_list">
 								<li><span class="flaticon-bed"></span>3</li>
@@ -138,7 +150,9 @@
 						</div>
 					</div>
 				</div>
-			{% endfor %}
+				{% endfor %}
+			</div>
+			
         {% else %}
         <h4>E'lonlar mavjud emas!</h4>
         {% endif %}

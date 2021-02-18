@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Edit Profile {% endblock title %}
+{% block content %}
+
+		<div class="main">
+			{% if messages %}
+				{% for m in messages %}
+					<div class="alert alert-warning alert-dismissible fade show" style="position: absolute; width: 100%; z-index: 20; top: -75px;" role="alert">
+						{{ m }}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				{% endfor %}
+			{% endif %}	
+			<div class="container" style="background-image: url('')">
+			
+				<div class="signup-content">
+					<form method="POST" id="signup-form" class="signup-form" action="{% url 'edit_profile' %}">
+						{% csrf_token %}
+						<h2>Ro'yxatdan o'tish </h2>
+						<p class="desc"></p>
+						<div class="form-group">
+							{{ form.first_name}}
+							{% comment %} <input type="text" class="form-input"  name="first_name" id="name" placeholder="First Name"/> {% endcomment %}
+						</div>
+						<div class="form-group">
+							{{ form.last_name}}
+							{% comment %} <input type="text" class="form-input"  name="last_name" id="name" placeholder="Last Name"/> {% endcomment %}
+						</div>						
+						<div class="form-group">
+							{{ form.username}}
+							{% comment %} <input type="text" class="form-input"  name="username" id="name" placeholder="User Name"/> {% endcomment %}
+						</div>
+						<div class="form-group">
+							{{ form.email}}
+							{% comment %} <input type="email" class="form-input" name="email" id="email" placeholder="Email"/> {% endcomment %}
+						</div>
+						<div class="form-group">
+							{{ form.password1}}
+							{% comment %} <input type="text" class="form-input" name="password1" id="password" placeholder="Password"/> {% endcomment %}
+							<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+						</div>
+						<div class="form-group">
+							{{ form.password2}}
+							{% comment %} <input type="text" class="form-input" name="password2" id="password" placeholder="Password again"/> {% endcomment %}
+							<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+						</div>
+						<div class="form-group">
+							{{ form.checkbox}}
+							{% comment %} <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" /> {% endcomment %}
+							<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit" class="form-submit submit" value="O'zgartirish"/>
+							
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+{% endblock content %}
