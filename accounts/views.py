@@ -36,7 +36,7 @@ def sign_up(request):
             return redirect('../../' + username)
     else:
         register_form = registerForm()   
-        return render(request, 'accounts/sign_up.html', {'form': register_form })
+    return render(request, 'accounts/sign_up.html', {'form': register_form })
 
 def sign_in(request):
     if request.method=='POST':
@@ -62,9 +62,9 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def UserChangeView(UpdateView):
+def edit_view(UpdateView):
     if request.method == 'POST':
-        edit_form = EditFormForm(request.POST)
+        edit_form = EditForm(request.POST)
         if register_form.is_valid():
             first_name = edit_form.cleaned_data['first_name']
             last_name = edit_form.cleaned_data['last_name']
@@ -94,7 +94,7 @@ def UserChangeView(UpdateView):
                
             return redirect('../../' + username)
     else:
-        edit_form = registerForm()   
+        edit_form = EditForm()   
     return render(request, 'personal_area/personal_area', {'form': edit_form })
 
 

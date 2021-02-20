@@ -10,7 +10,7 @@ urlpatterns = [
     path('contact/',views.contact, name='contact'),
     path('blog/',views.blog, name='blog'),
     path('main/',views.main, name='main'),
-    path('properties-single/',views.properties_single, name='properties-single'),
+    path('properties-single/<str:pk>/',views.properties_single, name='properties-single'),
     path('properties/',views.properties, name='properties'),
     path('services/', views.services, name='services')
 ]
