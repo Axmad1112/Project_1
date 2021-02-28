@@ -15,7 +15,7 @@
       </div>
     </section>
     <section class="ftco-section ftco-property-details">
-	{% for announcement in announcements %}
+	
       <div class="container">
       	<div class="row justify-content-center">
       		<div class="col-md-12">
@@ -48,7 +48,33 @@
 							    <li class="nav-item">
 							      <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Izoh</a>
 							    </li>
+								{% if announcement.person_name == user.username %}
+								<li class="nav-item">
+							      <a class="nav-link" href="{% url 'update_add' announcement.id %}">Tahrirlash</a>
+							    </li>
+								<li class="nav-item">
+							      	<button type="button" class="d-flex align-items-center justify-content-center btn-custom" data-toggle="modal" data-target="#exampleModal">
+										<span class="far fa-trash-alt"></span>
+									</button>
+							    </li>
+								{% endif %}						
 							  </ul>
+							</div>
+							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Haqiqattan ham ushbu e'lonni o'chirmoqchimisiz?</h5>
+										</div>  
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Bekor qilish</button>
+											<form action="{% url 'delete' announcement.id %}" method="POST" >
+											{% csrf_token %}
+											<button  class="btn btn-danger">O'chirish</button>
+											</form>
+										</div>
+									</div>
+                      			</div>
 							</div>
 
 						  <div class="tab-content" id="pills-tabContent">
@@ -212,7 +238,6 @@
 		      </div>
 				</div>
       </div>
-	  {% endfor %}
     </section>
 
 {% endblock content%}

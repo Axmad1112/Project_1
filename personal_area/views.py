@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from ecover.models import Announcement, Region, District, Type, Status, View
 import json
@@ -6,8 +6,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core import serializers
 from PIL import Image
 from django.http import HttpResponse
-from django.core.files.storage import FileSystemStorage
-from django.db.models import Q
+
 
 
 
@@ -15,6 +14,17 @@ def personal(request, username):
     if request.user.is_authenticated:
         announcements = Announcement.objects.filter(person_name=request.user)
         user = User.objects.filter(username=username)
+        
+        announcement_list = Announcement.objects.all().order_by('-date')
+        page = request.GET.get('page',1)
+        paginator = Paginator(announcement_list,6)
+       
+        try:
+            announcements = paginator.page(page)
+        except PageNotAnInteger:
+            announcements = paginator.page(1)
+        except EmptyPage:
+            announcements = paginator.page(paginator,num_pages)
         return render(request, "personal_area/personal_area.html", {'announcements': announcements, 'user': user})
        
     else:
@@ -67,11 +77,8 @@ def add(request, username):
         'views': views
     })
 
-def search(request):
-    title = request.GET.get('title')
-    results = Announcement.objects.filter(Q(title__icontains = title))
-    pages = pagination(request, results, num=1)
 
 
-    return render(request, 'properties.html', {'items': page[0], 'page_range': page[1]})
+
+
 

@@ -22,7 +22,7 @@
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('blog.image.url');">
+                <a href="{% url 'blog-single' blog.id %}" class="block-20 img" style="background-image: url('{{ blog.blog_image.url }}');">
 	              </a>
 	              <div class="meta mb-3">
                   <div><a href="#">{{ blog.date }}</a></div>
@@ -135,19 +135,29 @@
           </div>{% endcomment %}
         </div> 
         <div class="row mt-5">
+        {% if announcements.has_other_pages %}
+        <div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">
               <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
+			  	      {% if announcements.has_previous %}
+                  <li><a href="?page={{ announcements.previous_page_number }}">&lt;</a></li>
+                {% endif %}
+                {% for i in announcements.paginator.page_range %}
+                {% if announcements.number == i %}
+                  <li class="active"><span>{{ i }}</span></li>
+                {% else %}
+                  <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if announcements.has_next %}
+                  <li><a href="?page={{ announcements.next_page_number }}">&gt;</a></li>
+                {% endif %}
               </ul>
+              </div>
             </div>
           </div>
+		      {% endif %}
         </div>
       </div>
     </section>		

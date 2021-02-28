@@ -2,34 +2,39 @@
 {% load static %}
 {% block title %} Ecoverde project {% endblock title %}
 {% block content %}
-    <section class="hero-wrap" style="background-image: url('{% static 'images/bg_1.jpg' %}');" data-stellar-background-ratio="0.5">
+{% for nav in navbars %}
+    <section class="hero-wrap" style="background-image: url('{{nav.nav_image.url}}');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center">
           <div class="col-lg-7 col-md-6 ftco-animate d-flex align-items-end">
+		  	
           	<div class="text">
-	            <h1 class="mb-4">Find Perfect <br>House From Your Area.</h1>
-	            <p style="font-size: 18px;">From as low as $20 A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-	            <p><a href="#" class="btn btn-primary py-3 px-4">View all properties</a></p>
+	            <h1 class="mb-4">{{ nav.title }}</h1>
+	            <p style="font-size: 18px;">{{nav.text}}</p>
+	            <p><a href="{% url 'properties' %}" class="btn btn-primary py-3 px-4">View all properties</a></p>
             </div>
+			
           </div>
         </div>
       </div>
     </section>
+{% endfor %}
 
     <section class="ftco-section ftco-no-pb ftco-no-pt search-bg">
     	<div class="container">
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-							<form action="#" class="search-property-1">
+							<form method="GET" action="search" class="search-property-1">
+							{{form}}
 		        		<div class="row">
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Keyword</label>
 		          				<div class="form-field">
 		          					<div class="icon"><span class="fa fa-search"></span></div>
-				                <input type="text" class="form-control" placeholder="Enter Keyword">
+				                <input type="text" name="keyvalue" class="form-control" placeholder="Enter Keyword">
 				              </div>
 			              </div>
 		        			</div>
@@ -39,11 +44,13 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                        <option value="" style="color: green; background: #21243D;">Residence</option>
-		                        <option value="" style="color: green; background: #21243D;">Offices</option>
-		                        <option value="" style="color: green; background: #21243D;">Commercial</option>
-		                      </select>
+		                      		<select name="type" id="type_id" class="form-control">
+										
+											<option disabled>Type</option>
+											{% for type in types %}
+											<option>{{ type.name }}</option>
+											{% endfor %}
+									</select>
 		                    </div>
 				              </div>
 			              </div>
@@ -63,22 +70,12 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                        <option value="" style="color: green; background: #21243D;">$5,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$10,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$50,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$100,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$200,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$300,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$400,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$500,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$600,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$700,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$800,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$900,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$1,000,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$2,000,000</option>
+							  
+		                      <select name="price" id="price_id" class="form-control">
+		                        <option value="" style="color: green; background: #21243D;">${{price}}</option>
+		                        
 		                      </select>
+							  
 		                    </div>
 				              </div>
 			              </div>
@@ -158,7 +155,7 @@
 						<div class="item">
 							<div class="property-wrap ftco-animate">
 							{% if announcement.image %}
-								<a href="{% url 'properties-single' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+								<a href="{% url 'properties-single' announcement.id %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
 							{% endif %}
 									<div class="rent-sale">
 										{% if announcement.status.id == 1 %}
@@ -409,20 +406,21 @@
     </section>
 
     <section class="ftco-section ftco-no-pb ftco-no-pt">
-			<div class="container">
+			<div class="container mt-4">
 				<div class="row">
+				 {% for about in abouts %}
 					<div class="col-md-7 order-md-last d-flex align-items-stretch">
-						<div class="img w-100 img-2 mr-md-2" style="background-image: url({% static 'images/about.jpg' %});"></div>
-						<div class="img w-100 img-2 ml-md-2" style="background-image: url({% static 'images/about-2.jpg' %});"></div>
+						<div class="img w-100 img-2 mr-md-2" style="background-image: url('{{about.about_image1.url}}');"></div>
+						<div class="img w-100 img-2 ml-md-2" style="background-image: url('{{about.about_image2.url}}');"></div>
 					</div>
 					<div class="col-md-5 wrap-about py-md-5 ftco-animate">
-	          <div class="heading-section pr-md-5">
-	            <h2 class="mb-4">Ecoverde Real Estate</h2>
+					<div class="heading-section pr-md-5">
+						<h2 class="mb-4">{{about.title}}</h2>
 
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-	            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-	          </div>
+						<p>{{about.content}}</p>
 					</div>
+					</div>
+        		{% endfor %}
 				</div>
 			</div>
 		</section>
@@ -430,39 +428,41 @@
 		<section class="ftco-counter img" id="section-counter">
     	<div class="container">
     		<div class="row pt-md-5">
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 py-5 mb-4">
-              <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Area <br>Population</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 py-5 mb-4">
-              <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="2500">0</strong>
-                <span>Total <br>Properties</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 py-5 mb-4">
-              <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="500">0</strong>
-                <span>Average <br>House</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 py-5 mb-4">
-              <div class="text d-flex align-items-center">
-                <strong class="number" data-number="67">0</strong>
-                <span>Total <br>Branches</span>
-              </div>
-            </div>
-          </div>
-        </div>
+				{% for about in abouts %}
+				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 py-5 mb-4">
+					<div class="text text-border d-flex align-items-center">
+						<strong class="number" data-number="{{about.population}}">0</strong>
+						<span>Area <br>Population</span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 py-5 mb-4">
+					<div class="text text-border d-flex align-items-center">
+						<strong class="number" data-number="{{about.properties}}">0</strong>
+						<span>Total <br>Properties</span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 py-5 mb-4">
+					<div class="text text-border d-flex align-items-center">
+						<strong class="number" data-number="{{about.average_house}}">0</strong>
+						<span>Average <br>House</span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 py-5 mb-4">
+					<div class="text d-flex align-items-center">
+						<strong class="number" data-number="{{about.branches}}">0</strong>
+						<span>Total <br>Branches</span>
+					</div>
+					</div>
+				</div>
+        		{% endfor %}
+        	</div>
     	</div>
     </section>
 
@@ -475,24 +475,24 @@
           </div>
         </div>
         <div class="row ftco-animate">
+		{% for client in clients %}
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="text">
                   	<span class="fa fa-quote-left"></span>
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">{{client.text}}</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})"></div>
+                    	<div class="user-img" style="background-image: url('{{client.image.url}}')"></div>
                     	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
+		                    <p class="name">{{client.name}}</p>
+		                    <span class="position">{{client.specialist}}</span>
+		                </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
+              {% comment %} <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="text">
                   	<span class="fa fa-quote-left"></span>
@@ -536,10 +536,11 @@
 	                  </div>
                   </div>
                 </div>
-              </div>
+              </div> {% endcomment %}
             </div>
           </div>
         </div>
+		{% endfor %}
       </div>
     </section>
 
@@ -556,7 +557,7 @@
         		{% for agent in agents %}
         		<div class="agent">
     					<div class="img">
-		    				<img src="{{ agent.image.url }}" class="img-fluid" alt="Colorlib Template">
+		    				<img src="{{ agent.agent_image.url }}" class="img-fluid" alt="Colorlib Template">
 	    				</div>
 	    				<div class="desc">
 	    					<h3><a href="properties.html">{{ agent.name }}</a></h3>
@@ -616,7 +617,7 @@
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('blog.image.url');">
+                <a href="{% url 'blog-single' blog.id %}" class="block-20 img" style="background-image: url('{{blog.blog_image.url}}');">
 	              </a>
 	              <div class="meta mb-3">
                   <div><a href="#">{{ blog.date }}</a></div>

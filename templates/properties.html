@@ -19,78 +19,80 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-							<form action="search" class="search-property-1" method="GET">
-								
-								<div class="row">
-									<div class="col-lg align-items-end">
-										<div class="form-group">
-											<label for="#">Keyword</label>
-										<div class="form-field">
-											<div class="icon"><span class="fa fa-search"></span></div>
-										<input type="text" name='title'class="form-control" placeholder="Enter Keyword">
-									</div>
-								</div>
-									</div>
-									<div class="col-lg align-items-end">
-										<div class="form-group">
-											<label for="#">Property Type</label>
-											<div class="form-field">
-											<div class="select-wrap">
-									<div class="icon"><span class="fa fa-chevron-down"></span></div>
-									<select name="type" id="type" class="form-control">
-										{% for type in types %}
+								<form method="GET" action="search" class="search-property-1">
+		        		<div class="row">
+		        			<div class="col-lg align-items-end">
+		        				<div class="form-group">
+		        					<label for="#">Keyword</label>
+		          				<div class="form-field">
+		          					<div class="icon"><span class="fa fa-search"></span></div>
+				                <input type="text" class="form-control" placeholder="Enter Keyword">
+				              </div>
+			              </div>
+		        			</div>
+		        			<div class="col-lg align-items-end">
+		        				<div class="form-group">
+		        					<label for="#">Property Type</label>
+		        					<div class="form-field">
+		          					<div class="select-wrap">
+		                      		<div class="icon"><span class="fa fa-chevron-down"></span></div>
+		                      		<select name="type" id="type_id" class="form-control">
+										
+											<option>Type</option>
+											{% for type in types %}
 											<option>{{ type.name }}</option>
-										{% endfor %}
+											{% endfor %}
 									</select>
 									<input type="hidden" name="type_id" id="turi_id">
-									</div>
-									</div>
-								</div>
-									</div>
-									<div class="col-lg align-items-end">
-										<div class="form-group">
-											<label for="#">Location</label>
-										<div class="form-field">
-											<div class="icon"><span class="fa fa-search"></span></div>
-										<input type="text" class="form-control" placeholder="Location">
-									</div>
-								</div>
-									</div>
-									<div class="col-lg align-items-end">
-										<div class="form-group">
-											<label for="#">Price Limit</label>
-											<div class="form-field">
-											<div class="select-wrap">
-									<div class="icon"><span class="fa fa-chevron-down"></span></div>
-									<select name="" id="" class="form-control">
-										<option value="">$5,000</option>
-										<option value="">$10,000</option>
-										<option value="">$50,000</option>
-										<option value="">$100,000</option>
-										<option value="">$200,000</option>
-										<option value="">$300,000</option>
-										<option value="">$400,000</option>
-										<option value="">$500,000</option>
-										<option value="">$600,000</option>
-										<option value="">$700,000</option>
-										<option value="">$800,000</option>
-										<option value="">$900,000</option>
-										<option value="">$1,000,000</option>
-										<option value="">$2,000,000</option>
-									</select>
-									</div>
-									</div>
-								</div>
-									</div>
-									<div class="col-lg align-self-end">
-										<div class="form-group">
-											<div class="form-field">
-										<input type="submit" value="Search" class="form-control btn btn-primary">
-									</div>
-								</div>
-									</div>
-								</div>
-		        			</form>
+		                    	</div>
+				            </div>
+			              </div>
+		        			</div>
+		        			<div class="col-lg align-items-end">
+		        				<div class="form-group">
+		        					<label for="#">Location</label>
+		          				<div class="form-field">
+		          					<div class="icon"><span class="fa fa-search"></span></div>
+				                <input type="text" class="form-control" placeholder="Location">
+				              </div>
+			              </div>
+		        			</div>
+		        			<div class="col-lg align-items-end">
+		        				<div class="form-group">
+		        					<label for="#">Price Limit</label>
+		        					<div class="form-field">
+		          					<div class="select-wrap">
+		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
+		                      <select name="" id="" class="form-control">
+		                        <option value="" style="color: green; background: #21243D;">$5,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$10,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$50,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$100,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$200,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$300,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$400,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$500,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$600,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$700,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$800,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$900,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$1,000,000</option>
+		                        <option value="" style="color: green; background: #21243D;">$2,000,000</option>
+		                      </select>
+		                    </div>
+				              </div>
+			              </div>
+		        			</div>
+		        			<div class="col-lg align-self-end">
+		        				<div class="form-group">
+		        					<div class="form-field">
+				                <input type="submit" value="Search" class="form-control btn btn-primary">
+				              </div>
+			              </div>
+		        			</div>
+		        		</div>
+		        	</form>
+							
 		        		</div>
 					</div>
 	    	</div>
@@ -112,7 +114,7 @@
         		<div class="property-wrap ftco-animate">
 				
 					{% if announcement.image %}
-						<a href="{% url 'properties-single announcements.pk' %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+						<a href="{% url 'properties-single' announcement.id %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
 					{% endif %}
 					<div class="rent-sale">
 					{% if announcement.status.id == 1 %}
@@ -134,7 +136,7 @@
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
 	        					<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
 	        					<h3 class="ml-2">{{ announcement.person_name }}</h3>
@@ -166,7 +168,7 @@
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
 	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
 	        					<h3 class="ml-2">John Dorf</h3>
@@ -195,7 +197,7 @@
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
 	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
 	        					<h3 class="ml-2">John Dorf</h3>
@@ -225,7 +227,7 @@
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
 	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
 	        					<h3 class="ml-2">John Dorf</h3>
@@ -254,7 +256,7 @@
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
 	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
 	        					<h3 class="ml-2">John Dorf</h3>
@@ -283,7 +285,7 @@
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
 	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
 	        					<h3 class="ml-2">John Dorf</h3>
@@ -322,14 +324,20 @@
     </section>
 
 {% endblock content%}
+
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-	<script>
-		$(document).ready(function(){
-				var tuman_id = [], selectedRegionIndex = 0;
-				var t = '{{ districts|safe }}';
-				var tumanlar = JSON.parse(t);
-				$("#type_id").change(function(){
+    <script>
+        
+        $(document).ready(function(){
+			var tuman_id = [], selectedRegionIndex = 0;
+			var t = '{{ districts|safe }}';
+			var tumanlar = JSON.parse(t);
+            $("#type_id").change(function(){
                 selectedTypeIndex = $("#type_id option:selected").index();
 				$("#turi_id").val(selectedTypeIndex);
             });
-	</script>
+                      
+           
+        });
+        
+    </script>
