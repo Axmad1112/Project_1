@@ -322,16 +322,28 @@
             <h2 class="mb-2">Properties for this Cities</h2>
           </div>
         </div>
-    		<div class="row">
-    			<div class="col-md-4">
-    				<a href="#" class="search-place img" style="background-image: url({% static 'images/place-1.jpg' %});">
-							<div class="desc">
-								<h3><span>Miami</span></h3>
-								<span>24 Properties</span>
+    		<div class="row ftco-animate">
+				<div class="col-md-12">
+					
+						
+					<div class="carousel-properties owl-carousel">
+						{% for region in regions %}
+							<div class="item">
+								{% if region.image %}
+								<a href="{% url 'region-detail' region.id %}" class="search-place img" style="background-image: url({{region.image.url}});">
+								{% endif %}
+									<div class="desc">
+										<h3><span>{{region.name}}</span></h3>
+										<span>{{region.announcement_set.all.count}} Properties</span>
+									</div>
+								</a>
+							
 							</div>
-    				</a>
-    			</div>
-    			<div class="col-md-4">
+						{% endfor %}
+					</div>
+				</div>
+			
+    			{% comment %} <div class="col-md-4">
     				<a href="#" class="search-place img" style="background-image: url({% static 'images/place-2.jpg' %});">
 							<div class="desc">
 								<h3><span>Chicago</span></h3>
@@ -346,7 +358,7 @@
 								<span>15 Properties</span>
 							</div>
     				</a>
-    			</div>
+    			</div> {% endcomment %}
     		</div>
     	</div>
     </section>
@@ -432,7 +444,9 @@
 				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 					<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="{{about.population}}">0</strong>
+					
+						<strong class="number" data-number="{{user.count}}">0</strong>
+					
 						<span>Area <br>Population</span>
 					</div>
 					</div>
@@ -440,7 +454,7 @@
 				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 					<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="{{about.properties}}">0</strong>
+						<strong class="number" data-number="{{announcements.count}}">0</strong>
 						<span>Total <br>Properties</span>
 					</div>
 					</div>
@@ -448,7 +462,9 @@
 				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 					<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="{{about.average_house}}">0</strong>
+					
+						<strong class="number" data-number="{{announcements.type.house.count}}">0</strong>
+					
 						<span>Average <br>House</span>
 					</div>
 					</div>

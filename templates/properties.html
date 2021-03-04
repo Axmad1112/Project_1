@@ -19,14 +19,14 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-								<form method="GET" action="search" class="search-property-1">
+						<form method="GET" action="" class="search-property-1">
 		        		<div class="row">
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Keyword</label>
 		          				<div class="form-field">
 		          					<div class="icon"><span class="fa fa-search"></span></div>
-				                <input type="text" class="form-control" placeholder="Enter Keyword">
+				                <input type="text" name="title_content" class="form-control" placeholder="Enter Keyword">
 				              </div>
 			              </div>
 		        			</div>
@@ -35,13 +35,13 @@
 		        					<label for="#">Property Type</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
-		                      		<div class="icon"><span class="fa fa-chevron-down"></span></div>
+									  <div class="icon"><span class="fa fa-chevron-down"></span></div>
 		                      		<select name="type" id="type_id" class="form-control">
 										
-											<option>Type</option>
-											{% for type in types %}
-											<option>{{ type.name }}</option>
-											{% endfor %}
+										<option style="background-color: #21243D;">Type</option>
+										{% for type in types %}
+										<option style="background-color: #21243D;">{{ type.name }}</option>
+										{% endfor %}
 									</select>
 									<input type="hidden" name="type_id" id="turi_id">
 		                    	</div>
@@ -50,10 +50,15 @@
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="#">Location</label>
+		        					<label for="#">Region</label>
 		          				<div class="form-field">
-		          					<div class="icon"><span class="fa fa-search"></span></div>
-				                <input type="text" class="form-control" placeholder="Location">
+									  <select name="region" id="region_id" class="form-control pl-1">
+										<option style="background-color: #21243D;">Select the region</option>
+										{% for region in regions %}
+										<option value="" style="background-color: #21243D;">{{region.name}}</option>
+										{% endfor %}
+									</select>
+				                	<input type="hidden" name="region_id" id="viloyat_id">
 				              </div>
 			              </div>
 		        			</div>
@@ -63,21 +68,9 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                        <option value="" style="color: green; background: #21243D;">$5,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$10,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$50,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$100,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$200,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$300,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$400,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$500,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$600,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$700,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$800,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$900,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$1,000,000</option>
-		                        <option value="" style="color: green; background: #21243D;">$2,000,000</option>
+		                      <select name="price" id="" class="form-control">
+										
+									<option value="" style="background-color: #21243D;">{{price}}</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -123,7 +116,11 @@
 						<span class="rent">{{ announcement.status }}</span>
 					{% endif %}
 					</div>
+					{% if announcement.status.id == 1 %}
         				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
+					{% else %}
+						<p class="price"><span class="orig-price">{{ announcement.price}} / mo</span></p>
+					{% endif %}
         			</a>
         			<div class="text">
         				<ul class="property_list">
@@ -132,7 +129,7 @@
         					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
         				</ul>
         				<h3><a href="#">{{ announcement.title}}</a></h3>
-        				<span class="location">{{ announcement.region}}</span>
+        				<span class="location">{{ announcement.region}} {{announcement.district}}</span>
         				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="fa fa-link"></span>
         				</a>
@@ -149,6 +146,7 @@
 			
         	</div>
 		{% endfor %}
+	
         	{% comment %} <div class="col-md-4">
         		<div class="property-wrap ftco-animate">
         			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-2.jpg' %});">
@@ -328,16 +326,30 @@
 <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script>
         
-        $(document).ready(function(){
+       $(document).ready(function(){
 			var tuman_id = [], selectedRegionIndex = 0;
 			var t = '{{ districts|safe }}';
 			var tumanlar = JSON.parse(t);
+            $("select.region").change(function(){
+                tuman_id = [];
+				selectedRegionIndex = $(".region option:selected").index();
+				if (selectedRegionIndex > 1) selectedRegionIndex++;
+				var tuman = [];
+				for (var i = 0; i < tumanlar.length; i++){
+					if (selectedRegionIndex == tumanlar[i].fields.region_id) {tuman_id.push(tumanlar[i].pk);tuman.push(tumanlar[i].fields.name);}
+                }
+				var tuman_options = "";
+				for (var i = 0; i < tuman.length; i++){
+					tuman_options += "<option>" + tuman[i] + "</option>";
+				}
+				
+			});
+            
+            
             $("#type_id").change(function(){
                 selectedTypeIndex = $("#type_id option:selected").index();
 				$("#turi_id").val(selectedTypeIndex);
             });
-                      
-           
+            
         });
-        
     </script>

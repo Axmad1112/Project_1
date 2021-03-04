@@ -54,7 +54,7 @@
 							    </li>
 								<li class="nav-item">
 							      	<button type="button" class="d-flex align-items-center justify-content-center btn-custom" data-toggle="modal" data-target="#exampleModal">
-										<span class="far fa-trash-alt"></span>
+										O'chirish
 									</button>
 							    </li>
 								{% endif %}						
@@ -80,14 +80,20 @@
 						  <div class="tab-content" id="pills-tabContent">
 						    <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
 						    	<div class="row">
+								
 						    		<div class="col-md-4">
 						    			<ul class="features">
 						    				<li class="check"><span class="fa fa-check-circle"></span>Lot Area: 1,250 SQ FT</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Type: {{ announcement.type }}</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Status: {{ announcement.status }}</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Phone: {{ announcement.phone }}</li>
-											<li class="check"><span class="fa fa-check-circle"></span>User: {{ user.first_name }} {{ user.last_name }}</li>
-						    			</ul>
+											
+											
+											
+											<li class="check"><span class="fa fa-check-circle"></span>User: {{ announcement.person_name.first_name }}</li>
+						    				
+											
+										</ul>
 						    		</div>
 						    		<div class="col-md-4">
 						    			<ul class="features">
@@ -97,6 +103,7 @@
 						    				<li class="check"><span class="fa fa-check-circle"></span>View: {{ announcement.view }}</li>
 						    			</ul>
 						    		</div>
+								
 						    	</div>
 						    </div>
 

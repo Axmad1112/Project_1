@@ -14,5 +14,6 @@ urlpatterns = [
     path('properties/',views.properties, name='properties'),
     path('services/', views.services, name='services'),
     path('delete/<int:id>/', views.announcement_delete, name='delete'),
-    path('update_add/<int:id>/', views.update_add, name='update_add')
+    path('update_add/<int:id>/', views.update_add, name='update_add'),
+    path('Region/<int:pk>', views.RegionDetailView.as_view(), name="region-detail"),
 ]

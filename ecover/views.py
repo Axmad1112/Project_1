@@ -1,32 +1,26 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from ecover.models import Announcement, Blog, Agent, Type, Contact, About, Client, Navbar
+from ecover.models import Announcement, Blog, Agent, Type, Contact, About, Client, Navbar, Region, price_value
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
+from django.core import serializers
+import json
 from django.core.mail import send_mail
 from .forms import UpdateAddForm
-from .filters import AnnouncementFilter
-
-from .forms import SearchForm
-from search_views.search import SearchListView
-from search_views.filters import BaseFilter
+from django.views.generic import DetailView
 
 
 
 def index(request):
-    announcements = Announcement.objects.all()
+    announcements = Announcement.objects.all().order_by('-date')
     agents = Agent.objects.all()
     blogs = Blog.objects.all()
     abouts = About.objects.all()
     clients = Client.objects.all()
     types = Type.objects.all()
     navbars = Navbar.objects.all()
-    
-    if request.method == 'GET':
-        keyvalue = request.GET.get('keyvalue')
-        types = request.GET.get('type')
-        
-
+    regions = Region.objects.all()
+    user = User.objects.all()
    
     return render(request, "index.html", {
         'announcements': announcements,
@@ -36,6 +30,8 @@ def index(request):
         'abouts':abouts,
         'clients':clients,
         'navbars':navbars,
+        'regions':regions,
+        'user':user
     })
 
 def about(request):
@@ -79,7 +75,7 @@ def contact(request):
         send_mail(
             "Yangi xabar",
             msg,
-            "sardorbek.uktamov.1@mail.ru",
+            "ahmad.togayev.1996@gmail.com",
             [email], 
             fail_silently = False,
         )
@@ -99,13 +95,38 @@ def main(request):
 
 def properties_single(request,id):
     announcement = get_object_or_404(Announcement, pk=id)
-   
+    print(announcement)
     return render(request, "properties-single.html", {'announcement': announcement})
 
 
 def properties(request):
-    announcements = Announcement.objects.all()
+
+    regions = Region.objects.all()
+    json_serializer = serializers.get_serializer("json")()
     types = Type.objects.all()
+    
+
+    announcements = Announcement.objects.all()
+    
+
+    title_query = request.GET.get('title_content')
+    type_query  = request.GET.get('type_id')
+    region_query = request.GET.get('region')
+    price_query = request.GET.get('price')
+    print(title_query,"++++++++++")
+    print(type_query,"++++++++++")
+    print(region_query,"++++++++++")
+
+    if title_query != '' and title_query is not None:
+        announcements = announcements.filter(Q(title__icontains=title_query) | Q(content_icontains=title_query)).distinct()
+    elif type_query != '' and type_query is not None:
+        announcements = announcements.filter(Q(type__icontains=type_query))
+    elif region_query != '' and region_query is not None:
+        announcements = announcements.filter(Q(region__icontains=region_query))
+    
+   
+
+
 
     announcement_list = Announcement.objects.all().order_by('-date')
     page = request.GET.get('page',1)
@@ -116,8 +137,14 @@ def properties(request):
         announcements = paginator.page(1)
     except EmptyPage:
         announcements = paginator.page(paginator,num_pages)
+     
+    context = {
+        'announcements': announcements,
+        'types':types,
+        'regions':regions,
+    }
 
-    return render(request, 'properties.html', {'announcements': announcements,'types':types})
+    return render(request, 'properties.html', context)
     
 def services(request):
     return render(request, "services.html")
@@ -156,18 +183,22 @@ def update_add(request,id):
     return render(request, 'update_add.html', context)
 
 
-class Filter(BaseFilter):
-    search_fields = {
-        'search_text' : ['title', 'content'],
-        'search_price_exact' : { 'operator' : '__exact', 'fields' : ['price'] },
-        'search_price_min' : { 'operator' : '__gte', 'fields' : ['price'] },
-        'search_price_max' : { 'operator' : '__lte', 'fields' : ['price'] },
-
-    }
-
-class SearchList(SearchListView):
-    model = Announcement
-    paginate_by = 30
-    template_name = "properties.html"
-    form_class = SearchForm
-    filter_class = Filter
+class RegionDetailView(DetailView):
+    model = Region
+    template_name = 'region_properties.html'
+    context_object_name = 'region'
+    
+# def Region(request):
+#     blog_list = Announcement.objects.all().order_by('-date')
+#     page = request.GET.get('page',1)
+#     paginator = Paginator(blog_list,2)
+#     try:
+#         announcements = paginator.page(page)
+#     except PageNotAnInteger:
+#         announcements = paginator.page(1)
+#     except EmptyPage:
+#         announcements = paginator.page(paginator,num_pages)
+        
+#     return render(request,'region_properties.html',{'announcements':announcements})
+    
+    

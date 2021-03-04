@@ -3,7 +3,9 @@ from datetime import datetime, date
 from django.contrib.auth.models import User
 
 class Region(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='region_image')
+
     
 
     def __str__(self):
@@ -36,24 +38,25 @@ class Status(models.Model):
         return self.name
 
 
+price_value = (
+    ('5000','5000'),
+    ('10000','10000'),
+    ('500000','500000'),
+    ('1000000','1000000'),
+    ('2000000','2000000'),
+    ('3000000','3000000'),
+    ('4000000','4000000'),
+    ('5000000','5000000'),
+    ('6000000','6000000'),
+    ('7000000','7000000'),
+    ('8000000','8000000'),
+    ('9000000','9000000'),
+    ('10000000','10000000'),
+    ('20000000','20000000'),
+)
+
 class Announcement(models.Model):
 
-    price_value = (
-        ('5000','5000'),
-        ('10000','10000'),
-        ('500000','500000'),
-        ('1000000','1000000'),
-        ('2000000','2000000'),
-        ('3000000','3000000'),
-        ('4000000','4000000'),
-        ('5000000','5000000'),
-        ('6000000','6000000'),
-        ('7000000','7000000'),
-        ('8000000','8000000'),
-        ('9000000','9000000'),
-        ('10000000','10000000'),
-        ('20000000','20000000'),
-    )
     title       = models.CharField(max_length=10)
     region      = models.ForeignKey(Region, on_delete = models.CASCADE)
     district    = models.ForeignKey(District, on_delete = models.CASCADE)
@@ -64,10 +67,9 @@ class Announcement(models.Model):
     content     = models.TextField(max_length=60)
     image       = models.ImageField(upload_to='picture', blank=True, null=True)
     price       = models.CharField(choices=price_value, max_length=50, blank=False)
-    person_name = models.CharField(max_length=20)
+    person_name = models.ForeignKey(User, on_delete = models.CASCADE, null=True)
     phone       = models.CharField(max_length=20, default="+")
     date        = models.DateField(auto_now=True)
-
     def __str__(self):
         return self.title
 
@@ -129,3 +131,4 @@ class Contact(models.Model):
     
     def __str__(self):
         return self.first_name
+

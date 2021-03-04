@@ -12,12 +12,12 @@ from django.http import HttpResponse
 
 def personal(request, username):
     if request.user.is_authenticated:
-        announcements = Announcement.objects.filter(person_name=request.user)
+        announcements = Announcement.objects.filter(person_name=username)
         user = User.objects.filter(username=username)
         
-        announcement_list = Announcement.objects.all().order_by('-date')
+        announcement_list = Announcement.objects.filter(person_name=username).order_by('-date')
         page = request.GET.get('page',1)
-        paginator = Paginator(announcement_list,6)
+        paginator = Paginator(announcement_list,3)
        
         try:
             announcements = paginator.page(page)

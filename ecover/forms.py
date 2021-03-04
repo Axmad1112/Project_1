@@ -24,26 +24,5 @@ class UpdateAddForm(forms.ModelForm):
 
         }
 
-class SearchForm(forms.Form):
-    search_text =  forms.CharField(
-                    required = False,
-                    label='Search name or surname!',
-                    widget=forms.TextInput(attrs={'placeholder': 'search here!'})
-                  )
 
-    search_price_exact = forms.IntegerField(
-                    required = False,
-                    label='Search price (exact match)!'
-                  )
-
-    search_price_min = forms.IntegerField(
-                    required = False,
-                    label='Min age'
-                  )
-
-
-    search_price_max = forms.IntegerField(
-                    required = False,
-                    label='Max age'
-    )
        
