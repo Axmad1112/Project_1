@@ -24,110 +24,20 @@
           </div>
         </div>
         <div class="row justify-content-center">
+		{% for agent in agents %}
         	<div class="col-md-3 ftco-animate">
-				{% for agent in agents %}
         		<div class="agent">
     					<div class="img">
 		    				<img src="{{ agent.agent_image.url }}" class="img-fluid" alt="Colorlib Template">
 	    				</div>
 	    				<div class="desc">
-	    					<h3><a href="properties.html">{{ agent.name }}</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">{{ agent.properties }} Properties</span></p>
+	    					<h3><a href="{% url 'agent-detail' agent.id %}">{{ agent.name }}</a></h3>
+								<p class="h-info"><span class="location">Listing
+								</span> <span class="details">{{agent.announcement_set.all.count}} Properties</span></p>
 	    				</div>
     			</div>
-				{% endfor %}
         	</div>
-        	{% comment %} <div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-1.j' %}pg" class="img-fluid" alt="Colorlib Template">
-		    				<div class="desc">
-		    					<h3><a href="properties.html">Carlos Henderson</a></h3>
-									<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-		    				</div>
-	    				</div>
-    				</div>
-        	</div> {% endcomment %}
-        	{% comment %} <div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-3.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Jessica Moore</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-4.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Sarah Geronimo</a></h3>
-								<p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-5.j' %}pg" class="img-fluid" alt="Colorlib Template">
-		    				<div class="desc">
-		    					<h3><a href="properties.html">Carlos Henderson</a></h3>
-									<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-		    				</div>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-6.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Mike Bochs</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-7.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Jessica Moore</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-8.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Sarah Geronimo</a></h3>
-								<p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-9.j' %}pg" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Sarah Geronimo</a></h3>
-								<p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        </div>
-    	</div>{% endcomment %}
+		{% endfor %}
     </section> 
 
 {% endblock content%}

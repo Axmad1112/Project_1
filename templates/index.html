@@ -46,10 +46,10 @@
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
 		                      		<select name="type" id="type_id" class="form-control">
 										
-											<option disabled>Type</option>
-											{% for type in types %}
-											<option>{{ type.name }}</option>
-											{% endfor %}
+										<option selected disabled>Type</option>
+										{% for type in types %}
+										<option>{{ type.name }}</option>
+										{% endfor %}
 									</select>
 		                    </div>
 				              </div>
@@ -72,7 +72,7 @@
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
 							  
 		                      <select name="price" id="price_id" class="form-control">
-		                        <option value="" style="color: green; background: #21243D;">${{price}}</option>
+		                        <option value="" style="color: green; background: #21243D;">${{announcement.price}}</option>
 		                        
 		                      </select>
 							  
@@ -173,14 +173,16 @@
 										<li><span class="flaticon-bathtub"></span>2</li>
 										<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
 									</ul>
-									<h3><a href="#">{{ announcement.title }}</a></h3>
+									<h3><a href="{% url 'properties-single' announcement.id %}">{{ announcement.title }}</a></h3>
 									<span class="location">{{ announcement.region}}</span>
 									<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
 										<span class="fa fa-link"></span>
 									</a>
 									<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 										<div class="d-flex align-items-center">
-											<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
+											
+											<div class="img" style="background-image: url('{{ announcement.person_name.userdetail.author_image.url }}');"></div>
+											
 											<h3 class="ml-2">{{ announcement.person_name }}</h3>
 										</div>
 										<span class="text-right">{{ announcement.date }}</span>
@@ -190,124 +192,6 @@
 						</div>
 					{% endfor %}
 					</div>
-				
-			
-                {% comment %} <div class="item">
-                	<div class="property-wrap ftco-animate">
-		        			<a href="#" class="img" style="background-image: url({% static 'images/work-2.jpg' %});">
-		        				<div class="rent-sale">
-		        					<span class="rent">Rent</span>
-		        				</div>
-		        				<p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small> / mo</small></span></p>
-		        			</a>
-		        			<div class="text">
-		        				<ul class="property_list">
-		        					<li><span class="flaticon-bed"></span>3</li>
-		        					<li><span class="flaticon-bathtub"></span>2</li>
-		        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-		        				</ul>
-		        				<h3><a href="#">The Blue Sky Home</a></h3>
-		        				<span class="location">Oakland</span>
-		        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-		        					<span class="fa fa-link"></span>
-		        				</a>
-		        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-		        					<div class="d-flex align-items-center">
-			        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-			        					<h3 class="ml-2">John Dorf</h3>
-			        				</div>
-			        				<span class="text-right">2 weeks ago</span>
-		        				</div>
-		        			</div>
-		        	</div>
-              	</div> {% endcomment %}
-              {% comment %} <div class="item">
-                <div class="property-wrap ftco-animate">
-		        			<a href="#" class="img" style="background-image: url({% static 'images/work-3.jpg' %});">
-		        				<div class="rent-sale">
-		        					<span class="rent">Rent</span>
-		        				</div>
-		        				<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
-		        			</a>
-		        			<div class="text">
-		        				<ul class="property_list">
-		        					<li><span class="flaticon-bed"></span>3</li>
-		        					<li><span class="flaticon-bathtub"></span>2</li>
-		        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-		        				</ul>
-		        				<h3><a href="#">The Blue Sky Home</a></h3>
-		        				<span class="location">Oakland</span>
-		        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-		        					<span class="fa fa-link"></span>
-		        				</a>
-		        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-		        					<div class="d-flex align-items-center">
-			        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-			        					<h3 class="ml-2">John Dorf</h3>
-			        				</div>
-			        				<span class="text-right">2 weeks ago</span>
-		        				</div>
-		        			</div>
-		        		</div>
-              </div>
-              <div class="item">
-                <div class="property-wrap ftco-animate">
-		        			<a href="#" class="img" style="background-image: url({% static 'images/work-4.jpg' %});">
-		        				<div class="rent-sale">
-		        					<span class="rent">Rent</span>
-		        				</div>
-		        				<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
-		        			</a>
-		        			<div class="text">
-		        				<ul class="property_list">
-		        					<li><span class="flaticon-bed"></span>3</li>
-		        					<li><span class="flaticon-bathtub"></span>2</li>
-		        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-		        				</ul>
-		        				<h3><a href="#">The Blue Sky Home</a></h3>
-		        				<span class="location">Oakland</span>
-		        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-		        					<span class="fa fa-link"></span>
-		        				</a>
-		        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-		        					<div class="d-flex align-items-center">
-			        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-			        					<h3 class="ml-2">John Dorf</h3>
-			        				</div>
-			        				<span class="text-right">2 weeks ago</span>
-		        				</div>
-		        			</div>
-		        		</div>
-              </div>
-              <div class="item">
-                <div class="property-wrap ftco-animate">
-		        			<a href="#" class="img" style="background-image: url({% static 'images/work-5.jpg' %});">
-		        				<div class="rent-sale">
-		        					<span class="rent">Rent</span>
-		        				</div>
-		        				<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
-		        			</a>
-		        			<div class="text">
-		        				<ul class="property_list">
-		        					<li><span class="flaticon-bed"></span>3</li>
-		        					<li><span class="flaticon-bathtub"></span>2</li>
-		        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-		        				</ul>
-		        				<h3><a href="#">The Blue Sky Home</a></h3>
-		        				<span class="location">Oakland</span>
-		        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-		        					<span class="fa fa-link"></span>
-		        				</a>
-		        				<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-		        					<div class="d-flex align-items-center">
-			        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-			        					<h3 class="ml-2">John Dorf</h3>
-			        				</div>
-			        				<span class="text-right">2 weeks ago</span>
-		        				</div>
-		        			</div>
-		        		</div>
-              </div> {% endcomment %}
             </div>
           </div>
         </div>
@@ -324,20 +208,16 @@
         </div>
     		<div class="row ftco-animate">
 				<div class="col-md-12">
-					
-						
+				
 					<div class="carousel-properties owl-carousel">
 						{% for region in regions %}
 							<div class="item">
-								{% if region.image %}
 								<a href="{% url 'region-detail' region.id %}" class="search-place img" style="background-image: url({{region.image.url}});">
-								{% endif %}
 									<div class="desc">
 										<h3><span>{{region.name}}</span></h3>
 										<span>{{region.announcement_set.all.count}} Properties</span>
 									</div>
-								</a>
-							
+								</a><br>
 							</div>
 						{% endfor %}
 					</div>
@@ -454,7 +334,7 @@
 				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 					<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="{{announcements.count}}">0</strong>
+						<strong class="number" data-number="{{announcement.count}}">0</strong>
 						<span>Total <br>Properties</span>
 					</div>
 					</div>
@@ -463,7 +343,7 @@
 					<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
 					
-						<strong class="number" data-number="{{announcements.type.house.count}}">0</strong>
+						<strong class="number" data-number="{{type}}">0</strong>
 					
 						<span>Average <br>House</span>
 					</div>
@@ -569,19 +449,21 @@
           </div>
         </div>
         <div class="row">
+		{% for agent in agents %}
         	<div class="col-md-3 ftco-animate">
-        		{% for agent in agents %}
+        		
         		<div class="agent">
     					<div class="img">
 		    				<img src="{{ agent.agent_image.url }}" class="img-fluid" alt="Colorlib Template">
 	    				</div>
 	    				<div class="desc">
-	    					<h3><a href="properties.html">{{ agent.name }}</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">{{ agent.properties }} Properties</span></p>
+	    					<h3><a href="{% url 'agent-detail' agent.id %}">{{ agent.name }}</a></h3>
+							<p class="h-info"><span class="location">Listing</span> <span class="details">{{agent.announcement_set.all.count}} Properties</span></p>
 	    				</div>
     			</div>
-				{% endfor %}
+				
         	</div>
+		{% endfor %}
         	{% comment %} <div class="col-md-3 ftco-animate">
         		<div class="agent">
     					<div class="img">

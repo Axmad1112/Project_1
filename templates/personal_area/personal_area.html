@@ -58,7 +58,8 @@
 							
 							<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 								<div class="d-flex align-items-center">
-									<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
+									<div class="img" style="background-image: url('{{ announcement.person_name.userdetail.author_image.url }}');"></div>
+								
 									{% for i in user %}
 										<h3 class="ml-2">{{ i.first_name }} {{ i.last_name }}</h3>
 									{% endfor %}

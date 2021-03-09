@@ -19,14 +19,14 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-						<form method="GET" action="" class="search-property-1">
+						<form method="GET" action="{% url 'search' %}" class="search-property-1">
 		        		<div class="row">
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Keyword</label>
 		          				<div class="form-field">
 		          					<div class="icon"><span class="fa fa-search"></span></div>
-				                <input type="text" name="title_content" class="form-control" placeholder="Enter Keyword">
+				                <input type="text" name="keyvalue" class="form-control" placeholder="Enter Keyword">
 				              </div>
 			              </div>
 		        			</div>
@@ -36,14 +36,14 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 									  <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      		<select name="type" id="type_id" class="form-control">
+		                      		<select name="type" id="tur_id" class="form-control">
 										
-										<option style="background-color: #21243D;">Type</option>
+										<option style="background-color: #21243D;" selected disabled>Type</option>
 										{% for type in types %}
 										<option style="background-color: #21243D;">{{ type.name }}</option>
 										{% endfor %}
 									</select>
-									<input type="hidden" name="type_id" id="turi_id">
+									<input type="hidden" name="type" id="turi_id">
 		                    	</div>
 				            </div>
 			              </div>
@@ -58,7 +58,7 @@
 										<option value="" style="background-color: #21243D;">{{region.name}}</option>
 										{% endfor %}
 									</select>
-				                	<input type="hidden" name="region_id" id="viloyat_id">
+				                	<input type="hidden" name="region" id="viloyat_id">
 				              </div>
 			              </div>
 		        			</div>
@@ -69,8 +69,20 @@
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
 		                      <select name="price" id="" class="form-control">
-										
-									<option value="" style="background-color: #21243D;">{{price}}</option>
+		                        <option value="5000" >$5,000</option>
+		                        <option value="10000" >$10,000</option>
+		                        <option value="50000" >$50,000</option>
+		                        <option value="100000" >$100,000</option>
+		                        <option value="200000" >$200,000</option>
+		                        <option value="300000" >$300,000</option>
+		                        <option value="400000" >$400,000</option>
+		                        <option value="500000" >$500,000</option>
+		                        <option value="600000" >$600,000</option>
+		                        <option value="700000" >$700,000</option>
+		                        <option value="800000" >$800,000</option>
+		                        <option value="900000" >$900,000</option>
+		                        <option value="1000000" >$1,000,000</option>
+		                        <option value="2000000" >$2,000,000</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -135,8 +147,10 @@
         				</a>
         				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
         					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url('{% static 'images/person_1.jpg' %}');"></div>
-	        					<h3 class="ml-2">{{ announcement.person_name }}</h3>
+							
+	        					<div class="img" style="background-image: url('{{ announcement.person_name.userdetail.author_image.url }}');"></div>
+	        				
+								<h3 class="ml-2">{{ announcement.person_name }}</h3>
 	        				</div>
 	        				<span class="text-right">{{ announcement.date }}</span>
         				</div>
@@ -300,17 +314,17 @@
             <div class="block-27">
               <ul>
 			  	{% if announcements.has_previous %}
-                <li><a href="?page={{ announcements.previous_page_number }}">&lt;</a></li>
+                	<li><a href="?page={{ announcements.previous_page_number }}">&lt;</a></li>
                 {% endif %}
 				{% for i in announcements.paginator.page_range %}
-				{% if announcements.number == i %}
-				<li class="active"><span>{{ i }}</span></li>
-				{% else %}
-                <li><a href="?page={{ i }}">{{ i }}</a></li>
-				{% endif %}
+					{% if announcements.number == i %}
+						<li class="active"><span>{{ i }}</span></li>
+					{% elif num > announcement.number|add:'-3' and num < announcement.number|add:'3' %}
+						<li><a href="?page={{ i }}">{{ i }}</a></li>
+					{% endif %}
 				{% endfor %}
 				{% if announcements.has_next %}
-                <li><a href="?page={{ announcements.next_page_number }}">&gt;</a></li>
+                	<li><a href="?page={{ announcements.next_page_number }}">&gt;</a></li>
               	{% endif %}
 			  </ul>
             </div>
@@ -323,33 +337,27 @@
 
 {% endblock content%}
 
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script>
+{% comment %} <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script> {% endcomment %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script>
         
-       $(document).ready(function(){
-			var tuman_id = [], selectedRegionIndex = 0;
-			var t = '{{ districts|safe }}';
+        $(document).ready(function(){
 			var tumanlar = JSON.parse(t);
             $("select.region").change(function(){
-                tuman_id = [];
 				selectedRegionIndex = $(".region option:selected").index();
 				if (selectedRegionIndex > 1) selectedRegionIndex++;
-				var tuman = [];
-				for (var i = 0; i < tumanlar.length; i++){
-					if (selectedRegionIndex == tumanlar[i].fields.region_id) {tuman_id.push(tumanlar[i].pk);tuman.push(tumanlar[i].fields.name);}
-                }
-				var tuman_options = "";
-				for (var i = 0; i < tuman.length; i++){
-					tuman_options += "<option>" + tuman[i] + "</option>";
-				}
-				
+								
+				$("#viloyat_id").val(selectedRegionIndex);
+                selectedDistrictIndex = $("#district_id option:selected").index();
+                				
 			});
             
-            
+           
             $("#type_id").change(function(){
                 selectedTypeIndex = $("#type_id option:selected").index();
 				$("#turi_id").val(selectedTypeIndex);
             });
             
         });
+        
     </script>

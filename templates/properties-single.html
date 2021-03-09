@@ -86,11 +86,11 @@
 						    				<li class="check"><span class="fa fa-check-circle"></span>Lot Area: 1,250 SQ FT</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Type: {{ announcement.type }}</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Status: {{ announcement.status }}</li>
-						    				<li class="check"><span class="fa fa-check-circle"></span>Phone: {{ announcement.phone }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>Phone: {{ announcement.person_name.userdetail.phone }}</li>
 											
 											
 											
-											<li class="check"><span class="fa fa-check-circle"></span>User: {{ announcement.person_name.first_name }}</li>
+											<li class="check"><span class="fa fa-check-circle"></span>User: {{ announcement.person_name.first_name }} {{ announcement.person_name.last_name }}</li>
 						    				
 											
 										</ul>
@@ -116,8 +116,10 @@
 							   		<div class="col-md-7">
 							   			<h3 class="head">23 Reviews</h3>
 							   			<div class="review d-flex">
-									   		<div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
-									   		<div class="desc">
+										   	{% if announcement.author_image %}
+									   		<div class="user-img" style="background-image: url({{ announcement.author_image.url }})"></div>
+									   		{% endif %}
+											   <div class="desc">
 									   			<h4>
 									   				<span class="text-left">Jacob Webb</span>
 									   				<span class="text-right">14 March 2018</span>

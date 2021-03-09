@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ecover',
     'django_filters',
+    'accounts',
 ]
 
 MIDDLEWARE = [

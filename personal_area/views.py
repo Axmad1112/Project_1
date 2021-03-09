@@ -12,12 +12,12 @@ from django.http import HttpResponse
 
 def personal(request, username):
     if request.user.is_authenticated:
-        announcements = Announcement.objects.filter(person_name=username)
+        announcements = Announcement.objects.filter(person_name=request.user)
         user = User.objects.filter(username=username)
         
-        announcement_list = Announcement.objects.filter(person_name=username).order_by('-date')
+        announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')
         page = request.GET.get('page',1)
-        paginator = Paginator(announcement_list,3)
+        paginator = Paginator(announcement_list,6)
        
         try:
             announcements = paginator.page(page)
@@ -51,7 +51,7 @@ def add(request, username):
         content = request.POST['content']
         price = request.POST['price']
         image = request.FILES.get('image')
-        phone = request.POST.get('phone', '')
+        phone = request.POST('phone','')
 
         announcement = Announcement(
             title=title,
@@ -64,8 +64,7 @@ def add(request, username):
             price=price,
             content=content,
             image=image,
-            phone=phone,
-            person_name=request.user
+            person_name=request.user,
         )
         announcement.save()
     return render(request, 'add.html',

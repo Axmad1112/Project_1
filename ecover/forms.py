@@ -8,7 +8,7 @@ class UpdateAddForm(forms.ModelForm):
     
     class Meta:
         model = Announcement
-        fields = ['title','region','district','address','type','status','view','content','image','price','phone']
+        fields = ['title','region','district','address','type','status','view','content','image','price']
         widgets = {
             'title':forms.TextInput(attrs={'class':'form-control h6'}),
             'region':forms.Select(attrs={'class':'form-control'}),
@@ -19,10 +19,8 @@ class UpdateAddForm(forms.ModelForm):
             'image':forms.FileInput(attrs={'class':'form-control'}),
             'address':forms.TextInput(attrs={'class':'form-control'}),
             'content':forms.Textarea(attrs={'class':'form-control'}),
-            'phone':forms.TextInput(attrs={'class':'form-control'}),
             'price':forms.Select(attrs={'class':'form-control'}),
 
         }
 
-
-       
+    

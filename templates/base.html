@@ -68,6 +68,7 @@
 	          <li class="nav-item {% if request.path == contact %} active {% endif %}">
               <a href="{% url 'contact' %}" class="nav-link">Contact</a>
             </li>
+            
 
            
             {% if request.user.is_authenticated %}
@@ -79,7 +80,7 @@
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: -5px;">
                     <a class="dropdown-item" href="../../{{request.user}}">E'lonlar</a>
                     <a href="../../{{request.user}}/add" class="dropdown-item">E'lon berish</a>
-                    <a href="../{{request.user}}/edit_profile" class="dropdown-item">Edit</a>
+                    <a href="{% url 'profile' %}" class="dropdown-item">Edit</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a>
                   </div>
                 </div>
@@ -191,6 +192,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
-    
+  
   </body>
 </html>

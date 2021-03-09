@@ -7,23 +7,27 @@ from django.core import serializers
 import json
 from django.core.mail import send_mail
 from .forms import UpdateAddForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 
 
 
 def index(request):
-    announcements = Announcement.objects.all().order_by('-date')
+    announcements = Announcement.objects.all().order_by('-date','-time')[:5]
+    announcement = Announcement.objects.all()
     agents = Agent.objects.all()
     blogs = Blog.objects.all()
     abouts = About.objects.all()
     clients = Client.objects.all()
     types = Type.objects.all()
-    navbars = Navbar.objects.all()
+    navbars = Navbar.objects.all()[:1]
     regions = Region.objects.all()
     user = User.objects.all()
+    type = Announcement.objects.filter(type_id="5").count()
+    
    
     return render(request, "index.html", {
         'announcements': announcements,
+        'announcement':announcement,
         'agents': agents,
         'blogs':blogs,
         'types': types,
@@ -31,7 +35,8 @@ def index(request):
         'clients':clients,
         'navbars':navbars,
         'regions':regions,
-        'user':user
+        'user':user,
+        'type':type,
     })
 
 def about(request):
@@ -90,41 +95,16 @@ def contact(request):
         contact_user.save()
     return render(request, "contact.html")
 
-def main(request):
-    return render(request, "about.html")
 
 def properties_single(request,id):
     announcement = get_object_or_404(Announcement, pk=id)
-    print(announcement)
     return render(request, "properties-single.html", {'announcement': announcement})
 
 
 def properties(request):
-
     regions = Region.objects.all()
-    json_serializer = serializers.get_serializer("json")()
     types = Type.objects.all()
-    
-
     announcements = Announcement.objects.all()
-    
-
-    title_query = request.GET.get('title_content')
-    type_query  = request.GET.get('type_id')
-    region_query = request.GET.get('region')
-    price_query = request.GET.get('price')
-    print(title_query,"++++++++++")
-    print(type_query,"++++++++++")
-    print(region_query,"++++++++++")
-
-    if title_query != '' and title_query is not None:
-        announcements = announcements.filter(Q(title__icontains=title_query) | Q(content_icontains=title_query)).distinct()
-    elif type_query != '' and type_query is not None:
-        announcements = announcements.filter(Q(type__icontains=type_query))
-    elif region_query != '' and region_query is not None:
-        announcements = announcements.filter(Q(region__icontains=region_query))
-    
-   
 
 
 
@@ -188,6 +168,23 @@ class RegionDetailView(DetailView):
     template_name = 'region_properties.html'
     context_object_name = 'region'
     
+
+class AgentDetailView(DetailView):
+    model = Agent
+    template_name = 'agent_properties.html'
+    context_object_name = 'agent'
+    def get(self,request,pk):
+        announcements = Announcement.objects.filter(agent = pk)
+        return render(
+            self.request,
+            self.template_name,
+            {
+                'announcements':announcements,
+            }
+        )
+
+    
+    
 # def Region(request):
 #     blog_list = Announcement.objects.all().order_by('-date')
 #     page = request.GET.get('page',1)
@@ -200,5 +197,54 @@ class RegionDetailView(DetailView):
 #         announcements = paginator.page(paginator,num_pages)
         
 #     return render(request,'region_properties.html',{'announcements':announcements})
+
+class SearchResultsView(ListView):
+    model = Announcement
+    template_name = 'properties.html'
     
-    
+
+    def get_queryset(self): # new
+        
+        type=Type.objects.all()
+        region=Region.objects.all()
+        query = self.request.GET.get('keyvalue')  
+        type=self.request.GET.get('type')
+        price=self.request.GET.get('price')
+        region=self.request.GET.get('region')
+
+        
+        print("query keldimi",query)
+        print("type keldimi",type)
+        print("narx keldimi ko'rilarchi", price)
+        print("region keldimi",region)
+        
+        
+        
+        
+        if query=='' and type=='' and region=='':
+            result_list=Announcement.objects.all()
+        elif query!='':
+            query_list=Q(title__icontains=query)
+            if type!='':
+                query_list=Q(type__icontains=query) & Q(type_id=type)
+            elif region!='':
+                query_list=Q(region__icontains=query) & Q(region_id=region)
+            result_list=Announcement.objects.filter(query_list).order_by('-date')
+        elif type!='':
+            query_list=Q(type_id=type)
+            if region!='':
+                query_list=Q(type_id=type) & Q(region_id=region) 
+            result_list=Announcement.objects.filter(query_list).order_by('-date')
+        elif region!='':
+            query_list=Q(region_id=region) 
+            result_list=Announcement.objects.filter(query_list).order_by('-date')
+        elif price!='':
+            result_list=Announcement.objects.filter(price__gte=price).order_by('-date')
+        else:
+            query_list=Q(title__icontains=query) & Q(type_id=type) & Q(region_id=region) 
+            result_list=Announcement.objects.filter(query_list).order_by('-date')
+        return result_list
+       
+
+
+
