@@ -26,8 +26,7 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-							<form method="GET" action="search" class="search-property-1">
-							{{form}}
+							<form method="GET" action="{% url 'search' %}" class="search-property-1">
 		        		<div class="row">
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
@@ -43,24 +42,36 @@
 		        					<label for="#">Property Type</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
-		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      		<select name="type" id="type_id" class="form-control">
+									  <div class="icon"><span class="fa fa-chevron-down"></span></div>
+									  <select name="Type" id="type_id" class="form-control">
+												<option class="bg-dark" disabled selected>Type</option>
+												<option class="bg-dark" value="1">Residence</option>
+												<option class="bg-dark" value="2">Offices</option>
+												<option class="bg-dark" value="3">Commercial</option>
+												<option class="bg-dark" value="4">Hotel</option>
+												<option class="bg-dark" value="5">House</option>												
+										</select>
+										<input type="hidden" id="Property" name="type_query" />
+		                      		{% comment %} <select name="type" id="tur_id" class="form-control">
 										
-										<option selected disabled>Type</option>
-										{% for type in types %}
-										<option>{{ type.name }}</option>
-										{% endfor %}
+										<option style="background-color: #21243D;" selected disabled>Type</option>
+										<option style="background-color: #21243D;" value="1">Residence</option>
+										<option style="background-color: #21243D;" value="2">Offices</option>
+										<option style="background-color: #21243D;" value="3">Commercial</option>
+										<option style="background-color: #21243D;" value="4">Hotel</option>
+										<option style="background-color: #21243D;" value="5">House</option>
 									</select>
-		                    </div>
-				              </div>
+									<input type="hidden" id="Property" name="type_id" /> {% endcomment %}
+		                    	</div>
+				            </div>
 			              </div>
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="#">Location</label>
+		        					<label for="address">Location</label>
 		          				<div class="form-field">
-		          					<div class="icon"><span class="fa fa-search"></span></div>
-				                <input type="text" class="form-control" placeholder="Location">
+								  	<div class="icon"><span class="fa fa-search"></span></div>
+									<input type="text" name="location" id="address" class="form-control" placeholder="Location">
 				              </div>
 			              </div>
 		        			</div>
@@ -70,12 +81,22 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-							  
-		                      <select name="price" id="price_id" class="form-control">
-		                        <option value="" style="color: green; background: #21243D;">${{announcement.price}}</option>
-		                        
+		                      <select name="price" id="" class="form-control">
+		                        <option value="5000" >$5,000</option>
+		                        <option value="10000" >$10,000</option>
+		                        <option value="50000" >$50,000</option>
+		                        <option value="100000" >$100,000</option>
+		                        <option value="200000" >$200,000</option>
+		                        <option value="300000" >$300,000</option>
+		                        <option value="400000" >$400,000</option>
+		                        <option value="500000" >$500,000</option>
+		                        <option value="600000" >$600,000</option>
+		                        <option value="700000" >$700,000</option>
+		                        <option value="800000" >$800,000</option>
+		                        <option value="900000" >$900,000</option>
+		                        <option value="1000000" >$1,000,000</option>
+		                        <option value="2000000" >$2,000,000</option>
 		                      </select>
-							  
 		                    </div>
 				              </div>
 			              </div>
@@ -94,7 +115,6 @@
 	    	</div>
 	    </div>
     </section>
-
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-primary">
       <div class="container">
         <div class="row d-flex no-gutters">
@@ -154,9 +174,13 @@
 					{% for announcement in announcements %}
 						<div class="item">
 							<div class="property-wrap ftco-animate">
-							{% if announcement.image %}
-								<a href="{% url 'properties-single' announcement.id %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
-							{% endif %}
+								{% if request.user.is_authenticated %}
+									{% if announcement.image %}
+										<a href="{% url 'properties-single' announcement.id %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+									{% endif %}
+								{% else %}
+									<a href="{% url 'sign_in'%}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+								{% endif %}
 									<div class="rent-sale">
 										{% if announcement.status.id == 1 %}
 										<span class="sale">{{ announcement.status }}</span>
@@ -223,22 +247,6 @@
 					</div>
 				</div>
 			
-    			{% comment %} <div class="col-md-4">
-    				<a href="#" class="search-place img" style="background-image: url({% static 'images/place-2.jpg' %});">
-							<div class="desc">
-								<h3><span>Chicago</span></h3>
-								<span>20 Properties</span>
-							</div>
-    				</a>
-    			</div>
-    			<div class="col-md-4">
-    				<a href="#" class="search-place img" style="background-image: url({% static 'images/place-3.jpg' %});">
-							<div class="desc">
-								<h3><span>Illinoi</span></h3>
-								<span>15 Properties</span>
-							</div>
-    				</a>
-    			</div> {% endcomment %}
     		</div>
     	</div>
     </section>
@@ -388,51 +396,7 @@
                   </div>
                 </div>
               </div>
-              {% comment %} <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                  	<span class="fa fa-quote-left"></span>
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url({% static 'images/person_3.jpg' %})"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                  	<span class="fa fa-quote-left"></span>
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                  	<span class="fa fa-quote-left"></span>
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div> {% endcomment %}
+             
             </div>
           </div>
         </div>
@@ -464,39 +428,6 @@
 				
         	</div>
 		{% endfor %}
-        	{% comment %} <div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-2.jpg' %}" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Mike Bochs</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-3.jpg' %}" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Jessica Moore</a></h3>
-								<p class="h-info"><span class="location">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="agent">
-    					<div class="img">
-		    				<img src="{% static 'images/team-4.jpg' %}" class="img-fluid" alt="Colorlib Template">
-	    				</div>
-	    				<div class="desc">
-	    					<h3><a href="properties.html">Sarah Geronimo</a></h3>
-								<p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
-	    				</div>
-    				</div>
-        	</div> {% endcomment %}
         </div>
     	</div>
     </section>
@@ -527,49 +458,24 @@
             </div>
           </div>
           {% endfor %}
-          {% comment %} <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="blog-single.html" class="block-20 img" style="background-image: url('{% static 'images/image_2.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="blog-single.html" class="block-20 img" style="background-image: url('{% static 'images/image_3.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="blog-single.html" class="block-20 img" style="background-image: url('{% static 'images/image_4.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div> {% endcomment %}
+          
           </div>
         </div>
       </div>
     </section>		
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script>
+        
+        $(function () {
+			$("#Property").keyup(function () {
+				var value = $(this).val();
+				$("#type_id option[selected]").removeAttr("selected");
+				$("#type_id option[value=" + value + "]").attr("selected", "selected");
+			});
+			$("#type_id").change(function () {
+				$("#Property").val($(this).val());
+			});
+		});
+    </script>
 {% endblock content %}

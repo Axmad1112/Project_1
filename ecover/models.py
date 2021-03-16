@@ -2,6 +2,8 @@ from django.db import models
 from datetime import datetime, date, time
 from django.contrib.auth.models import User
 
+
+
 class Region(models.Model):
     name = models.CharField(max_length=30)
     image = models.ImageField(upload_to='region_image')
@@ -54,7 +56,8 @@ price_value = (
     ('9000000','9000000'),
     ('10000000','10000000'),
     ('20000000','20000000'),
-)
+    )
+
 
 class Agent(models.Model):
     name        = models.CharField(max_length=20)
@@ -76,23 +79,15 @@ class Announcement(models.Model):
     image       = models.ImageField(upload_to='picture', blank=True, null=True)
     price       = models.CharField(choices=price_value, max_length=50, blank=False)
     person_name = models.ForeignKey(User, on_delete = models.CASCADE, null=True)
-    date        = models.DateField(default=datetime.now(), blank=True)
+    date        = models.DateField(auto_now_add=True, blank=True)
     time        = models.TimeField(auto_now_add=True)
-    
+    agent       = models.ForeignKey(Agent, on_delete = models.CASCADE, null=True)
+    phone       = models.CharField(max_length=20, default="+998", null=True, blank=True)
     
     def __str__(self):
         return self.title
 
 
-class Blog(models.Model):
-    title       = models.CharField(max_length=20)
-    date        = models.DateField(auto_now=True)
-    number      = models.IntegerField()
-    text        = models.TextField(max_length=50)
-    blog_image  = models.ImageField(upload_to='blog_rasm')
-
-    def __str__(self):
-        return self.title
 
 class Client(models.Model):
     text = models.TextField(max_length=100)
@@ -130,4 +125,6 @@ class Contact(models.Model):
     
     def __str__(self):
         return self.first_name
+
+
 

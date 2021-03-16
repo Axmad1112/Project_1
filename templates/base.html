@@ -54,11 +54,6 @@
 	          <li class="nav-item {% if request.path == services %} active {% endif %}">
               <a href="{% url 'services' %}" class="nav-link">Services</a>
             </li>
-            {% if not request.user.is_authenticated %}
-            <li class="nav-item {% if request.path == add %} active {% endif %}">
-              <a href="{% url 'sign_in' %}" class="nav-link">Add Announcement</a>
-            </li>
-            {% endif %}
 	          <li class="nav-item {% if request.path == properties %} active {% endif %}">
               <a href="{% url 'properties' %}" class="nav-link">Properties</a>
             </li>
@@ -78,8 +73,12 @@
                     <a href="" class="nav-link">{{ request.user }}</a>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: -5px;">
+                  
+                  {% if is_member %}
                     <a class="dropdown-item" href="../../{{request.user}}">E'lonlar</a>
                     <a href="../../{{request.user}}/add" class="dropdown-item">E'lon berish</a>
+                  {% endif %}
+                  
                     <a href="{% url 'profile' %}" class="dropdown-item">Edit</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a>
                   </div>

@@ -82,7 +82,14 @@
         <label for="price_id">Price</label>
         <input type="text" name="price" id="price_id"><br>
  {% comment %} <------------------------------------------> {% endcomment %}
-
+        <label for="agent">Agent</label>
+        <select name="agent" id="agent">
+            <option disabled selected>Select view</option>
+            {% for agent in agents %}
+            <option>{{agent.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="hidden" name="agent_id" id="agent_id">
 
 
         
@@ -124,7 +131,8 @@
             });
             $("#type_id").change(function(){
                 selectedTypeIndex = $("#type_id option:selected").index();
-				$("#turi_id").val(selectedTypeIndex);
+		
+                $("#turi_id").val(selectedTypeIndex);
             });
             
             $("#status_id").change(function(){
@@ -135,6 +143,10 @@
             $("#view_id").change(function(){
                 selectedViewIndex = $("#view_id option:selected").index();
 				$("#korinish_id").val(selectedViewIndex);
+			});
+            $("#agent").change(function(){
+                selectedViewIndex = $("#agent option:selected").index();
+				$("#agent_id").val(selectedViewIndex);
 			});
         });
         

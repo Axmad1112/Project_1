@@ -23,4 +23,8 @@ class UpdateAddForm(forms.ModelForm):
 
         }
 
-    
+class SearchForm(forms.ModelForm):
+
+    class Meta:
+        model = Announcement
+        fields = ['region', 'type', 'price','title']

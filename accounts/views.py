@@ -18,7 +18,6 @@ def sign_up(request):
             password1 = register_form.cleaned_data['password1']
             password2 = register_form.cleaned_data['password2']
 
-            
 
             if password1==password2:
                 if User.objects.filter(username=username).exists():

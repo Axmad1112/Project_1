@@ -1,0 +1,2212 @@
+[
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "TextInput",
+        "importPath": "django.forms.widgets",
+        "description": "django.forms.widgets",
+        "isExtraImport": true,
+        "detail": "django.forms.widgets",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordInput",
+        "importPath": "django.forms.widgets",
+        "description": "django.forms.widgets",
+        "isExtraImport": true,
+        "detail": "django.forms.widgets",
+        "documentation": {}
+    },
+    {
+        "label": "CheckboxInput",
+        "importPath": "django.forms.widgets",
+        "description": "django.forms.widgets",
+        "isExtraImport": true,
+        "detail": "django.forms.widgets",
+        "documentation": {}
+    },
+    {
+        "label": "EmailInput",
+        "importPath": "django.forms.widgets",
+        "description": "django.forms.widgets",
+        "isExtraImport": true,
+        "detail": "django.forms.widgets",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Group",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Group",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Group",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Announcement",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Announcement",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Announcement",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Announcement",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Region",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "District",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Type",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Status",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "PageNotAnInteger",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "EmptyPage",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "PageNotAnInteger",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "EmptyPage",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "PageNotAnInteger",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "EmptyPage",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "Blog",
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "isExtraImport": true,
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "django.core",
+        "description": "django.core",
+        "isExtraImport": true,
+        "detail": "django.core",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "django.core",
+        "description": "django.core",
+        "isExtraImport": true,
+        "detail": "django.core",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "send_mail",
+        "importPath": "django.core.mail",
+        "description": "django.core.mail",
+        "isExtraImport": true,
+        "detail": "django.core.mail",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0001_initial",
+        "description": "accounts.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UserDetail',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "accounts.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0002_auto_20210308_1554",
+        "description": "accounts.migrations.0002_auto_20210308_1554",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userdetail',\n            name='author_image',\n            field=models.ImageField(default='<user.first_name[0]>', upload_to='author_image'),\n        ),",
+        "detail": "accounts.migrations.0002_auto_20210308_1554",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0003_auto_20210308_1600",
+        "description": "accounts.migrations.0003_auto_20210308_1600",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0002_auto_20210308_1554'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userdetail',\n            name='author_image',\n            field=models.ImageField(default='author.jpg', upload_to='author_image'),\n        ),",
+        "detail": "accounts.migrations.0003_auto_20210308_1600",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0004_auto_20210314_1112",
+        "description": "accounts.migrations.0004_auto_20210314_1112",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0003_auto_20210308_1600'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userdetail',\n            name='author_image',\n            field=models.ImageField(blank=True, default='author.jpg', null=True, upload_to='author_image'),\n        ),",
+        "detail": "accounts.migrations.0004_auto_20210314_1112",
+        "documentation": {}
+    },
+    {
+        "label": "AccountsConfig",
+        "kind": 6,
+        "importPath": "accounts.apps",
+        "description": "accounts.apps",
+        "peekOfCode": "class AccountsConfig(AppConfig):\n    name = 'accounts'",
+        "detail": "accounts.apps",
+        "documentation": {}
+    },
+    {
+        "label": "loginForm",
+        "kind": 6,
+        "importPath": "accounts.forms",
+        "description": "accounts.forms",
+        "peekOfCode": "class loginForm(forms.Form):\n    username = forms.CharField(\n        max_length=30,\n        widget=forms.TextInput(attrs={\n            'name': 'username',\n            'class': 'form-input',\n            'placeholder': 'User Name',\n            'required': 'required'\n        })\n    )",
+        "detail": "accounts.forms",
+        "documentation": {}
+    },
+    {
+        "label": "registerForm",
+        "kind": 6,
+        "importPath": "accounts.forms",
+        "description": "accounts.forms",
+        "peekOfCode": "class registerForm(forms.Form):\n    first_name = forms.CharField(\n        max_length=30,\n        widget=forms.TextInput(attrs={\n            'name': 'first_name',\n            'class': 'form-input',\n            'placeholder': 'First Name',\n            'required': 'required'\n        })\n    )",
+        "detail": "accounts.forms",
+        "documentation": {}
+    },
+    {
+        "label": "EditProfile",
+        "kind": 6,
+        "importPath": "accounts.forms",
+        "description": "accounts.forms",
+        "peekOfCode": "class EditProfile(forms.ModelForm):\n    class Meta:\n        model = User\n        fields = ['first_name', 'last_name', 'username', 'email']\n        widgets = {\n            'first_name':forms.TextInput(attrs={'class':'form-control h6'}),\n            'last_name':forms.TextInput(attrs={'class':'form-control'}),\n            'username':forms.TextInput(attrs={'class':'form-control'}),\n            'email':forms.EmailInput(attrs={'class':'form-control'}),\n        }",
+        "detail": "accounts.forms",
+        "documentation": {}
+    },
+    {
+        "label": "ProfileEdit",
+        "kind": 6,
+        "importPath": "accounts.forms",
+        "description": "accounts.forms",
+        "peekOfCode": "class ProfileEdit(forms.ModelForm):\n    class Meta:\n        model = UserDetail\n        fields = ['author_image', 'phone']\n        widgets = {\n            'author_image':forms.FileInput(attrs={'class':'form-control'}),\n            'phone':forms.TextInput(attrs={'class':'form-control'}),\n        }",
+        "detail": "accounts.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetail",
+        "kind": 6,
+        "importPath": "accounts.models",
+        "description": "accounts.models",
+        "peekOfCode": "class UserDetail(models.Model):\n    user = models.OneToOneField(User,on_delete=models.CASCADE)\n    author_image= models.ImageField(default='author.jpg', upload_to='author_image', null=True, blank=True)\n    phone       = models.CharField(max_length=20, default=\"+998\", null=True, blank=True)",
+        "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "accounts.urls",
+        "description": "accounts.urls",
+        "peekOfCode": "urlpatterns = [\n    path('sign_up/', views.sign_up, name='sign_up'),\n    path('sign_in', views.sign_in, name='sign_in'),\n    path('logout', views.logout, name='logout'),\n    path('reset_password', auth_views.PasswordResetView.as_view(template_name='reset_password/password_reset.html'), name='reset_password'),\n    path('reset_password_sent', auth_views.PasswordResetDoneView.as_view(template_name='reset_password/password_reset_send.html'), name='password_reset_done'),\n    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name='reset_password/password_reset_form.html'), name='password_reset_confirm'),\n    path('reset_password_complete', auth_views.PasswordResetCompleteView.as_view(template_name='reset_password/password_reset_done.html'), name='password_reset_complete'),\n    path('profile', views.editprofile, name='profile')\n]",
+        "detail": "accounts.urls",
+        "documentation": {}
+    },
+    {
+        "label": "sign_up",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def sign_up(request):\n    if request.method == 'POST':\n        register_form = registerForm(request.POST)\n        if register_form.is_valid():\n            first_name = register_form.cleaned_data['first_name']\n            last_name = register_form.cleaned_data['last_name']\n            username = register_form.cleaned_data['username']\n            email = register_form.cleaned_data['email']\n            password1 = register_form.cleaned_data['password1']\n            password2 = register_form.cleaned_data['password2']",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "sign_in",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def sign_in(request):\n    if request.method=='POST':\n        login_form = loginForm(request.POST)\n        if login_form.is_valid():\n            username = login_form.cleaned_data['username']\n            password = login_form.cleaned_data['password']\n            user = auth.authenticate(username=username, password=password)\n            if user is not None:\n                auth.login(request, user)\n                return redirect('../' + username)",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def logout(request):\n    auth.logout(request)\n    return redirect('/')\n@login_required\ndef editprofile(request):\n    if request.method == 'POST':\n        edit_form = EditProfile(request.POST, instance=request.user)\n        p_form  = ProfileEdit(request.POST, request.FILES, instance=request.user.userdetail)\n        if edit_form.is_valid() and p_form.is_valid():                            \n            edit_form.save()",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "editprofile",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def editprofile(request):\n    if request.method == 'POST':\n        edit_form = EditProfile(request.POST, instance=request.user)\n        p_form  = ProfileEdit(request.POST, request.FILES, instance=request.user.userdetail)\n        if edit_form.is_valid() and p_form.is_valid():                            \n            edit_form.save()\n            p_form.save()\n            messages.info(request, \"Muvaffaqiyatli yakunlandi!\")\n            return redirect('profile')\n    else:",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0001_initial",
+        "description": "blog.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('ecover', '0012_auto_20210315_1931'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Blog_categories',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "blog.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0002_blog_paragraph",
+        "description": "blog.migrations.0002_blog_paragraph",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='blog',\n            name='paragraph',\n            field=models.CharField(default='', max_length=500),\n            preserve_default=False,",
+        "detail": "blog.migrations.0002_blog_paragraph",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0003_auto_20210315_1945",
+        "description": "blog.migrations.0003_auto_20210315_1945",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_blog_paragraph'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='blog',\n            name='content_body',\n            field=models.TextField(max_length=1000),\n        ),",
+        "detail": "blog.migrations.0003_auto_20210315_1945",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0004_auto_20210315_1957",
+        "description": "blog.migrations.0004_auto_20210315_1957",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0003_auto_20210315_1945'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='blog',\n            old_name='blog_single_image',\n            new_name='blog_single_image1',\n        ),",
+        "detail": "blog.migrations.0004_auto_20210315_1957",
+        "documentation": {}
+    },
+    {
+        "label": "BlogConfig",
+        "kind": 6,
+        "importPath": "blog.apps",
+        "description": "blog.apps",
+        "peekOfCode": "class BlogConfig(AppConfig):\n    name = 'blog'",
+        "detail": "blog.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Blog_categories",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class Blog_categories(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Type(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title           = models.CharField(max_length=250)",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "Type",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class Type(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title           = models.CharField(max_length=250)\n    blog_image      = models.ImageField(upload_to='blog_rasm')\n    categories      = models.ForeignKey(Blog_categories, on_delete=models.CASCADE)\n    blog_single_image1  = models.ImageField(upload_to='blog_rasm')\n    content_header  = models.TextField(max_length=1000)",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "Blog",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class Blog(models.Model):\n    title           = models.CharField(max_length=250)\n    blog_image      = models.ImageField(upload_to='blog_rasm')\n    categories      = models.ForeignKey(Blog_categories, on_delete=models.CASCADE)\n    blog_single_image1  = models.ImageField(upload_to='blog_rasm')\n    content_header  = models.TextField(max_length=1000)\n    blog_single_image2  = models.ImageField(upload_to='blog_rasm')\n    content_body    = models.TextField(max_length=1000)\n    paragraph   = models.TextField(max_length=500)\n    types       = models.ForeignKey(Type, on_delete=models.CASCADE)",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "blog.urls",
+        "description": "blog.urls",
+        "peekOfCode": "urlpatterns = [\n    path('blog-single/<int:id>/',views.blog_single, name='blog-single'),\n    path('blog/',views.blog, name='blog'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('Types/<int:pk>', views.BlogTypesDetailview.as_view(), name=\"type-detail\"),\n]",
+        "detail": "blog.urls",
+        "documentation": {}
+    },
+    {
+        "label": "BlogCategoriesDetailView",
+        "kind": 6,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "class BlogCategoriesDetailView(DetailView):\n    model = Blog\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        blogs = Blog.objects.filter(categories = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        blog_list = Blog.objects.filter(categories=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
+        "label": "BlogTypesDetailview",
+        "kind": 6,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "class BlogTypesDetailview(DetailView):\n    model = Blog\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        blogs = Blog.objects.filter(types = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        blog_list = Blog.objects.filter(types=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
+        "label": "blog_single",
+        "kind": 2,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "def blog_single(request, id):\n    blogs = get_object_or_404(Blog, pk=id)\n    blog_post = Blog.objects.all().order_by('-date','-time')[:5]\n    categories = Blog_categories.objects.all()\n    types      = Type.objects.all()\n    print(blog)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    context = {\n        'blogs': blogs,",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
+        "label": "blog",
+        "kind": 2,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "def blog(request):\n    blogs = Blog.objects.all\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    blog_list = Blog.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(blog_list,4)\n    try:\n        blogs = paginator.page(page)\n    except PageNotAnInteger:",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0001_initial",
+        "description": "ecover.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='About',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=30)),",
+        "detail": "ecover.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0002_announcement_person_name",
+        "description": "ecover.migrations.0002_announcement_person_name",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('ecover', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='announcement',\n            name='person_name',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),",
+        "detail": "ecover.migrations.0002_announcement_person_name",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0003_announcement_agent",
+        "description": "ecover.migrations.0003_announcement_agent",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0002_announcement_person_name'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='announcement',\n            name='agent',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='ecover.agent'),\n        ),",
+        "detail": "ecover.migrations.0003_announcement_agent",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0004_auto_20210305_1718",
+        "description": "ecover.migrations.0004_auto_20210305_1718",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0003_announcement_agent'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='about',\n            name='average_house',\n        ),\n        migrations.RemoveField(",
+        "detail": "ecover.migrations.0004_auto_20210305_1718",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0005_auto_20210306_1306",
+        "description": "ecover.migrations.0005_auto_20210306_1306",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0004_auto_20210305_1718'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='agent',\n            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='ecover.agent'),\n            preserve_default=False,",
+        "detail": "ecover.migrations.0005_auto_20210306_1306",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0006_auto_20210306_1512",
+        "description": "ecover.migrations.0006_auto_20210306_1512",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0005_auto_20210306_1306'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='announcement',\n            name='author_image',\n            field=models.ImageField(default='', upload_to='author_image'),\n            preserve_default=False,",
+        "detail": "ecover.migrations.0006_auto_20210306_1512",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0007_auto_20210307_1601",
+        "description": "ecover.migrations.0007_auto_20210307_1601",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('ecover', '0006_auto_20210306_1512'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='announcement',\n            name='agent',\n        ),",
+        "detail": "ecover.migrations.0007_auto_20210307_1601",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0008_delete_userdetail",
+        "description": "ecover.migrations.0008_delete_userdetail",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0007_auto_20210307_1601'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='UserDetail',\n        ),\n    ]",
+        "detail": "ecover.migrations.0008_delete_userdetail",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0009_auto_20210308_1739",
+        "description": "ecover.migrations.0009_auto_20210308_1739",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0008_delete_userdetail'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='date',\n            field=models.DateField(auto_now_add=True),\n        ),",
+        "detail": "ecover.migrations.0009_auto_20210308_1739",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0010_auto_20210308_1743",
+        "description": "ecover.migrations.0010_auto_20210308_1743",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0009_auto_20210308_1739'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='announcement',\n            name='time',\n            field=models.TimeField(auto_now_add=True, default=django.utils.timezone.now),\n            preserve_default=False,",
+        "detail": "ecover.migrations.0010_auto_20210308_1743",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0011_auto_20210314_1112",
+        "description": "ecover.migrations.0011_auto_20210314_1112",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0010_auto_20210308_1743'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='announcement',\n            name='agent',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='ecover.agent'),\n        ),",
+        "detail": "ecover.migrations.0011_auto_20210314_1112",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0012_auto_20210315_1931",
+        "description": "ecover.migrations.0012_auto_20210315_1931",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0011_auto_20210314_1112'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='Blog',\n        ),\n        migrations.AlterField(\n            model_name='announcement',",
+        "detail": "ecover.migrations.0012_auto_20210315_1931",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0013_auto_20210315_1942",
+        "description": "ecover.migrations.0013_auto_20210315_1942",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0012_auto_20210315_1931'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='date',\n            field=models.DateField(blank=True, default=datetime.datetime(2021, 3, 15, 19, 42, 44, 493429)),\n        ),",
+        "detail": "ecover.migrations.0013_auto_20210315_1942",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0014_auto_20210315_1943",
+        "description": "ecover.migrations.0014_auto_20210315_1943",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0013_auto_20210315_1942'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='date',\n            field=models.DateField(blank=True, default=datetime.datetime(2021, 3, 15, 19, 43, 40, 315447)),\n        ),",
+        "detail": "ecover.migrations.0014_auto_20210315_1943",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0015_auto_20210315_1945",
+        "description": "ecover.migrations.0015_auto_20210315_1945",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0014_auto_20210315_1943'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='date',\n            field=models.DateField(blank=True, default=datetime.datetime(2021, 3, 15, 19, 45, 41, 394569)),\n        ),",
+        "detail": "ecover.migrations.0015_auto_20210315_1945",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0016_auto_20210315_1957",
+        "description": "ecover.migrations.0016_auto_20210315_1957",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0015_auto_20210315_1945'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='date',\n            field=models.DateField(blank=True, default=datetime.datetime(2021, 3, 15, 19, 57, 19, 977400)),\n        ),",
+        "detail": "ecover.migrations.0016_auto_20210315_1957",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0017_auto_20210316_1123",
+        "description": "ecover.migrations.0017_auto_20210316_1123",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0016_auto_20210315_1957'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='date',\n            field=models.DateField(auto_now_add=True),\n        ),",
+        "detail": "ecover.migrations.0017_auto_20210316_1123",
+        "documentation": {}
+    },
+    {
+        "label": "EcoverConfig",
+        "kind": 6,
+        "importPath": "ecover.apps",
+        "description": "ecover.apps",
+        "peekOfCode": "class EcoverConfig(AppConfig):\n    name = 'ecover'",
+        "detail": "ecover.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateAddForm",
+        "kind": 6,
+        "importPath": "ecover.forms",
+        "description": "ecover.forms",
+        "peekOfCode": "class UpdateAddForm(forms.ModelForm):\n    class Meta:\n        model = Announcement\n        fields = ['title','region','district','address','type','status','view','content','image','price']\n        widgets = {\n            'title':forms.TextInput(attrs={'class':'form-control h6'}),\n            'region':forms.Select(attrs={'class':'form-control'}),\n            'district':forms.Select(attrs={'class':'form-control'}),\n            'type':forms.Select(attrs={'class':'form-control'}),\n            'status':forms.Select(attrs={'class':'form-control'}),",
+        "detail": "ecover.forms",
+        "documentation": {}
+    },
+    {
+        "label": "SearchForm",
+        "kind": 6,
+        "importPath": "ecover.forms",
+        "description": "ecover.forms",
+        "peekOfCode": "class SearchForm(forms.ModelForm):\n    class Meta:\n        model = Announcement\n        fields = ['region', 'type', 'price','title']",
+        "detail": "ecover.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Region",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Region(models.Model):\n    name = models.CharField(max_length=30)\n    image = models.ImageField(upload_to='region_image')\n    def __str__(self):\n        return self.name\nclass District(models.Model):\n    name = models.CharField(max_length=20)\n    region_id=models.ForeignKey(Region,on_delete=models.CASCADE)\n    def __str__(self):\n        return self.name",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "District",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class District(models.Model):\n    name = models.CharField(max_length=20)\n    region_id=models.ForeignKey(Region,on_delete=models.CASCADE)\n    def __str__(self):\n        return self.name\nclass Type(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass View(models.Model):",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Type",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Type(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass View(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass Status(models.Model):\n    name = models.CharField(max_length=20)",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class View(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass Status(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nprice_value = (\n    ('5000','5000'),",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Status",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Status(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nprice_value = (\n    ('5000','5000'),\n    ('10000','10000'),\n    ('500000','500000'),\n    ('1000000','1000000'),\n    ('2000000','2000000'),",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Agent(models.Model):\n    name        = models.CharField(max_length=20)\n    agent_image = models.ImageField(upload_to='agent_rasm')\n    def __str__(self):\n        return self.name\nclass Announcement(models.Model):\n    title       = models.CharField(max_length=10)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Announcement",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Announcement(models.Model):\n    title       = models.CharField(max_length=10)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)\n    type        = models.ForeignKey(Type, on_delete = models.CASCADE, null=True)\n    status      = models.ForeignKey(Status, on_delete=models.CASCADE)\n    view        = models.ForeignKey(View, on_delete = models.CASCADE, blank=True) \n    content     = models.TextField(max_length=60)\n    image       = models.ImageField(upload_to='picture', blank=True, null=True)",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Client(models.Model):\n    text = models.TextField(max_length=100)\n    name = models.CharField(max_length=30)\n    specialist = models.CharField(max_length=20)\n    image = models.ImageField(upload_to='client')\n    def __str__(self):\n        return self.name\n# Create your models here.\nclass Navbar(models.Model):\n    title       = models.CharField(max_length=50, blank=True)",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Navbar",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Navbar(models.Model):\n    title       = models.CharField(max_length=50, blank=True)\n    text        = models.CharField(max_length=50, blank=True)\n    nav_image   = models.ImageField(upload_to='body_rasm')\n    def __str__(self):\n        return self.title\nclass About(models.Model):\n    title       = models.CharField(max_length=30)\n    content     = models.CharField(max_length=150)\n    about_image1= models.ImageField(upload_to='about')",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "About",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class About(models.Model):\n    title       = models.CharField(max_length=30)\n    content     = models.CharField(max_length=150)\n    about_image1= models.ImageField(upload_to='about')\n    about_image2= models.ImageField(upload_to='about')\n    branches    = models.IntegerField()\n    def __str__(self):\n        return self.title\nclass Contact(models.Model):\n    first_name = models.CharField(max_length=20)",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "kind": 6,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "class Contact(models.Model):\n    first_name = models.CharField(max_length=20)\n    last_name  = models.CharField(max_length=20)\n    email      = models.EmailField()\n    message    = models.CharField(max_length=150)\n    def __str__(self):\n        return self.first_name",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "price_value",
+        "kind": 5,
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "peekOfCode": "price_value = (\n    ('5000','5000'),\n    ('10000','10000'),\n    ('500000','500000'),\n    ('1000000','1000000'),\n    ('2000000','2000000'),\n    ('3000000','3000000'),\n    ('4000000','4000000'),\n    ('5000000','5000000'),\n    ('6000000','6000000'),",
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "ecover.urls",
+        "description": "ecover.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('about/',views.about, name='about'),\n    path('agent/',views.agent, name='agent'),\n    path('contact/',views.contact, name='contact'),\n    path('properties-single/<int:id>/',views.properties_single, name='properties-single'),\n    path('properties/',views.properties, name='properties'),\n    path('services/', views.services, name='services'),\n    path('delete/<int:id>/', views.announcement_delete, name='delete'),\n    path('update_add/<int:id>/', views.update_add, name='update_add'),",
+        "detail": "ecover.urls",
+        "documentation": {}
+    },
+    {
+        "label": "RegionDetailView",
+        "kind": 6,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "class RegionDetailView(DetailView):\n    model = Region\n    template_name = 'region_properties.html'\n    def get(self,request,pk):\n        announcements = Announcement.objects.filter(region = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        announcement_list = Announcement.objects.filter(region=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,2)",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "AgentDetailView",
+        "kind": 6,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "class AgentDetailView(DetailView):\n    model = Agent\n    template_name = 'agent_properties.html'\n    def get(self,request,pk):\n        announcements = Announcement.objects.filter(agent = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        agent = Agent.objects.get(pk=pk)\n        announcement_list = Announcement.objects.filter(agent=pk).order_by('-date')\n        page = request.GET.get('page',1)",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "HomePageView",
+        "kind": 6,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "class HomePageView(TemplateView):\n    template_name = 'index.html'\nclass SearchResultsView(ListView):\n    model = Announcement\n    template_name = 'search.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        type_query=self.request.GET.get('type_query')\n        location = self.request.GET.get('location')\n        print(query, \"++++++++++++++++\")",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "SearchResultsView",
+        "kind": 6,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "class SearchResultsView(ListView):\n    model = Announcement\n    template_name = 'search.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        type_query=self.request.GET.get('type_query')\n        location = self.request.GET.get('location')\n        print(query, \"++++++++++++++++\")\n        print(type_query, \"manabu type id\")\n        print(location, \"++++++++++++++++\")",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def index(request):\n    announcements = Announcement.objects.all().order_by('-date','-time')[:5]\n    announcement = Announcement.objects.all()\n    agents = Agent.objects.all()\n    blogs = Blog.objects.all()\n    abouts = About.objects.all()\n    clients = Client.objects.all()\n    types = Type.objects.all()\n    navbars = Navbar.objects.all()[:1]\n    regions = Region.objects.all()",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "about",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def about(request):\n    announcement = Announcement.objects.all()\n    user = User.objects.all()\n    type = Announcement.objects.filter(type_id=\"5\").count()\n    abouts = About.objects.all()\n    clients = Client.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    return render(request, \"about.html\",{\n        'abouts':abouts,",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "agent",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def agent(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    agents = Agent.objects.all()\n    return render(request, \"agent.html\", {'agents': agents,'is_member':is_member})\ndef contact(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    if request.method == 'POST':\n        first_name = request.POST['first_name']",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "contact",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def contact(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    if request.method == 'POST':\n        first_name = request.POST['first_name']\n        last_name  = request.POST['last_name']\n        email      = request.POST['email']\n        message    = request.POST['message']\n        msg = first_name + \" \" + last_name + \"\\n\" + message\n        send_mail(",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "properties_single",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def properties_single(request,id):\n    announcement = get_object_or_404(Announcement, pk=id)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    return render(request, \"properties-single.html\", {'announcement': announcement,'is_member':is_member})\ndef properties(request):\n    regions = Region.objects.all()\n    types = Type.objects.all()\n    announcements = Announcement.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "properties",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def properties(request):\n    regions = Region.objects.all()\n    types = Type.objects.all()\n    announcements = Announcement.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    announcement_list = Announcement.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(announcement_list,9)\n    try:",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "services",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def services(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    return render(request, \"services.html\",{'is_member':is_member})\ndef announcement_delete(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    if request.method == 'POST':\n        announcement.delete()\n        return redirect('../../personal')\ndef update_add(request,id):",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "announcement_delete",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def announcement_delete(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    if request.method == 'POST':\n        announcement.delete()\n        return redirect('../../personal')\ndef update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    form = UpdateAddForm(instance=announcement)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "update_add",
+        "kind": 2,
+        "importPath": "ecover.views",
+        "description": "ecover.views",
+        "peekOfCode": "def update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    form = UpdateAddForm(instance=announcement)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    if request.method == 'POST':\n        form = UpdateAddForm(request.POST, request.FILES, instance=announcement)\n        if form.is_valid():\n            form.save()\n            return redirect('../../personal')",
+        "detail": "ecover.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "Ecoverde.asgi",
+        "description": "Ecoverde.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "Ecoverde.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'kqj+$fh7@yinjma*l_a4(728o(l7-_3z74^7kzw(3908&i0ddw'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "SECRET_KEY = 'kqj+$fh7@yinjma*l_a4(728o(l7-_3z74^7kzw(3908&i0ddw'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'ecover',",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'ecover',\n    'django_filters',\n    'accounts',",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'Ecoverde.urls'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "ROOT_URLCONF = 'Ecoverde.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, \"templates\")],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, \"templates\")],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'Ecoverde.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'ecover',\n        'USER': 'root',\n        'PASSWORD': '',\n    }",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'ecover',\n        'USER': 'root',\n        'PASSWORD': '',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_L10N",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_BACKEND",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST_USER",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "EMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_PORT",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "EMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_USE_TLS",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "EMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST_PASSWORD",
+        "kind": 5,
+        "importPath": "Ecoverde.settings",
+        "description": "Ecoverde.settings",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = 'companyinstant'",
+        "detail": "Ecoverde.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "Ecoverde.urls",
+        "description": "Ecoverde.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('ecover.urls')),\n    path('', include('blog.urls')),\n    path('accounts/', include('accounts.urls')),\n    path('<username>/', include('personal_area.urls'))\n]\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "Ecoverde.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "Ecoverde.wsgi",
+        "description": "Ecoverde.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "Ecoverde.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "PersonalAreaConfig",
+        "kind": 6,
+        "importPath": "personal_area.apps",
+        "description": "personal_area.apps",
+        "peekOfCode": "class PersonalAreaConfig(AppConfig):\n    name = 'personal_area'",
+        "detail": "personal_area.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "personal_area.urls",
+        "description": "personal_area.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.personal, name = 'personal'),\n    path('add', views.add, name='add'),\n]",
+        "detail": "personal_area.urls",
+        "documentation": {}
+    },
+    {
+        "label": "personal",
+        "kind": 2,
+        "importPath": "personal_area.views",
+        "description": "personal_area.views",
+        "peekOfCode": "def personal(request, username):\n    if request.user.is_authenticated:\n        announcements = Announcement.objects.filter(person_name=request.user)\n        user = User.objects.filter(username=username)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,6)\n        try:",
+        "detail": "personal_area.views",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "kind": 2,
+        "importPath": "personal_area.views",
+        "description": "personal_area.views",
+        "peekOfCode": "def add(request, username):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    regions = Region.objects.all()\n    json_serializer = serializers.get_serializer(\"json\")()\n    districts = json_serializer.serialize(District.objects.all(), ensure_ascii=False)\n    statuses = Status.objects.all()\n    types = Type.objects.all()\n    views = View.objects.all()\n    agents = Agent.objects.all()",
+        "detail": "personal_area.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Ecoverde.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

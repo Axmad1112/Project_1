@@ -48,7 +48,7 @@
 							    <li class="nav-item">
 							      <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Izoh</a>
 							    </li>
-								{% if announcement.person_name == user.username %}
+								{% if announcement.person_name == request.user %}
 								<li class="nav-item">
 							      <a class="nav-link" href="{% url 'update_add' announcement.id %}">Tahrirlash</a>
 							    </li>

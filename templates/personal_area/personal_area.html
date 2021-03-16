@@ -83,7 +83,7 @@
 						{% for i in announcements.paginator.page_range %}
 						{% if announcements.number == i %}
 						<li class="active"><span>{{ i }}</span></li>
-						{% else %}
+						{% elif i > announcements.number|add:'-2' and i < announcements.number|add:'2' %}
 						<li><a href="?page={{ i }}">{{ i }}</a></li>
 						{% endif %}
 						{% endfor %}

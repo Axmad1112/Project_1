@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ecover',
     'django_filters',
     'accounts',
+    'blog',
 ]
 
 MIDDLEWARE = [

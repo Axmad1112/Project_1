@@ -18,6 +18,7 @@
     <section class="ftco-section">
       <div class="container">
         <div class="row d-flex">
+        {% if blogs %}
           {% for blog in blogs %}
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
@@ -26,139 +27,45 @@
 	              </a>
 	              <div class="meta mb-3">
                   <div><a href="#">{{ blog.date }}</a></div>
-                  <div><a href="#">Admin</a></div>
+                  <div><a href="#">{{blog.agent}}</a></div>
                   <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ blog.number }}</a></div>
                 </div>
-	              <h3 class="heading"><a href="#">{{ blog.text }}</a></h3>
+	              <h3 class="heading"><a href="#">{{ blog.title }}</a></h3>
               </div>
             </div>
           </div>
           {% endfor %}
-          {% comment %} <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_2.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_3.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_4.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
+          {% else %}
+            <p class="ml-4">Bu haqida yangilik yo'q !</p>
+          {% endif %}
 
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_5.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_6.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_7.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <div class="text">
-                <a href="{% url 'blog-single' %}" class="block-20 img" style="background-image: url('{% static 'images/image_8.jpg' %}');">
-	              </a>
-	              <div class="meta mb-3">
-                  <div><a href="#">June 01, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-	              <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              </div>
-            </div>
-          </div>{% endcomment %}
         </div> 
-        <div class="row mt-5">
-        {% if announcements.has_other_pages %}
+        
+        {% if blogs.has_other_pages %}
         <div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">
               <ul>
-			  	      {% if announcements.has_previous %}
-                  <li><a href="?page={{ announcements.previous_page_number }}">&lt;</a></li>
+			  	      {% if blogs.has_previous %}
+                  <li><a href="?page={{ blogs.previous_page_number }}">&lt;</a></li>
                 {% endif %}
-                {% for i in announcements.paginator.page_range %}
-                {% if announcements.number == i %}
-                  <li class="active"><span>{{ i }}</span></li>
-                {% else %}
-                  <li><a href="?page={{ i }}">{{ i }}</a></li>
-                {% endif %}
+                {% for i in blogs.paginator.page_range %}
+                  {% if blogs.number == i %}
+                    <li class="active"><span>{{ i }}</span></li>
+                  {% elif i > announcements.number|add:'-2' and i < announcements.number|add:'2' %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                  {% endif %}
                 {% endfor %}
-                {% if announcements.has_next %}
-                  <li><a href="?page={{ announcements.next_page_number }}">&gt;</a></li>
+                {% if blogs.has_next %}
+                  <li><a href="?page={{ blogs.next_page_number }}">&gt;</a></li>
                 {% endif %}
               </ul>
               </div>
             </div>
           </div>
-		      {% endif %}
-        </div>
+		    {% endif %}
+        
+        
       </div>
     </section>		
 
