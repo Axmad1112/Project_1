@@ -83,24 +83,22 @@
 								
 						    		<div class="col-md-4">
 						    			<ul class="features">
-						    				<li class="check"><span class="fa fa-check-circle"></span>Lot Area: 1,250 SQ FT</li>
-						    				<li class="check"><span class="fa fa-check-circle"></span>Type: {{ announcement.type }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>Region: {{ announcement.region }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>District: {{ announcement.district }}</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Status: {{ announcement.status }}</li>
-						    				<li class="check"><span class="fa fa-check-circle"></span>Phone: {{ announcement.person_name.userdetail.phone }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>Type: {{ announcement.type }}</li>
 											
-											
-											
-											<li class="check"><span class="fa fa-check-circle"></span>User: {{ announcement.person_name.first_name }} {{ announcement.person_name.last_name }}</li>
+											<li class="check"><span class="fa fa-check-circle"></span>View: {{ announcement.view }}</li>
 						    				
 											
 										</ul>
 						    		</div>
 						    		<div class="col-md-4">
 						    			<ul class="features">
-						    				<li class="check"><span class="fa fa-check-circle"></span>Region: {{ announcement.region }}</li>
-						    				<li class="check"><span class="fa fa-check-circle"></span>District: {{ announcement.district }}</li>
 						    				<li class="check"><span class="fa fa-check-circle"></span>Price: {{ announcement.price }}</li>
-						    				<li class="check"><span class="fa fa-check-circle"></span>View: {{ announcement.view }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>User: {{ announcement.person_name.first_name }} {{ announcement.person_name.last_name }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>Phone: {{ announcement.person_name.userdetail.phone }}</li>
+						    				<li class="check"><span class="fa fa-check-circle"></span>Email: {{ announcement.person_name.email }}</li>
 						    			</ul>
 						    		</div>
 								

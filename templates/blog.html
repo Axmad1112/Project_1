@@ -18,19 +18,19 @@
     <section class="ftco-section">
       <div class="container">
         <div class="row d-flex">
-        {% if blogs %}
-          {% for blog in blogs %}
+        {% if posts %}
+          {% for post in posts %}
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="{% url 'blog-single' blog.id %}" class="block-20 img" style="background-image: url('{{ blog.blog_image.url }}');">
+                <a href="{% url 'blog-single' post.id %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
 	              </a>
 	              <div class="meta mb-3">
-                  <div><a href="#">{{ blog.date }}</a></div>
-                  <div><a href="#">{{blog.agent}}</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ blog.number }}</a></div>
+                  <div><a href="#">{{ post.date }}</a></div>
+                  <div><a href="#">{{post.agent}}</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ post.number }}</a></div>
                 </div>
-	              <h3 class="heading"><a href="#">{{ blog.title }}</a></h3>
+	              <h3 class="heading"><a href="{% url 'blog-single' post.id %}">{{ post.title }}</a></h3>
               </div>
             </div>
           </div>
@@ -41,23 +41,23 @@
 
         </div> 
         
-        {% if blogs.has_other_pages %}
+        {% if posts.has_other_pages %}
         <div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">
               <ul>
-			  	      {% if blogs.has_previous %}
-                  <li><a href="?page={{ blogs.previous_page_number }}">&lt;</a></li>
+			  	      {% if posts.has_previous %}
+                  <li><a href="?page={{ posts.previous_page_number }}">&lt;</a></li>
                 {% endif %}
-                {% for i in blogs.paginator.page_range %}
-                  {% if blogs.number == i %}
+                {% for i in posts.paginator.page_range %}
+                  {% if posts.number == i %}
                     <li class="active"><span>{{ i }}</span></li>
                   {% elif i > announcements.number|add:'-2' and i < announcements.number|add:'2' %}
                     <li><a href="?page={{ i }}">{{ i }}</a></li>
                   {% endif %}
                 {% endfor %}
-                {% if blogs.has_next %}
-                  <li><a href="?page={{ blogs.next_page_number }}">&gt;</a></li>
+                {% if posts.has_next %}
+                  <li><a href="?page={{ posts.next_page_number }}">&gt;</a></li>
                 {% endif %}
               </ul>
               </div>

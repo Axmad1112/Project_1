@@ -19,25 +19,25 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ftco-animate">
-          <h2 class="mb-3">{{ blogs.title }}</h2>
+          <h2 class="mb-3">{{ posts.title }}</h2>
           	<p>
-              <img src="{{ blogs.blog_single_image1.url }}" alt="blog_image" class="img-fluid">
+              <img src="{{ posts.post_single_image1.url }}" alt="blog_image" class="img-fluid">
             </p>
             
-            <p>{{blogs.content_header}}</p>
+            <p>{{posts.content_header}}</p>
             <p>
-              <img src="{{blogs.blog_single_image2.url}}" alt="" class="img-fluid">
+              <img src="{{posts.post_single_image2.url}}" alt="" class="img-fluid">
             </p>
-            <p>{{blogs.content_body}}</p>
+            <p>{{posts.content_body}}</p>
             <div class="tag-widget post-tag-container mb-5 mt-5">
             
               <div class="tagcloud">
-              {% for type in types %}
-                <a href="{% url 'type-detail' type.id %}" class="tag-cloud-link">{{type.name}}</a>
-                {% comment %} <a href="#" class="tag-cloud-link">home</a>
-                <a href="#" class="tag-cloud-link">building</a>
-                <a href="#" class="tag-cloud-link">Travel</a> {% endcomment %}
-              {% endfor %}
+                {% for tag in posts.tags.all %}
+                    <a href="{% url 'tagged' tag.slug %}" class="tag-cloud-link">{{ tag }}</a>
+                {% endfor %} 
+             
+
+              
               </div>
             
             </div>
@@ -179,7 +179,7 @@
               <div class="categories">
                 <h3>Categories</h3>
                 {% for categorie in categories %}
-                <li><a href="{% url 'categories-detail' categorie.id %}">{{categorie.name}} <span>{{categorie.blog_set.all.count}}</span></a></li>
+                <li><a href="{% url 'categories-detail' categorie.id %}">{{categorie.name}} <span>{{categorie.post_set.all.count}}</span></a></li>
                 {% comment %} <li><a href="#">Office <span>(22)</span></a></li>
                 <li><a href="#">Commercial <span>(37)</span></a></li>
                 <li><a href="#">Building <span>(42)</span></a></li>
@@ -192,7 +192,7 @@
             <div class="sidebar-box ftco-animate mb-0">
               
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url({{blog.blog_image.url}});"></a>
+                <a class="blog-img mr-4" style="background-image: url({{blog.post_image.url}});"></a>
                 <div class="text">
                   <h3 class="heading"><a href="{% url 'blog-single' blog.id %}">{{blog.title}}</a></h3>
                   <div class="meta">
@@ -231,20 +231,26 @@
             <div class="sidebar-box ftco-animate">
               <h3>Tag Cloud</h3>
               <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">home</a>
+              {% for pos in post %}
+                {% for tag in pos.tags.all %}
+                    <a href="{% url 'tagged' tag.slug %}" class="tag-cloud-link">{{ tag }}</a>
+                {% endfor %} 
+              {% endfor %}
+
+                {% comment %} <a href="#" class="tag-cloud-link">home</a>
                 <a href="#" class="tag-cloud-link">house</a>
                 <a href="#" class="tag-cloud-link">real</a>
                 <a href="#" class="tag-cloud-link">state</a>
                 <a href="#" class="tag-cloud-link">office</a>
                 <a href="#" class="tag-cloud-link">residence</a>
                 <a href="#" class="tag-cloud-link">land</a>
-                <a href="#" class="tag-cloud-link">park</a>
+                <a href="#" class="tag-cloud-link">park</a> {% endcomment %}
               </div>
             </div>
 
             <div class="sidebar-box ftco-animate">
               <h3>Paragraph</h3>
-              <p>{{blogs.paragraph}}</p>
+              <p>{{posts.paragraph}}</p>
             </div>
           </div>
 

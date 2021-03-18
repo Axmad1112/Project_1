@@ -179,7 +179,9 @@
 										<a href="{% url 'properties-single' announcement.id %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
 									{% endif %}
 								{% else %}
+									{% if announcement.image %}
 									<a href="{% url 'sign_in'%}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+									{% endif %}
 								{% endif %}
 									<div class="rent-sale">
 										{% if announcement.status.id == 1 %}
@@ -446,14 +448,14 @@
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="{% url 'blog-single' blog.id %}" class="block-20 img" style="background-image: url('{{blog.blog_image.url}}');">
+                <a href="{% url 'blog-single' blog.id %}" class="block-20 img" style="background-image: url('{{blog.post_image.url}}');">
 	              </a>
 	              <div class="meta mb-3">
                   <div><a href="#">{{ blog.date }}</a></div>
                   <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ blog.number }}</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> </a></div>
                 </div>
-	              <h3 class="heading"><a href="#">{{ blog.text }}</a></h3>
+	              <h3 class="heading"><a href="#">{{ blog.title }}</a></h3>
               </div>
             </div>
           </div>

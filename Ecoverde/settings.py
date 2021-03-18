@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ecover',
-    'django_filters',
     'accounts',
-    'blog',
+    'Blog_Post',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +84,9 @@ DATABASES = {
         'NAME': 'ecover',
         'USER': 'root',
         'PASSWORD': '',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_ALL_TABLES'"
+        },
     }
 }
 

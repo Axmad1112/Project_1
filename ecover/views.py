@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Announcement, Agent, Type, Contact, About, Client, Navbar, Region
-from blog.models import Blog
+from Blog_Post.models import Post
 from django.contrib.auth.models import User, Group
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
@@ -19,7 +19,7 @@ def index(request):
     announcements = Announcement.objects.all().order_by('-date','-time')[:5]
     announcement = Announcement.objects.all()
     agents = Agent.objects.all()
-    blogs = Blog.objects.all()
+    blogs = Post.objects.all().order_by('-date','time')[:4]
     abouts = About.objects.all()
     clients = Client.objects.all()
     types = Type.objects.all()

@@ -68,7 +68,7 @@ class Agent(models.Model):
 
 class Announcement(models.Model):
 
-    title       = models.CharField(max_length=10)
+    title       = models.CharField(max_length=30)
     region      = models.ForeignKey(Region, on_delete = models.CASCADE)
     district    = models.ForeignKey(District, on_delete = models.CASCADE)
     address     = models.CharField(max_length=30)

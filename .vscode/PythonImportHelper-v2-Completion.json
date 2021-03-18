@@ -128,39 +128,7 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -281,6 +249,22 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -534,6 +518,14 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -953,6 +945,23 @@
         "documentation": {}
     },
     {
+        "label": "taggit.managers",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "taggit.managers",
+        "description": "taggit.managers",
+        "detail": "taggit.managers",
+        "documentation": {}
+    },
+    {
+        "label": "TaggableManager",
+        "importPath": "taggit.managers",
+        "description": "taggit.managers",
+        "isExtraImport": true,
+        "detail": "taggit.managers",
+        "documentation": {}
+    },
+    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
@@ -1114,6 +1123,22 @@
         "documentation": {}
     },
     {
+        "label": "Tag",
+        "importPath": "taggit.models",
+        "description": "taggit.models",
+        "isExtraImport": true,
+        "detail": "taggit.models",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.template.defaultfilters",
+        "description": "django.template.defaultfilters",
+        "isExtraImport": true,
+        "detail": "django.template.defaultfilters",
+        "documentation": {}
+    },
+    {
         "label": "django.utils.timezone",
         "kind": 6,
         "isExtraImport": true,
@@ -1123,11 +1148,11 @@
         "documentation": {}
     },
     {
-        "label": "Blog",
-        "importPath": "blog.models",
-        "description": "blog.models",
+        "label": "Post",
+        "importPath": "Blog_Post.models",
+        "description": "Blog_Post.models",
         "isExtraImport": true,
-        "detail": "blog.models",
+        "detail": "Blog_Post.models",
         "documentation": {}
     },
     {
@@ -1375,118 +1400,109 @@
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "blog.migrations.0001_initial",
-        "description": "blog.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('ecover', '0012_auto_20210315_1931'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Blog_categories',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
-        "detail": "blog.migrations.0001_initial",
+        "importPath": "Blog_Post.migrations.0001_initial",
+        "description": "Blog_Post.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('ecover', '0017_auto_20210316_1123'),\n        ('taggit', '0003_taggeditem_add_unique_index'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Post_categories',\n            fields=[",
+        "detail": "Blog_Post.migrations.0001_initial",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "blog.migrations.0002_blog_paragraph",
-        "description": "blog.migrations.0002_blog_paragraph",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='blog',\n            name='paragraph',\n            field=models.CharField(default='', max_length=500),\n            preserve_default=False,",
-        "detail": "blog.migrations.0002_blog_paragraph",
+        "importPath": "Blog_Post.migrations.0002_auto_20210317_1457",
+        "description": "Blog_Post.migrations.0002_auto_20210317_1457",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Blog_Post', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='post',\n            old_name='tags',\n            new_name='tag',\n        ),",
+        "detail": "Blog_Post.migrations.0002_auto_20210317_1457",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "blog.migrations.0003_auto_20210315_1945",
-        "description": "blog.migrations.0003_auto_20210315_1945",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_blog_paragraph'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='blog',\n            name='content_body',\n            field=models.TextField(max_length=1000),\n        ),",
-        "detail": "blog.migrations.0003_auto_20210315_1945",
+        "importPath": "Blog_Post.migrations.0003_auto_20210317_1630",
+        "description": "Blog_Post.migrations.0003_auto_20210317_1630",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Blog_Post', '0002_auto_20210317_1457'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='post',\n            old_name='tag',\n            new_name='tags',\n        ),",
+        "detail": "Blog_Post.migrations.0003_auto_20210317_1630",
         "documentation": {}
     },
     {
-        "label": "Migration",
+        "label": "BlogPostConfig",
         "kind": 6,
-        "importPath": "blog.migrations.0004_auto_20210315_1957",
-        "description": "blog.migrations.0004_auto_20210315_1957",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0003_auto_20210315_1945'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='blog',\n            old_name='blog_single_image',\n            new_name='blog_single_image1',\n        ),",
-        "detail": "blog.migrations.0004_auto_20210315_1957",
+        "importPath": "Blog_Post.apps",
+        "description": "Blog_Post.apps",
+        "peekOfCode": "class BlogPostConfig(AppConfig):\n    name = 'Blog_Post'",
+        "detail": "Blog_Post.apps",
         "documentation": {}
     },
     {
-        "label": "BlogConfig",
+        "label": "PostForm",
         "kind": 6,
-        "importPath": "blog.apps",
-        "description": "blog.apps",
-        "peekOfCode": "class BlogConfig(AppConfig):\n    name = 'blog'",
-        "detail": "blog.apps",
+        "importPath": "Blog_Post.forms",
+        "description": "Blog_Post.forms",
+        "peekOfCode": "class PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = [\n            'title',\n            'content_body',\n            'tags'\n        ]",
+        "detail": "Blog_Post.forms",
         "documentation": {}
     },
     {
-        "label": "Blog_categories",
+        "label": "Post_categories",
         "kind": 6,
-        "importPath": "blog.models",
-        "description": "blog.models",
-        "peekOfCode": "class Blog_categories(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Type(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title           = models.CharField(max_length=250)",
-        "detail": "blog.models",
+        "importPath": "Blog_Post.models",
+        "description": "Blog_Post.models",
+        "peekOfCode": "class Post_categories(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Post(models.Model):\n    title           = models.CharField(max_length=250)\n    post_image      = models.ImageField(upload_to='blog_rasm')\n    categories      = models.ForeignKey(Post_categories, on_delete=models.CASCADE)\n    post_single_image1  = models.ImageField(upload_to='blog_rasm')\n    content_header  = models.TextField(max_length=1000)",
+        "detail": "Blog_Post.models",
         "documentation": {}
     },
     {
-        "label": "Type",
+        "label": "Post",
         "kind": 6,
-        "importPath": "blog.models",
-        "description": "blog.models",
-        "peekOfCode": "class Type(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title           = models.CharField(max_length=250)\n    blog_image      = models.ImageField(upload_to='blog_rasm')\n    categories      = models.ForeignKey(Blog_categories, on_delete=models.CASCADE)\n    blog_single_image1  = models.ImageField(upload_to='blog_rasm')\n    content_header  = models.TextField(max_length=1000)",
-        "detail": "blog.models",
-        "documentation": {}
-    },
-    {
-        "label": "Blog",
-        "kind": 6,
-        "importPath": "blog.models",
-        "description": "blog.models",
-        "peekOfCode": "class Blog(models.Model):\n    title           = models.CharField(max_length=250)\n    blog_image      = models.ImageField(upload_to='blog_rasm')\n    categories      = models.ForeignKey(Blog_categories, on_delete=models.CASCADE)\n    blog_single_image1  = models.ImageField(upload_to='blog_rasm')\n    content_header  = models.TextField(max_length=1000)\n    blog_single_image2  = models.ImageField(upload_to='blog_rasm')\n    content_body    = models.TextField(max_length=1000)\n    paragraph   = models.TextField(max_length=500)\n    types       = models.ForeignKey(Type, on_delete=models.CASCADE)",
-        "detail": "blog.models",
+        "importPath": "Blog_Post.models",
+        "description": "Blog_Post.models",
+        "peekOfCode": "class Post(models.Model):\n    title           = models.CharField(max_length=250)\n    post_image      = models.ImageField(upload_to='blog_rasm')\n    categories      = models.ForeignKey(Post_categories, on_delete=models.CASCADE)\n    post_single_image1  = models.ImageField(upload_to='blog_rasm')\n    content_header  = models.TextField(max_length=1000)\n    post_single_image2  = models.ImageField(upload_to='blog_rasm')\n    content_body    = models.TextField(max_length=1000)\n    paragraph   = models.TextField(max_length=500)\n    agent       = models.ForeignKey(Agent, on_delete=models.CASCADE)",
+        "detail": "Blog_Post.models",
         "documentation": {}
     },
     {
         "label": "urlpatterns",
         "kind": 5,
-        "importPath": "blog.urls",
-        "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('blog-single/<int:id>/',views.blog_single, name='blog-single'),\n    path('blog/',views.blog, name='blog'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('Types/<int:pk>', views.BlogTypesDetailview.as_view(), name=\"type-detail\"),\n]",
-        "detail": "blog.urls",
+        "importPath": "Blog_Post.urls",
+        "description": "Blog_Post.urls",
+        "peekOfCode": "urlpatterns = [\n    path('blog-single/<int:id>/',views.blog_single, name='blog-single'),\n    path('blog/',views.blog, name='blog'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n]",
+        "detail": "Blog_Post.urls",
         "documentation": {}
     },
     {
         "label": "BlogCategoriesDetailView",
         "kind": 6,
-        "importPath": "blog.views",
-        "description": "blog.views",
-        "peekOfCode": "class BlogCategoriesDetailView(DetailView):\n    model = Blog\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        blogs = Blog.objects.filter(categories = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        blog_list = Blog.objects.filter(categories=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)",
-        "detail": "blog.views",
-        "documentation": {}
-    },
-    {
-        "label": "BlogTypesDetailview",
-        "kind": 6,
-        "importPath": "blog.views",
-        "description": "blog.views",
-        "peekOfCode": "class BlogTypesDetailview(DetailView):\n    model = Blog\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        blogs = Blog.objects.filter(types = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        blog_list = Blog.objects.filter(types=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)",
-        "detail": "blog.views",
+        "importPath": "Blog_Post.views",
+        "description": "Blog_Post.views",
+        "peekOfCode": "class BlogCategoriesDetailView(DetailView):\n    model = Post\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        posts = Post.objects.filter(categories = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        blog_list = Post.objects.filter(categories=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)",
+        "detail": "Blog_Post.views",
         "documentation": {}
     },
     {
         "label": "blog_single",
         "kind": 2,
-        "importPath": "blog.views",
-        "description": "blog.views",
-        "peekOfCode": "def blog_single(request, id):\n    blogs = get_object_or_404(Blog, pk=id)\n    blog_post = Blog.objects.all().order_by('-date','-time')[:5]\n    categories = Blog_categories.objects.all()\n    types      = Type.objects.all()\n    print(blog)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    context = {\n        'blogs': blogs,",
-        "detail": "blog.views",
+        "importPath": "Blog_Post.views",
+        "description": "Blog_Post.views",
+        "peekOfCode": "def blog_single(request, id):\n    posts = get_object_or_404(Post, pk=id)\n    blog_post = Post.objects.all().order_by('-date','-time')[:5]\n    post = Post.objects.order_by('-date','time')\n    categories = Post_categories.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    context = {\n        'posts': posts,\n        'is_member':is_member,",
+        "detail": "Blog_Post.views",
         "documentation": {}
     },
     {
         "label": "blog",
         "kind": 2,
-        "importPath": "blog.views",
-        "description": "blog.views",
-        "peekOfCode": "def blog(request):\n    blogs = Blog.objects.all\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    blog_list = Blog.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(blog_list,4)\n    try:\n        blogs = paginator.page(page)\n    except PageNotAnInteger:",
-        "detail": "blog.views",
+        "importPath": "Blog_Post.views",
+        "description": "Blog_Post.views",
+        "peekOfCode": "def blog(request):\n    posts = Post.objects.all().order_by('-date','time')\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    post_list = Post.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(post_list,4)\n    try:\n        posts = paginator.page(page)\n    except PageNotAnInteger:",
+        "detail": "Blog_Post.views",
+        "documentation": {}
+    },
+    {
+        "label": "tagged",
+        "kind": 2,
+        "importPath": "Blog_Post.views",
+        "description": "Blog_Post.views",
+        "peekOfCode": "def tagged(request, slug):\n    tag = get_object_or_404(Tag, slug=slug)\n    posts = Post.objects.filter(tags=tag)\n    context = {\n        'posts':posts,\n    }\n    return render(request, 'blog.html', context)\n# def home_view(request):\n#     posts = Post.objects.order_by('-date')\n#     # Show most common tags ",
+        "detail": "Blog_Post.views",
         "documentation": {}
     },
     {
@@ -1643,6 +1659,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0018_auto_20210317_1628",
+        "description": "ecover.migrations.0018_auto_20210317_1628",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0017_auto_20210316_1123'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='announcement',\n            name='title',\n            field=models.CharField(max_length=30),\n        ),",
+        "detail": "ecover.migrations.0018_auto_20210317_1628",
+        "documentation": {}
+    },
+    {
         "label": "EcoverConfig",
         "kind": 6,
         "importPath": "ecover.apps",
@@ -1719,7 +1744,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class Agent(models.Model):\n    name        = models.CharField(max_length=20)\n    agent_image = models.ImageField(upload_to='agent_rasm')\n    def __str__(self):\n        return self.name\nclass Announcement(models.Model):\n    title       = models.CharField(max_length=10)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)",
+        "peekOfCode": "class Agent(models.Model):\n    name        = models.CharField(max_length=20)\n    agent_image = models.ImageField(upload_to='agent_rasm')\n    def __str__(self):\n        return self.name\nclass Announcement(models.Model):\n    title       = models.CharField(max_length=30)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1728,7 +1753,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class Announcement(models.Model):\n    title       = models.CharField(max_length=10)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)\n    type        = models.ForeignKey(Type, on_delete = models.CASCADE, null=True)\n    status      = models.ForeignKey(Status, on_delete=models.CASCADE)\n    view        = models.ForeignKey(View, on_delete = models.CASCADE, blank=True) \n    content     = models.TextField(max_length=60)\n    image       = models.ImageField(upload_to='picture', blank=True, null=True)",
+        "peekOfCode": "class Announcement(models.Model):\n    title       = models.CharField(max_length=30)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)\n    type        = models.ForeignKey(Type, on_delete = models.CASCADE, null=True)\n    status      = models.ForeignKey(Status, on_delete=models.CASCADE)\n    view        = models.ForeignKey(View, on_delete = models.CASCADE, blank=True) \n    content     = models.TextField(max_length=60)\n    image       = models.ImageField(upload_to='picture', blank=True, null=True)",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1827,7 +1852,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def index(request):\n    announcements = Announcement.objects.all().order_by('-date','-time')[:5]\n    announcement = Announcement.objects.all()\n    agents = Agent.objects.all()\n    blogs = Blog.objects.all()\n    abouts = About.objects.all()\n    clients = Client.objects.all()\n    types = Type.objects.all()\n    navbars = Navbar.objects.all()[:1]\n    regions = Region.objects.all()",
+        "peekOfCode": "def index(request):\n    announcements = Announcement.objects.all().order_by('-date','-time')[:5]\n    announcement = Announcement.objects.all()\n    agents = Agent.objects.all()\n    blogs = Post.objects.all().order_by('-date','time')[:4]\n    abouts = About.objects.all()\n    clients = Client.objects.all()\n    types = Type.objects.all()\n    navbars = Navbar.objects.all()[:1]\n    regions = Region.objects.all()",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -1953,7 +1978,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'ecover',\n    'django_filters',\n    'accounts',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'ecover',\n    'accounts',\n    'Blog_Post',",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -1989,7 +2014,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'Ecoverde.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'ecover',\n        'USER': 'root',\n        'PASSWORD': '',\n    }",
+        "peekOfCode": "WSGI_APPLICATION = 'Ecoverde.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'ecover',\n        'USER': 'root',\n        'PASSWORD': '',\n        'OPTIONS': {",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -1998,7 +2023,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'ecover',\n        'USER': 'root',\n        'PASSWORD': '',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'ecover',\n        'USER': 'root',\n        'PASSWORD': '',\n        'OPTIONS': {\n            'init_command': \"SET sql_mode='STRICT_ALL_TABLES'\"\n        },\n    }",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2151,7 +2176,7 @@
         "kind": 5,
         "importPath": "Ecoverde.urls",
         "description": "Ecoverde.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('ecover.urls')),\n    path('', include('blog.urls')),\n    path('accounts/', include('accounts.urls')),\n    path('<username>/', include('personal_area.urls'))\n]\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('ecover.urls')),\n    path('', include('Blog_Post.urls')),\n    path('accounts/', include('accounts.urls')),\n    path('<username>/', include('personal_area.urls')),\n]\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "Ecoverde.urls",
         "documentation": {}
     },

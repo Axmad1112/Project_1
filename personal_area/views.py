@@ -46,7 +46,6 @@ def add(request, username):
     agents = Agent.objects.all()
 
     if request.method=='POST':
-        print(request.method=='POST')
         title = request.POST['title']
         region_id = request.POST['region_id']
         district_id = request.POST['district_id']
