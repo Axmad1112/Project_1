@@ -168,10 +168,10 @@
           </div> <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
             <div class="sidebar-box">
-              <form action="#" class="search-form">
+              <form method="GET" action="{% url 'search' %}" class="search-form">
                 <div class="form-group">
                   <span class="icon fa fa-search"></span>
-                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                  <input type="text" name="keyvalue" class="form-control" placeholder="Type a keyword and hit enter">
                 </div>
               </form>
             </div>
@@ -231,10 +231,8 @@
             <div class="sidebar-box ftco-animate">
               <h3>Tag Cloud</h3>
               <div class="tagcloud">
-              {% for pos in post %}
-                {% for tag in pos.tags.all %}
+              {% for tag in post %}
                     <a href="{% url 'tagged' tag.slug %}" class="tag-cloud-link">{{ tag }}</a>
-                {% endfor %} 
               {% endfor %}
 
                 {% comment %} <a href="#" class="tag-cloud-link">home</a>

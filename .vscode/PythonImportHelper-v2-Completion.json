@@ -1019,6 +1019,22 @@
         "documentation": {}
     },
     {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
         "label": "Paginator",
         "importPath": "django.core.paginator",
         "description": "django.core.paginator",
@@ -1092,6 +1108,22 @@
     },
     {
         "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
         "isExtraImport": true,
@@ -1153,14 +1185,6 @@
         "description": "Blog_Post.models",
         "isExtraImport": true,
         "detail": "Blog_Post.models",
-        "documentation": {}
-    },
-    {
-        "label": "Q",
-        "importPath": "django.db.models",
-        "description": "django.db.models",
-        "isExtraImport": true,
-        "detail": "django.db.models",
         "documentation": {}
     },
     {
@@ -1465,7 +1489,7 @@
         "kind": 5,
         "importPath": "Blog_Post.urls",
         "description": "Blog_Post.urls",
-        "peekOfCode": "urlpatterns = [\n    path('blog-single/<int:id>/',views.blog_single, name='blog-single'),\n    path('blog/',views.blog, name='blog'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('blog-single/<int:id>/',views.blog_single, name='blog-single'),\n    path('blog/',views.blog, name='blog'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n    path('post-search/', views.SearchResultsView.as_view(), name='search'),\n]",
         "detail": "Blog_Post.urls",
         "documentation": {}
     },
@@ -1479,11 +1503,20 @@
         "documentation": {}
     },
     {
+        "label": "SearchResultsView",
+        "kind": 6,
+        "importPath": "Blog_Post.views",
+        "description": "Blog_Post.views",
+        "peekOfCode": "class SearchResultsView(ListView):\n    model = Post\n    template_name = 'blog.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        print(query, \"++++++++++++++++\")\n        results = Post.objects.filter(\n            Q(title__icontains=query) | Q(content_header__icontains=query) | Q(content_body__icontains=query))\n        return results\n# def home_view(request):",
+        "detail": "Blog_Post.views",
+        "documentation": {}
+    },
+    {
         "label": "blog_single",
         "kind": 2,
         "importPath": "Blog_Post.views",
         "description": "Blog_Post.views",
-        "peekOfCode": "def blog_single(request, id):\n    posts = get_object_or_404(Post, pk=id)\n    blog_post = Post.objects.all().order_by('-date','-time')[:5]\n    post = Post.objects.order_by('-date','time')\n    categories = Post_categories.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    context = {\n        'posts': posts,\n        'is_member':is_member,",
+        "peekOfCode": "def blog_single(request, id):\n    posts = get_object_or_404(Post, pk=id)\n    blog_post = Post.objects.all().order_by('-date','-time')[:5]\n    post = Tag.objects.all()\n    categories = Post_categories.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    context = {\n        'posts': posts,\n        'is_member':is_member,",
         "detail": "Blog_Post.views",
         "documentation": {}
     },
@@ -1501,7 +1534,7 @@
         "kind": 2,
         "importPath": "Blog_Post.views",
         "description": "Blog_Post.views",
-        "peekOfCode": "def tagged(request, slug):\n    tag = get_object_or_404(Tag, slug=slug)\n    posts = Post.objects.filter(tags=tag)\n    context = {\n        'posts':posts,\n    }\n    return render(request, 'blog.html', context)\n# def home_view(request):\n#     posts = Post.objects.order_by('-date')\n#     # Show most common tags ",
+        "peekOfCode": "def tagged(request, slug):\n    tag = get_object_or_404(Tag, slug=slug)\n    posts = Post.objects.filter(tags=tag)\n    context = {\n        'posts':posts,\n    }\n    return render(request, 'blog.html', context)\nclass SearchResultsView(ListView):\n    model = Post\n    template_name = 'blog.html'",
         "detail": "Blog_Post.views",
         "documentation": {}
     },

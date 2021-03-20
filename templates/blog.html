@@ -35,6 +35,23 @@
             </div>
           </div>
           {% endfor %}
+          {% elif object_list %}
+            {% for post in object_list %}
+              <div class="col-md-3 d-flex ftco-animate">
+                <div class="blog-entry justify-content-end">
+                  <div class="text">
+                    <a href="{% url 'blog-single' post.id %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
+                    </a>
+                    <div class="meta mb-3">
+                      <div><a href="#">{{ post.date }}</a></div>
+                      <div><a href="#">{{post.agent}}</a></div>
+                      <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ post.number }}</a></div>
+                    </div>
+                    <h3 class="heading"><a href="{% url 'blog-single' post.id %}">{{ post.title }}</a></h3>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
           {% else %}
             <p class="ml-4">Bu haqida yangilik yo'q !</p>
           {% endif %}
