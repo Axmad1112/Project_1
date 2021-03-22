@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load hitcount_tags %}
 {% block title %} Ecoverde Blog {% endblock title %}
 {% block content %}
 
@@ -23,14 +24,15 @@
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="{% url 'blog-single' post.id %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
+                <a href="{% url 'blog-single' post.slug %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
 	              </a>
 	              <div class="meta mb-3">
                   <div><a href="#">{{ post.date }}</a></div>
                   <div><a href="#">{{post.agent}}</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ post.number }}</a></div>
+
+                  <div><a href="#" class="meta-chat"><span class="fa fa-eye"> {% get_hit_count for post %}</span></a></div>
                 </div>
-	              <h3 class="heading"><a href="{% url 'blog-single' post.id %}">{{ post.title }}</a></h3>
+	              <h3 class="heading"><a href="">{{ post.title }}</a></h3>
               </div>
             </div>
           </div>
@@ -40,14 +42,14 @@
               <div class="col-md-3 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
                   <div class="text">
-                    <a href="{% url 'blog-single' post.id %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
+                    <a href="#" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
                     </a>
                     <div class="meta mb-3">
                       <div><a href="#">{{ post.date }}</a></div>
                       <div><a href="#">{{post.agent}}</a></div>
-                      <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>{{ post.number }}</a></div>
+                      <div><a href="#" ><span class="fa fa-eye"></span></a></div>
                     </div>
-                    <h3 class="heading"><a href="{% url 'blog-single' post.id %}">{{ post.title }}</a></h3>
+                    <h3 class="heading"><a href="">{{ post.title }}</a></h3>
                   </div>
                 </div>
               </div>

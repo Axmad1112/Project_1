@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ecover',
     'accounts',
-    'Blog_Post',
     'taggit',
+    'hitcount',
+    'blog'
 ]
 
 MIDDLEWARE = [
