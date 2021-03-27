@@ -14,12 +14,12 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt">
+    <section class="ftco-section ftco-no-pb ftco-no-pt search-bg">
     	<div class="container">
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-						<form method="GET" action="{% url 'search' %}" class="search-property-1">
+							<form method="GET" action="{% url 'search' %}" class="search-property-1">
 		        		<div class="row">
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
@@ -35,30 +35,39 @@
 		        					<label for="#">Property Type</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
-									  <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      		<select name="type" id="tur_id" class="form-control">
+									  	<div class="icon"><span class="fa fa-chevron-down"></span></div>
+										 
+											{% comment %} <select name="Type" id="type_id" class="form-control">
+												<option class="bg-dark" disabled selected>Type</option>
+												<option class="bg-dark" value="1">Residence</option>
+												<option class="bg-dark" value="2">Offices</option>
+												<option class="bg-dark" value="3">Commercial</option>
+												<option class="bg-dark" value="4">Hotel</option>
+												<option class="bg-dark" value="5">House</option>												
+											</select>
+											<input type="text" id="Property" name="type_query"> {% endcomment %}
+											<select name="type_query" id="type_id" class="form-control">
+												<option disabled selected style="background: #20233C;">Select type</option>
+												{% for type in types %}
+												<option value="{{type.id}}" style="background: #20233C;">{{type.name}}</option>
+												{% endfor %}
+											</select>
 										
-										<option style="background-color: #21243D;" selected disabled>Type</option>
-										{% for type in types %}
-										<option style="background-color: #21243D;">{{ type.name }}</option>
-										{% endfor %}
-									</select>
-									<input type="hidden" name="type" id="turi_id">
-		                    	</div>
-				            </div>
-			              </div>
+		                    		</div>
+				            		</div>
+			              		</div>
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="#">Region</label>
+		        					<label for="address">Region</label>
 		          				<div class="form-field">
-									  <select name="region" id="region_id" class="form-control pl-1">
-										<option style="background-color: #21243D;">Select the region</option>
+								  	<div class="icon"><span class="fa fa-chevron-down"></span></div>
+									  <select name="region" id="region_id" class="form-control px-3">
+										<option disabled selected style="background: #20233C;">Select the region</option>
 										{% for region in regions %}
-										<option value="" style="background-color: #21243D;">{{region.name}}</option>
+										<option value="{{region.id}}" style="background: #20233C;" class="px-0">{{region.name}}</option>
 										{% endfor %}
 									</select>
-				                	<input type="hidden" name="region" id="viloyat_id">
 				              </div>
 			              </div>
 		        			</div>
@@ -68,21 +77,22 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="price" id="" class="form-control">
-		                        <option value="5000" >$5,000</option>
-		                        <option value="10000" >$10,000</option>
-		                        <option value="50000" >$50,000</option>
-		                        <option value="100000" >$100,000</option>
-		                        <option value="200000" >$200,000</option>
-		                        <option value="300000" >$300,000</option>
-		                        <option value="400000" >$400,000</option>
-		                        <option value="500000" >$500,000</option>
-		                        <option value="600000" >$600,000</option>
-		                        <option value="700000" >$700,000</option>
-		                        <option value="800000" >$800,000</option>
-		                        <option value="900000" >$900,000</option>
-		                        <option value="1000000" >$1,000,000</option>
-		                        <option value="2000000" >$2,000,000</option>
+		                      <select name="price_limit" id="" class="form-control">
+							  	<option value="" style="background: #20233C;">0 $</option>
+		                        <option value="5000" style="background: #20233C;">$5,000</option>
+		                        <option value="10000" style="background: #20233C;">$10,000</option>
+		                        <option value="50000" style="background: #20233C;">$50,000</option>
+		                        <option value="100000" style="background: #20233C;">$100,000</option>
+		                        <option value="200000" style="background: #20233C;">$200,000</option>
+		                        <option value="300000" style="background: #20233C;">$300,000</option>
+		                        <option value="400000" style="background: #20233C;">$400,000</option>
+		                        <option value="500000" style="background: #20233C;">$500,000</option>
+		                        <option value="600000" style="background: #20233C;">$600,000</option>
+		                        <option value="700000" style="background: #20233C;">$700,000</option>
+		                        <option value="800000" style="background: #20233C;">$800,000</option>
+		                        <option value="900000" style="background: #20233C;">$900,000</option>
+		                        <option value="1000000" style="background: #20233C;">$1,000,000</option>
+		                        <option value="2000000" style="background: #20233C;">$2,000,000</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -97,8 +107,7 @@
 		        			</div>
 		        		</div>
 		        	</form>
-							
-		        		</div>
+		        </div>
 					</div>
 	    	</div>
 	    </div>
@@ -163,154 +172,60 @@
 			
         	</div>
 		{% endfor %}
-	
-        	{% comment %} <div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-2.jpg' %});">
-        				<div class="rent-sale">
-        					<span class="rent">Rent</span>
-        				</div>
-        				<p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small> / mo</small></span></p>
-        			</a>
-        			<div class="text">
-        				<ul class="property_list">
-        					<li><span class="flaticon-bed"></span>3</li>
-        					<li><span class="flaticon-bathtub"></span>2</li>
-        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-        				</ul>
-        				<h3><a href="#">The Blue Sky Home</a></h3>
-        				<span class="location">Oakland</span>
-        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        					<span class="fa fa-link"></span>
-        				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
-        					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-	        					<h3 class="ml-2">John Dorf</h3>
-	        				</div>
-	        				<span class="text-right">2 weeks ago</span>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-3.jpg' %});">
-        				<div class="rent-sale">
-        					<span class="rent">Rent</span>
-        				</div>
-        				<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
-        			</a>
-        			<div class="text">
-        				<ul class="property_list">
-        					<li><span class="flaticon-bed"></span>3</li>
-        					<li><span class="flaticon-bathtub"></span>2</li>
-        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-        				</ul>
-        				<h3><a href="#">The Blue Sky Home</a></h3>
-        				<span class="location">Oakland</span>
-        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        					<span class="fa fa-link"></span>
-        				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
-        					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-	        					<h3 class="ml-2">John Dorf</h3>
-	        				</div>
-	        				<span class="text-right">2 weeks ago</span>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-4.jpg' %});">
-        				<div class="rent-sale">
-        					<span class="sale">Sale</span>
-        				</div>
-        				<p class="price"><span class="orig-price">$300,000</span></p>
-        			</a>
-        			<div class="text">
-        				<ul class="property_list">
-        					<li><span class="flaticon-bed"></span>3</li>
-        					<li><span class="flaticon-bathtub"></span>2</li>
-        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-        				</ul>
-        				<h3><a href="#">The Blue Sky Home</a></h3>
-        				<span class="location">Oakland</span>
-        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        					<span class="fa fa-link"></span>
-        				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
-        					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-	        					<h3 class="ml-2">John Dorf</h3>
-	        				</div>
-	        				<span class="text-right">2 weeks ago</span>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-5.jpg' %});">
-        				<div class="rent-sale">
-        					<span class="rent">Rent</span>
-        				</div>
-        				<p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small> / mo</small></span></p>
-        			</a>
-        			<div class="text">
-        				<ul class="property_list">
-        					<li><span class="flaticon-bed"></span>3</li>
-        					<li><span class="flaticon-bathtub"></span>2</li>
-        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-        				</ul>
-        				<h3><a href="#">The Blue Sky Home</a></h3>
-        				<span class="location">Oakland</span>
-        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        					<span class="fa fa-link"></span>
-        				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
-        					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-	        					<h3 class="ml-2">John Dorf</h3>
-	        				</div>
-	        				<span class="text-right">2 weeks ago</span>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="{% url 'properties-single' %}" class="img" style="background-image: url({% static 'images/work-6.jpg' %});">
-        				<div class="rent-sale">
-        					<span class="rent">Rent</span>
-        				</div>
-        				<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
-        			</a>
-        			<div class="text">
-        				<ul class="property_list">
-        					<li><span class="flaticon-bed"></span>3</li>
-        					<li><span class="flaticon-bathtub"></span>2</li>
-        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-        				</ul>
-        				<h3><a href="#">The Blue Sky Home</a></h3>
-        				<span class="location">Oakland</span>
-        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        					<span class="fa fa-link"></span>
-        				</a>
-        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
-        					<div class="d-flex align-items-center">
-	        					<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
-	        					<h3 class="ml-2">John Dorf</h3>
-	        				</div>
-	        				<span class="text-right">2 weeks ago</span>
-        				</div>
-        			</div>
-        		</div>
-        	</div> {% endcomment %}
         </div>
+		<div class="row">
+		{% for announcement in results %}
+        	<div class="col-md-4">
+			
+        		<div class="property-wrap ftco-animate">
+				
+					{% if announcement.image %}
+						<a href="{% url 'properties-single' announcement.id %}" class="img" style="background-image: url('{{ announcement.image.url }}');">
+					{% endif %}
+					<div class="rent-sale">
+					{% if announcement.status.id == 1 %}
+        				<span class="sale">{{ announcement.status }}</span>
+        			{% else %}
+						<span class="rent">{{ announcement.status }}</span>
+					{% endif %}
+					</div>
+					{% if announcement.status.id == 1 %}
+        				<p class="price"><span class="orig-price">{{ announcement.price}}</span></p>
+					{% else %}
+						<p class="price"><span class="orig-price">{{ announcement.price}} / mo</span></p>
+					{% endif %}
+        			</a>
+        			<div class="text">
+        				<ul class="property_list">
+        					<li><span class="flaticon-bed"></span>3</li>
+        					<li><span class="flaticon-bathtub"></span>2</li>
+        					<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
+        				</ul>
+        				<h3><a href="#">{{ announcement.title}}</a></h3>
+        				<span class="location">{{ announcement.region}} {{announcement.district}}</span>
+        				<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
+        					<span class="fa fa-link"></span>
+        				</a>
+        				<div class="list-team d-flex align-items-center mt-2 pt-2 bannouncement-top">
+        					<div class="d-flex align-items-center">
+							
+	        					<div class="img" style="background-image: url('{{ announcement.person_name.userdetail.author_image.url }}');"></div>
+	        				
+								<h3 class="ml-2">{{ announcement.person_name }}</h3>
+	        				</div>
+	        				<span class="text-right">{{ announcement.date }}</span>
+        				</div>
+        			</div>
+				
+        		</div>
+			
+        	</div>
+				
+		{% endfor %}
+	
+        	
+        </div>
+		
 		{% if announcements.has_other_pages %}
         <div class="row mt-5">
           <div class="col text-center">
@@ -334,33 +249,33 @@
           </div>
         </div>
 		{% endif %}
+		{% if results.has_other_pages %}
+			<div class="row mt-5">
+			<div class="col text-center">
+				<div class="block-27">
+				<ul>
+					{% if results.has_previous %}
+						<li><a href="?page={{ results.previous_page_number }}">&lt;</a></li>
+					{% endif %}
+					{% for i in results.paginator.page_range %}
+						{% if results.number == i %}
+							<li class="active"><span>{{ i }}</span></li>
+						{% elif i > results.number|add:'-2' and i < results.number|add:'2' %}
+							<li><a href="?page={{ i }}">{{ i }}</a></li>
+						{% endif %}
+					{% endfor %}
+					{% if results.has_next %}
+						<li><a href="?page={{ results.next_page_number }}">&gt;</a></li>
+					{% endif %}
+				</ul>
+				</div>
+			</div>
+			</div>
+		{% endif %}
+		
     	</div>
 		
     </section>
 
 {% endblock content%}
 
-{% comment %} <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script> {% endcomment %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   <script>
-        
-        $(document).ready(function(){
-			var tumanlar = JSON.parse(t);
-            $("select.region").change(function(){
-				selectedRegionIndex = $(".region option:selected").index();
-				if (selectedRegionIndex > 1) selectedRegionIndex++;
-								
-				$("#viloyat_id").val(selectedRegionIndex);
-                selectedDistrictIndex = $("#district_id option:selected").index();
-                				
-			});
-            
-           
-            $("#type_id").change(function(){
-                selectedTypeIndex = $("#type_id option:selected").index();
-				$("#turi_id").val(selectedTypeIndex);
-            });
-            
-        });
-        
-    </script>

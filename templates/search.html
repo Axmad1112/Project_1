@@ -36,7 +36,7 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 									  <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      			<select name="Type" id="type_id" class="form-control">
+		                      			{% comment %} <select name="Type" id="type_id" class="form-control">
 												<option class="bg-dark" disabled selected>Type</option>
 												<option class="bg-dark" value="1">Residence</option>
 												<option class="bg-dark" value="2">Offices</option>
@@ -44,7 +44,13 @@
 												<option class="bg-dark" value="4">Hotel</option>
 												<option class="bg-dark" value="5">House</option>												
 										</select>
-									<input type="hidden" id="Property" name="type_query" />
+										<input type="text" id="Property" name="type_query"> {% endcomment %}
+										<select name="type_query" id="type_id" class="form-control">
+											<option disabled selected>Select type</option>
+											{% for type in types %}
+											<option value="{{type.id}}">{{type.name}}</option>
+											{% endfor %}
+										</select>
 		                    	</div>
 				            </div>
 			              </div>
@@ -53,8 +59,13 @@
 		        				<div class="form-group">
 		        					<label for="address">Location</label>
 		          				<div class="form-field">
-								  	<div class="icon"><span class="fa fa-search"></span></div>
-									<input type="text" name="location" id="address" class="form-control" placeholder="Location">
+								  	<div class="icon"><span class="fa fa-chevron-down"></span></div>
+									  <select name="region" id="region_id" class="form-control px-3">
+										<option disabled selected>Select the region</option>
+										{% for region in regions %}
+										<option value="{{region.id}}" class="px-0">{{region.name}}</option>
+										{% endfor %}
+									</select>
 				              </div>
 			              </div>
 		        			</div>
@@ -64,7 +75,8 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="price" id="" class="form-control">
+		                      <select name="price_limit" id="" class="form-control">
+							  	<option value="">0 $</option>
 		                        <option value="5000" >$5,000</option>
 		                        <option value="10000" >$10,000</option>
 		                        <option value="50000" >$50,000</option>
@@ -109,7 +121,7 @@
 					</div>
 				</div>
         <div class="row">
-		{% for announcement in object_list %}
+		{% for announcement in results %}
         	<div class="col-md-4">
 			
         		<div class="property-wrap ftco-animate">
@@ -159,46 +171,33 @@
 	
         	
         </div>
-		{% if announcements.has_other_pages %}
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-			  	{% if announcements.has_previous %}
-                	<li><a href="?page={{ announcements.previous_page_number }}">&lt;</a></li>
-                {% endif %}
-				{% for i in announcements.paginator.page_range %}
-					{% if announcements.number == i %}
-						<li class="active"><span>{{ i }}</span></li>
-					{% elif i > announcements.number|add:'-2' and i < announcements.number|add:'2' %}
-						<li><a href="?page={{ i }}">{{ i }}</a></li>
+		{% if results.has_other_pages %}
+			<div class="row mt-5">
+			<div class="col text-center">
+				<div class="block-27">
+				<ul>
+					{% if results.has_previous %}
+						<li><a href="?page={{ results.previous_page_number }}">&lt;</a></li>
 					{% endif %}
-				{% endfor %}
-				{% if announcements.has_next %}
-                	<li><a href="?page={{ announcements.next_page_number }}">&gt;</a></li>
-              	{% endif %}
-			  </ul>
-            </div>
-          </div>
-        </div>
+					{% for i in results.paginator.page_range %}
+						{% if results.number == i %}
+							<li class="active"><span>{{ i }}</span></li>
+						{% elif i > results.number|add:'-2' and i < results.number|add:'2' %}
+							<li><a href="?page={{ i }}">{{ i }}</a></li>
+						{% endif %}
+					{% endfor %}
+					{% if results.has_next %}
+						<li><a href="?page={{ results.next_page_number }}">&gt;</a></li>
+					{% endif %}
+				</ul>
+				</div>
+			</div>
+			</div>
 		{% endif %}
     	</div>
 		
     </section>
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script>
-        
-        $(function () {
-			$("#Property").keyup(function () {
-				var value = $(this).val();
-				$("#type_id option[selected]").removeAttr("selected");
-				$("#type_id option[value=" + value + "]").attr("selected", "selected");
-			});
-			$("#type_id").change(function () {
-				$("#Property").val($(this).val());
-			});
-		});
-    </script>
+
 {% endblock content%}
 
 

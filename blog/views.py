@@ -3,37 +3,50 @@ import django.forms.widgets
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.contrib.auth.models import User, Group
 from accounts.models import UserDetail
-from .models import Post, Post_categories, PostView
+from .models import Post, Post_categories, PostView, Comment
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views.generic import DetailView, TemplateView, ListView
 from taggit.models import Tag
 from .forms import PostForm, CommentForm
 from django.contrib.auth import get_user
 from django.template.defaultfilters import slugify
-from ecover.models import Agent
+from ecover.models import Agent, BaseFooter
 
 
 
 
 def blog_single(request, slug):
     posts = get_object_or_404(Post, slug=slug)
-    blog_post = Post.objects.all().order_by('-date','-time')[:5]
+    blog_post = Post.objects.all().order_by('-date','-time','-post_view')[:5]
     user = User.objects.all()
     post = Tag.objects.all()
     categories = Post_categories.objects.all()
-    comments = posts.comments.all()
+    footer = BaseFooter.objects.all()
+    comments = Comment.objects.filter(post=posts,reply=None)
+
+    post_object=Post.objects.get(slug=slug)
+    post_object.post_view = post_object.post_view + 1
+    post_object.save()
 
     new_comment = None
     # Comment posted
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            # Create Comment object but don't save to database yet
+            
+           
+            reply_id = request.POST.get('comment_id')
+            comment_qs = None
+            
+            if reply_id:
+                comment_qs= Comment.objects.get(id=reply_id)
+
+            # new_comment = Comment.objects.create(
+            #     post = posts, author = request.user, reply = comment_qs,content=content)
             new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
+            new_comment.reply = comment_qs
             new_comment.post = posts     
             new_comment.author = request.user
-            # Save the comment to the database
             new_comment.save()
             return HttpResponseRedirect(request.path)
     else:
@@ -48,14 +61,17 @@ def blog_single(request, slug):
         'new_comment':new_comment,
         'comment_form':comment_form,
         'user':user,
+        'footer':footer
     }
+    # if request.is_ajax():
+    #     html = render_to_string('coments.html',context,request=request)
+    #     return JsonResponse({'form':html})
     return render(request, "blog-single.html",context)
 
 def blog(request):
     posts = Post.objects.all().order_by('-date','time')
-    users_in_group = Group.objects.get(name="Admin").user_set.all()
-    is_member = request.user in users_in_group
-
+    footer = BaseFooter.objects.all()
+    
 
     post_list = Post.objects.all().order_by('-date')
     page = request.GET.get('page',1)
@@ -66,7 +82,7 @@ def blog(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator,num_pages)
-    return render(request, "blog.html", {'posts': posts,'is_member':is_member})
+    return render(request, "blog.html", {'posts': posts,'footer':footer})
 
 
 class BlogCategoriesDetailView(DetailView):
@@ -74,8 +90,7 @@ class BlogCategoriesDetailView(DetailView):
     template_name = 'blog.html'
     def get(self,request,pk):
         posts = Post.objects.filter(categories = pk)
-        users_in_group = Group.objects.get(name="Admin").user_set.all()
-        is_member = request.user in users_in_group
+        footer = BaseFooter.objects.all()
 
         blog_list = Post.objects.filter(categories=pk).order_by('-date')
         page = request.GET.get('page',1)
@@ -92,7 +107,7 @@ class BlogCategoriesDetailView(DetailView):
             self.template_name,
             {
                 'posts':posts,
-                'is_member':is_member
+                'footer':footer
             }
         )
 
@@ -123,23 +138,7 @@ class SearchResultsView(ListView):
         
         return results
 
-# def home_view(request):
-#     posts = Post.objects.order_by('-date')
-#     # Show most common tags 
-#     common_tags = Post.tags.most_common()[:4]
-#     form = PostForm(request.POST)
-#     if form.is_valid():
-#         newpost = form.save(commit=False)
-#         newpost.slug = slugify(newpost.title)
-#         newpost.save()
-#         # Without this next line the tags won't be saved.
-#         form.save_m2m()
-#     context = {
-#         'posts':posts,
-#         'common_tags':common_tags,
-#         'form':form,
-#     }
-#     return render(request, 'new_add.html', context)
+
 
 
 

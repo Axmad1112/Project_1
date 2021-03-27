@@ -128,6 +128,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -241,6 +273,54 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -754,7 +834,7 @@
         "documentation": {}
     },
     {
-        "label": "Announcement",
+        "label": "BaseFooter",
         "importPath": "ecover.models",
         "description": "ecover.models",
         "isExtraImport": true,
@@ -770,7 +850,23 @@
         "documentation": {}
     },
     {
-        "label": "Region",
+        "label": "Agent",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "Announcement",
+        "importPath": "ecover.models",
+        "description": "ecover.models",
+        "isExtraImport": true,
+        "detail": "ecover.models",
+        "documentation": {}
+    },
+    {
+        "label": "BaseFooter",
         "importPath": "ecover.models",
         "description": "ecover.models",
         "isExtraImport": true,
@@ -786,7 +882,7 @@
         "documentation": {}
     },
     {
-        "label": "Type",
+        "label": "Region",
         "importPath": "ecover.models",
         "description": "ecover.models",
         "isExtraImport": true,
@@ -802,7 +898,7 @@
         "documentation": {}
     },
     {
-        "label": "View",
+        "label": "Type",
         "importPath": "ecover.models",
         "description": "ecover.models",
         "isExtraImport": true,
@@ -810,7 +906,7 @@
         "documentation": {}
     },
     {
-        "label": "Agent",
+        "label": "View",
         "importPath": "ecover.models",
         "description": "ecover.models",
         "isExtraImport": true,
@@ -1510,7 +1606,7 @@
         "kind": 6,
         "importPath": "accounts.models",
         "description": "accounts.models",
-        "peekOfCode": "class UserDetail(models.Model):\n    user = models.OneToOneField(User,on_delete=models.CASCADE)\n    author_image= models.ImageField(default='author.jpg', upload_to='author_image', null=True, blank=True)\n    phone       = models.CharField(max_length=20, default=\"+998\", null=True, blank=True)",
+        "peekOfCode": "class UserDetail(models.Model):\n    user = models.OneToOneField(User,on_delete=models.CASCADE)\n    author_image= models.ImageField(default='author.jpg', upload_to='author_image', null=True, blank=True)\n    phone       = models.CharField(max_length=20, default=\"+998\", null=True, blank=True)\n    def __str__(self):\n       return self.user.username",
         "detail": "accounts.models",
         "documentation": {}
     },
@@ -1537,7 +1633,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def sign_in(request):\n    if request.method=='POST':\n        login_form = loginForm(request.POST)\n        if login_form.is_valid():\n            username = login_form.cleaned_data['username']\n            password = login_form.cleaned_data['password']\n            user = auth.authenticate(username=username, password=password)\n            if user is not None:\n                auth.login(request, user)\n                return redirect('../' + username)",
+        "peekOfCode": "def sign_in(request):\n    if request.method=='POST':\n        login_form = loginForm(request.POST)\n        if login_form.is_valid():\n            username = login_form.cleaned_data['username']\n            password = login_form.cleaned_data['password']\n            user = auth.authenticate(username=username, password=password)\n            if user is not None:\n                auth.login(request, user)\n                if request.user.is_staff:",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -1566,6 +1662,24 @@
         "description": "blog.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('taggit', '0003_taggeditem_add_unique_index'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('ecover', '0018_auto_20210317_1628'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Post',",
         "detail": "blog.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0002_post_post_view",
+        "description": "blog.migrations.0002_post_post_view",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='post_view',\n            field=models.IntegerField(default=0),\n        ),",
+        "detail": "blog.migrations.0002_post_post_view",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0003_comment_reply",
+        "description": "blog.migrations.0003_comment_reply",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_post_post_view'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='comment',\n            name='reply',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='replies', to='blog.comment'),\n        ),",
+        "detail": "blog.migrations.0003_comment_reply",
         "documentation": {}
     },
     {
@@ -1627,7 +1741,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class PostView(models.Model):\n    user = models.ForeignKey(User,on_delete=models.CASCADE)\n    post = models.ForeignKey(Post,on_delete=models.CASCADE)\n# Create your models here.\nclass Comment(models.Model):\n    author   = models.ForeignKey(User, on_delete=models.CASCADE)\n    date     = models.DateTimeField(auto_now_add=True)\n    post     = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')\n    name     = models.CharField(max_length=20)\n    email    = models.EmailField()",
+        "peekOfCode": "class PostView(models.Model):\n    user = models.ForeignKey(User,on_delete=models.CASCADE)\n    post = models.ForeignKey(Post,on_delete=models.CASCADE)\n# Create your models here.\nclass Comment(models.Model):\n    author   = models.ForeignKey(User, on_delete=models.CASCADE)\n    date     = models.DateTimeField(auto_now_add=True)\n    post     = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')\n    reply    = models.ForeignKey('self',on_delete=models.SET_NULL, null=True, related_name=\"replies\")\n    name     = models.CharField(max_length=20)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -1636,7 +1750,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Comment(models.Model):\n    author   = models.ForeignKey(User, on_delete=models.CASCADE)\n    date     = models.DateTimeField(auto_now_add=True)\n    post     = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')\n    name     = models.CharField(max_length=20)\n    email    = models.EmailField()\n    content  = models.TextField()\n    active   = models.BooleanField(default=True)\n    class Meta:\n        ordering = ['date']",
+        "peekOfCode": "class Comment(models.Model):\n    author   = models.ForeignKey(User, on_delete=models.CASCADE)\n    date     = models.DateTimeField(auto_now_add=True)\n    post     = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')\n    reply    = models.ForeignKey('self',on_delete=models.SET_NULL, null=True, related_name=\"replies\")\n    name     = models.CharField(max_length=20)\n    email    = models.EmailField()\n    content  = models.TextField()\n    active   = models.BooleanField(default=True)\n    class Meta:",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -1645,7 +1759,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('blog/', views.blog, name='blog'),\n    path('blog-single/<slug:slug>/', views.blog_single, name='blog-single'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n    path('post-search/', views.SearchResultsView.as_view(), name='search'),\n    # path('blog/<slug:slug>/', views.PostDetailView.as_view(), name='detail'),\n    path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('blog/', views.blog, name='blog'),\n    path('blog-single/<slug:slug>/', views.blog_single, name='blog-single'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n    path('post-search/', views.SearchResultsView.as_view(), name='post-search'),\n    # path('blog/<slug:slug>/', views.PostDetailView.as_view(), name='detail'),\n    path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),\n]",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -1654,7 +1768,7 @@
         "kind": 6,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "class BlogCategoriesDetailView(DetailView):\n    model = Post\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        posts = Post.objects.filter(categories = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        blog_list = Post.objects.filter(categories=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)",
+        "peekOfCode": "class BlogCategoriesDetailView(DetailView):\n    model = Post\n    template_name = 'blog.html'\n    def get(self,request,pk):\n        posts = Post.objects.filter(categories = pk)\n        footer = BaseFooter.objects.all()\n        blog_list = Post.objects.filter(categories=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(blog_list,4)\n        try:",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1663,7 +1777,7 @@
         "kind": 6,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "class SearchResultsView(ListView):\n    model = Post\n    template_name = 'blog.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        print(query, \"++++++++++++++++\")\n        results = Post.objects.filter(\n            Q(title__icontains=query) | Q(content_header__icontains=query) | Q(content_body__icontains=query))\n        return results\n# def home_view(request):",
+        "peekOfCode": "class SearchResultsView(ListView):\n    model = Post\n    template_name = 'blog.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        print(query, \"++++++++++++++++\")\n        results = Post.objects.filter(\n            Q(title__icontains=query) | Q(content_header__icontains=query) | Q(content_body__icontains=query))\n        return results",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1672,7 +1786,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def blog_single(request, slug):\n    posts = get_object_or_404(Post, slug=slug)\n    blog_post = Post.objects.all().order_by('-date','-time')[:5]\n    user = User.objects.all()\n    post = Tag.objects.all()\n    categories = Post_categories.objects.all()\n    comments = posts.comments.all()\n    new_comment = None\n    # Comment posted\n    if request.method == 'POST':",
+        "peekOfCode": "def blog_single(request, slug):\n    posts = get_object_or_404(Post, slug=slug)\n    blog_post = Post.objects.all().order_by('-date','-time','-post_view')[:5]\n    user = User.objects.all()\n    post = Tag.objects.all()\n    categories = Post_categories.objects.all()\n    footer = BaseFooter.objects.all()\n    comments = Comment.objects.filter(post=posts,reply=None)\n    post_object=Post.objects.get(slug=slug)\n    post_object.post_view = post_object.post_view + 1",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1681,7 +1795,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def blog(request):\n    posts = Post.objects.all().order_by('-date','time')\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    post_list = Post.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(post_list,4)\n    try:\n        posts = paginator.page(page)\n    except PageNotAnInteger:",
+        "peekOfCode": "def blog(request):\n    posts = Post.objects.all().order_by('-date','time')\n    footer = BaseFooter.objects.all()\n    post_list = Post.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(post_list,4)\n    try:\n        posts = paginator.page(page)\n    except PageNotAnInteger:\n        posts = paginator.page(1)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1857,6 +1971,33 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0019_auto_20210327_1611",
+        "description": "ecover.migrations.0019_auto_20210327_1611",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0018_auto_20210317_1628'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='BaseFooter',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('twitter_link', models.CharField(max_length=50)),",
+        "detail": "ecover.migrations.0019_auto_20210327_1611",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0020_auto_20210327_1614",
+        "description": "ecover.migrations.0020_auto_20210327_1614",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0019_auto_20210327_1611'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='basefooter',\n            name='email',\n            field=models.EmailField(blank=True, max_length=50, null=True),\n        ),",
+        "detail": "ecover.migrations.0020_auto_20210327_1614",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ecover.migrations.0021_auto_20210327_1718",
+        "description": "ecover.migrations.0021_auto_20210327_1718",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ecover', '0020_auto_20210327_1614'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='contact',\n            name='address',\n            field=models.CharField(blank=True, max_length=200, null=True),\n        ),",
+        "detail": "ecover.migrations.0021_auto_20210327_1718",
+        "documentation": {}
+    },
+    {
         "label": "EcoverConfig",
         "kind": 6,
         "importPath": "ecover.apps",
@@ -1915,7 +2056,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class View(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass Status(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nprice_value = (\n    ('5000','5000'),",
+        "peekOfCode": "class View(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass Status(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass Agent(models.Model):\n    name        = models.CharField(max_length=20)",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1924,7 +2065,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class Status(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nprice_value = (\n    ('5000','5000'),\n    ('10000','10000'),\n    ('500000','500000'),\n    ('1000000','1000000'),\n    ('2000000','2000000'),",
+        "peekOfCode": "class Status(models.Model):\n    name = models.CharField(max_length=20)\n    def __str__(self):\n        return self.name\nclass Agent(models.Model):\n    name        = models.CharField(max_length=20)\n    agent_image = models.ImageField(upload_to='agent_rasm')\n    def __str__(self):\n        return self.name\nclass Announcement(models.Model):",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1933,7 +2074,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class Agent(models.Model):\n    name        = models.CharField(max_length=20)\n    agent_image = models.ImageField(upload_to='agent_rasm')\n    def __str__(self):\n        return self.name\nclass Announcement(models.Model):\n    title       = models.CharField(max_length=30)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)",
+        "peekOfCode": "class Agent(models.Model):\n    name        = models.CharField(max_length=20)\n    agent_image = models.ImageField(upload_to='agent_rasm')\n    def __str__(self):\n        return self.name\nclass Announcement(models.Model):\n    price_value = (\n    ('5000','5000'),\n    ('10000','10000'),\n    ('50000','50000'),",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1942,7 +2083,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class Announcement(models.Model):\n    title       = models.CharField(max_length=30)\n    region      = models.ForeignKey(Region, on_delete = models.CASCADE)\n    district    = models.ForeignKey(District, on_delete = models.CASCADE)\n    address     = models.CharField(max_length=30)\n    type        = models.ForeignKey(Type, on_delete = models.CASCADE, null=True)\n    status      = models.ForeignKey(Status, on_delete=models.CASCADE)\n    view        = models.ForeignKey(View, on_delete = models.CASCADE, blank=True) \n    content     = models.TextField(max_length=60)\n    image       = models.ImageField(upload_to='picture', blank=True, null=True)",
+        "peekOfCode": "class Announcement(models.Model):\n    price_value = (\n    ('5000','5000'),\n    ('10000','10000'),\n    ('50000','50000'),\n    ('100000','100000'),\n    ('200000','200000'),\n    ('300000','300000'),\n    ('400000','400000'),\n    ('500000','500000'),",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1969,7 +2110,7 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class About(models.Model):\n    title       = models.CharField(max_length=30)\n    content     = models.CharField(max_length=150)\n    about_image1= models.ImageField(upload_to='about')\n    about_image2= models.ImageField(upload_to='about')\n    branches    = models.IntegerField()\n    def __str__(self):\n        return self.title\nclass Contact(models.Model):\n    first_name = models.CharField(max_length=20)",
+        "peekOfCode": "class About(models.Model):\n    title       = models.CharField(max_length=30)\n    content     = models.CharField(max_length=150)\n    about_image1= models.ImageField(upload_to='about')\n    about_image2= models.ImageField(upload_to='about')\n    branches    = models.IntegerField()\n    def __str__(self):\n        return self.title\nclass Contact(models.Model):\n    first_name = models.CharField(max_length=20, blank=True, null=True)",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -1978,16 +2119,16 @@
         "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "class Contact(models.Model):\n    first_name = models.CharField(max_length=20)\n    last_name  = models.CharField(max_length=20)\n    email      = models.EmailField()\n    message    = models.CharField(max_length=150)\n    def __str__(self):\n        return self.first_name",
+        "peekOfCode": "class Contact(models.Model):\n    first_name = models.CharField(max_length=20, blank=True, null=True)\n    last_name  = models.CharField(max_length=20, blank=True, null=True)\n    email      = models.EmailField(blank=True, null=True)\n    message    = models.CharField(max_length=150, blank=True, null=True)\n    address    = models.CharField(max_length=200, blank=True, null=True)\n    phone = models.CharField(max_length=50, blank=True, null=True)\n    email = models.EmailField(max_length=50, blank=True, null=True)\n    def __str__(self):\n        return self.first_name",
         "detail": "ecover.models",
         "documentation": {}
     },
     {
-        "label": "price_value",
-        "kind": 5,
+        "label": "BaseFooter",
+        "kind": 6,
         "importPath": "ecover.models",
         "description": "ecover.models",
-        "peekOfCode": "price_value = (\n    ('5000','5000'),\n    ('10000','10000'),\n    ('500000','500000'),\n    ('1000000','1000000'),\n    ('2000000','2000000'),\n    ('3000000','3000000'),\n    ('4000000','4000000'),\n    ('5000000','5000000'),\n    ('6000000','6000000'),",
+        "peekOfCode": "class BaseFooter(models.Model):\n    twitter_link = models.CharField(max_length=50, blank=True, null=True)\n    facebook_link = models.CharField(max_length=50, blank=True, null=True)\n    instagram_link = models.CharField(max_length=50, blank=True, null=True)\n    telegram_link = models.CharField(max_length=50, blank=True, null=True)\n    phone = models.CharField(max_length=50, blank=True, null=True)\n    email = models.EmailField(max_length=50, blank=True, null=True)\n    def __str__(self):\n        return self.phone",
         "detail": "ecover.models",
         "documentation": {}
     },
@@ -2005,7 +2146,7 @@
         "kind": 6,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "class RegionDetailView(DetailView):\n    model = Region\n    template_name = 'region_properties.html'\n    def get(self,request,pk):\n        announcements = Announcement.objects.filter(region = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        announcement_list = Announcement.objects.filter(region=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,2)",
+        "peekOfCode": "class RegionDetailView(DetailView):\n    model = Region\n    template_name = 'region_properties.html'\n    def get(self,request,pk):\n        announcements = Announcement.objects.filter(region = pk)\n        footer = BaseFooter.objects.all()\n        announcement_list = Announcement.objects.filter(region=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,2)\n        try:",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2014,16 +2155,7 @@
         "kind": 6,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "class AgentDetailView(DetailView):\n    model = Agent\n    template_name = 'agent_properties.html'\n    def get(self,request,pk):\n        announcements = Announcement.objects.filter(agent = pk)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        agent = Agent.objects.get(pk=pk)\n        announcement_list = Announcement.objects.filter(agent=pk).order_by('-date')\n        page = request.GET.get('page',1)",
-        "detail": "ecover.views",
-        "documentation": {}
-    },
-    {
-        "label": "HomePageView",
-        "kind": 6,
-        "importPath": "ecover.views",
-        "description": "ecover.views",
-        "peekOfCode": "class HomePageView(TemplateView):\n    template_name = 'index.html'\nclass SearchResultsView(ListView):\n    model = Announcement\n    template_name = 'search.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        type_query=self.request.GET.get('type_query')\n        location = self.request.GET.get('location')\n        print(query, \"++++++++++++++++\")",
+        "peekOfCode": "class AgentDetailView(DetailView):\n    model = Agent\n    template_name = 'agent_properties.html'\n    def get(self,request,pk):\n        announcements = Announcement.objects.filter(agent = pk)\n        footer = BaseFooter.objects.all()\n        agent = Agent.objects.get(pk=pk)\n        announcement_list = Announcement.objects.filter(agent=pk).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,6)",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2032,7 +2164,7 @@
         "kind": 6,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "class SearchResultsView(ListView):\n    model = Announcement\n    template_name = 'search.html'\n    def get_queryset(self): # new\n        query = self.request.GET.get('keyvalue')\n        type_query=self.request.GET.get('type_query')\n        location = self.request.GET.get('location')\n        print(query, \"++++++++++++++++\")\n        print(type_query, \"manabu type id\")\n        print(location, \"++++++++++++++++\")",
+        "peekOfCode": "class SearchResultsView(ListView):\n    model = Announcement\n    template_name = 'properties.html'\n    paginate_by = 3\n    def get(self,request): # new++\n        types=Type.objects.all()\n        regions = Region.objects.all()\n        query = self.request.GET.get('keyvalue')\n        type_query=self.request.GET.get('type_query')\n        region = self.request.GET.get('region')",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2050,7 +2182,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def about(request):\n    announcement = Announcement.objects.all()\n    user = User.objects.all()\n    type = Announcement.objects.filter(type_id=\"5\").count()\n    abouts = About.objects.all()\n    clients = Client.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    return render(request, \"about.html\",{\n        'abouts':abouts,",
+        "peekOfCode": "def about(request):\n    announcement = Announcement.objects.all()\n    user = User.objects.all()\n    type = Announcement.objects.filter(type_id=\"5\").count()\n    abouts = About.objects.all()\n    clients = Client.objects.all()\n    footer = BaseFooter.objects.all()\n    return render(request, \"about.html\",{\n        'abouts':abouts,\n        'clients':clients,",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2059,7 +2191,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def agent(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    agents = Agent.objects.all()\n    return render(request, \"agent.html\", {'agents': agents,'is_member':is_member})\ndef contact(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    if request.method == 'POST':\n        first_name = request.POST['first_name']",
+        "peekOfCode": "def agent(request):\n    footer = BaseFooter.objects.all()\n    agents = Agent.objects.all()\n    return render(request, \"agent.html\", {'agents': agents,'footer':footer})\ndef contact(request):\n    footer = BaseFooter.objects.all()\n    if request.method == 'POST':\n        first_name = request.POST['first_name']\n        last_name  = request.POST['last_name']\n        email      = request.POST['email']",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2068,7 +2200,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def contact(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    if request.method == 'POST':\n        first_name = request.POST['first_name']\n        last_name  = request.POST['last_name']\n        email      = request.POST['email']\n        message    = request.POST['message']\n        msg = first_name + \" \" + last_name + \"\\n\" + message\n        send_mail(",
+        "peekOfCode": "def contact(request):\n    footer = BaseFooter.objects.all()\n    if request.method == 'POST':\n        first_name = request.POST['first_name']\n        last_name  = request.POST['last_name']\n        email      = request.POST['email']\n        message    = request.POST['message']\n        msg = first_name + \" \" + last_name + \"\\n\" + message\n        send_mail(\n            \"Yangi xabar\",",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2077,7 +2209,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def properties_single(request,id):\n    announcement = get_object_or_404(Announcement, pk=id)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    return render(request, \"properties-single.html\", {'announcement': announcement,'is_member':is_member})\ndef properties(request):\n    regions = Region.objects.all()\n    types = Type.objects.all()\n    announcements = Announcement.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()",
+        "peekOfCode": "def properties_single(request,id):\n    announcement = get_object_or_404(Announcement, pk=id)\n    footer = BaseFooter.objects.all()\n    return render(request, \"properties-single.html\", {'announcement': announcement,'footer':footer})\ndef properties(request):\n    regions = Region.objects.all()\n    types = Type.objects.all()\n    announcements = Announcement.objects.all()\n    footer = BaseFooter.objects.all()\n    announcement_list = Announcement.objects.all().order_by('-date')",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2086,7 +2218,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def properties(request):\n    regions = Region.objects.all()\n    types = Type.objects.all()\n    announcements = Announcement.objects.all()\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    announcement_list = Announcement.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(announcement_list,9)\n    try:",
+        "peekOfCode": "def properties(request):\n    regions = Region.objects.all()\n    types = Type.objects.all()\n    announcements = Announcement.objects.all()\n    footer = BaseFooter.objects.all()\n    announcement_list = Announcement.objects.all().order_by('-date')\n    page = request.GET.get('page',1)\n    paginator = Paginator(announcement_list,3)\n    try:\n        announcements = paginator.page(page)",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2095,7 +2227,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def services(request):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    return render(request, \"services.html\",{'is_member':is_member})\ndef announcement_delete(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    if request.method == 'POST':\n        announcement.delete()\n        return redirect('../../personal')\ndef update_add(request,id):",
+        "peekOfCode": "def services(request):\n    footer = BaseFooter.objects.all()\n    return render(request, \"services.html\",{'footer':footer})\ndef announcement_delete(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    if request.method == 'POST':\n        announcement.delete()\n        return redirect('../../personal')\ndef update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2104,7 +2236,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def announcement_delete(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    if request.method == 'POST':\n        announcement.delete()\n        return redirect('../../personal')\ndef update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    form = UpdateAddForm(instance=announcement)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group",
+        "peekOfCode": "def announcement_delete(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    if request.method == 'POST':\n        announcement.delete()\n        return redirect('../../personal')\ndef update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    form = UpdateAddForm(instance=announcement)\n    footer = BaseFooter.objects.all()\n    if request.method == 'POST':",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2113,7 +2245,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    form = UpdateAddForm(instance=announcement)\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    if request.method == 'POST':\n        form = UpdateAddForm(request.POST, request.FILES, instance=announcement)\n        if form.is_valid():\n            form.save()\n            return redirect('../../personal')",
+        "peekOfCode": "def update_add(request,id):\n    announcement = get_object_or_404(Announcement, pk=id, person_name=request.user)\n    form = UpdateAddForm(instance=announcement)\n    footer = BaseFooter.objects.all()\n    if request.method == 'POST':\n        form = UpdateAddForm(request.POST, request.FILES, instance=announcement)\n        if form.is_valid():\n            form.save()\n            return redirect('../../personal')\n    context = {'form': form,'footer':footer}",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2275,7 +2407,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2284,7 +2416,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2293,7 +2425,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2302,7 +2434,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2311,7 +2443,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2320,7 +2452,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_HOST_USER = \"testingemail286@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "EMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2329,7 +2461,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2338,7 +2470,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "EMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2347,7 +2479,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "EMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2356,7 +2488,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_HOST_PASSWORD = 'companyinstant'",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = 'mister5771112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2401,7 +2533,7 @@
         "kind": 2,
         "importPath": "personal_area.views",
         "description": "personal_area.views",
-        "peekOfCode": "def personal(request, username):\n    if request.user.is_authenticated:\n        announcements = Announcement.objects.filter(person_name=request.user)\n        user = User.objects.filter(username=username)\n        users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n        is_member = request.user in users_in_group\n        announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,6)\n        try:",
+        "peekOfCode": "def personal(request, username):\n    if request.user.is_authenticated:\n        announcements = Announcement.objects.filter(person_name=request.user)\n        user = User.objects.filter(username=username)\n        footer = BaseFooter.objects.all()\n        announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,6)\n        try:\n            announcements = paginator.page(page)",
         "detail": "personal_area.views",
         "documentation": {}
     },
@@ -2410,7 +2542,7 @@
         "kind": 2,
         "importPath": "personal_area.views",
         "description": "personal_area.views",
-        "peekOfCode": "def add(request, username):\n    users_in_group = Group.objects.get(name=\"Admin\").user_set.all()\n    is_member = request.user in users_in_group\n    regions = Region.objects.all()\n    json_serializer = serializers.get_serializer(\"json\")()\n    districts = json_serializer.serialize(District.objects.all(), ensure_ascii=False)\n    statuses = Status.objects.all()\n    types = Type.objects.all()\n    views = View.objects.all()\n    agents = Agent.objects.all()",
+        "peekOfCode": "def add(request, username):\n    footer = BaseFooter.objects.all()\n    regions = Region.objects.all()\n    json_serializer = serializers.get_serializer(\"json\")()\n    districts = json_serializer.serialize(District.objects.all(), ensure_ascii=False)\n    statuses = Status.objects.all()\n    types = Type.objects.all()\n    views = View.objects.all()\n    agents = Agent.objects.all()\n    if request.method=='POST':",
         "detail": "personal_area.views",
         "documentation": {}
     },

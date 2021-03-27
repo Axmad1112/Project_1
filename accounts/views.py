@@ -53,7 +53,10 @@ def sign_in(request):
             
             if user is not None:
                 auth.login(request, user)
-                return redirect('../' + username)
+                if request.user.is_staff:
+                    return redirect('../' + username)
+                else:
+                    return redirect('../')
             else:
                 messages.info(request, 'Foydalanuvchi nomi yoki parol xato !!!')
                 return redirect('sign_in')

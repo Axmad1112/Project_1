@@ -41,22 +41,7 @@ class Status(models.Model):
 
 
 
-price_value = (
-    ('5000','5000'),
-    ('10000','10000'),
-    ('500000','500000'),
-    ('1000000','1000000'),
-    ('2000000','2000000'),
-    ('3000000','3000000'),
-    ('4000000','4000000'),
-    ('5000000','5000000'),
-    ('6000000','6000000'),
-    ('7000000','7000000'),
-    ('8000000','8000000'),
-    ('9000000','9000000'),
-    ('10000000','10000000'),
-    ('20000000','20000000'),
-    )
+
 
 
 class Agent(models.Model):
@@ -67,6 +52,22 @@ class Agent(models.Model):
         return self.name
 
 class Announcement(models.Model):
+    price_value = (
+    ('5000','5000'),
+    ('10000','10000'),
+    ('50000','50000'),
+    ('100000','100000'),
+    ('200000','200000'),
+    ('300000','300000'),
+    ('400000','400000'),
+    ('500000','500000'),
+    ('600000','600000'),
+    ('700000','700000'),
+    ('800000','800000'),
+    ('900000','900000'),
+    ('1000000','1000000'),
+    ('2000000','2000000'),
+    )
 
     title       = models.CharField(max_length=30)
     region      = models.ForeignKey(Region, on_delete = models.CASCADE)
@@ -118,13 +119,26 @@ class About(models.Model):
         return self.title
 
 class Contact(models.Model):
-    first_name = models.CharField(max_length=20)
-    last_name  = models.CharField(max_length=20)
-    email      = models.EmailField()
-    message    = models.CharField(max_length=150)
+    first_name = models.CharField(max_length=20, blank=True, null=True)
+    last_name  = models.CharField(max_length=20, blank=True, null=True)
+    email      = models.EmailField(blank=True, null=True)
+    message    = models.CharField(max_length=150, blank=True, null=True)
+    address    = models.CharField(max_length=200, blank=True, null=True)
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    email = models.EmailField(max_length=50, blank=True, null=True)
     
     def __str__(self):
         return self.first_name
 
 
 
+class BaseFooter(models.Model):
+    twitter_link = models.CharField(max_length=50, blank=True, null=True)
+    facebook_link = models.CharField(max_length=50, blank=True, null=True)
+    instagram_link = models.CharField(max_length=50, blank=True, null=True)
+    telegram_link = models.CharField(max_length=50, blank=True, null=True)
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    email = models.EmailField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.phone

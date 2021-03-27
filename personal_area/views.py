@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, Group
-from ecover.models import Announcement, Region, District, Type, Status, View, Agent
+from ecover.models import Agent, Announcement, BaseFooter, District, Region, Status, Type, View
 import json
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core import serializers
@@ -15,8 +15,7 @@ def personal(request, username):
         announcements = Announcement.objects.filter(person_name=request.user)
         user = User.objects.filter(username=username)
         
-        users_in_group = Group.objects.get(name="Admin").user_set.all()
-        is_member = request.user in users_in_group
+        footer = BaseFooter.objects.all()
 
         announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')
         page = request.GET.get('page',1)
@@ -28,14 +27,14 @@ def personal(request, username):
             announcements = paginator.page(1)
         except EmptyPage:
             announcements = paginator.page(paginator,num_pages)
-        return render(request, "personal_area/personal_area.html", {'announcements': announcements, 'user': user,'is_member':is_member})
+        return render(request, "personal_area/personal_area.html", {'announcements': announcements, 'user': user,'footer':footer})
        
     else:
         return HttpResponse("Bunday sahifa topilmadi !!!")
     
 def add(request, username):
-    users_in_group = Group.objects.get(name="Admin").user_set.all()
-    is_member = request.user in users_in_group
+    
+    footer = BaseFooter.objects.all()
             
     regions = Region.objects.all()
     json_serializer = serializers.get_serializer("json")()
@@ -81,7 +80,7 @@ def add(request, username):
                 'types': types,
                 'views': views,
                 'agents':agents,
-                'is_member':is_member
+                'footer':footer
             })
         
 

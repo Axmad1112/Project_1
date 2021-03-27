@@ -74,7 +74,7 @@
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: -5px;">
                   
-                  {% if is_member %}
+                  {% if request.user.is_staff %}
                     <a class="dropdown-item" href="../../{{request.user}}">E'lonlar</a>
                     <a href="../../{{request.user}}/add" class="dropdown-item">E'lon berish</a>
                   {% endif %}
@@ -104,14 +104,16 @@
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
+        {% for foo in footer %}
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Ecoverde</h2>
               <p>Far far away, behind the word mountains, far from the countries.</p>
               <ul class="ftco-footer-social list-unstyled mt-5">
-                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="{{foo.twitter_link}}"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="{{foo.facebook_link}}"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="{{foo.instagram_link}}"><span class="fa fa-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="{{foo.telegram_link}}"><span class="fa fa-telegram"></span></a></li>
               </ul>
             </div>
           </div>
@@ -119,9 +121,8 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Community</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Search Properties</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>For Agents</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reviews</a></li>
+                <li><a href="/"><span class="fa fa-chevron-right mr-2"></span>Search Properties</a></li>
+                <li><a href="{% url 'agent' %}"><span class="fa fa-chevron-right mr-2"></span>For Agents</a></li>
                 <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>FAQs</a></li>
               </ul>
             </div>
@@ -130,9 +131,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">About Us</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Our Story</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Meet the team</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+                <li><a href="{% url 'about' %}"><span class="fa fa-chevron-right mr-2"></span>Our Story</a></li>
+                <li><a href="{% url 'about' %}"><span class="fa fa-chevron-right mr-2"></span>Meet the team</a></li>
+                <li><a href="{% url 'about' %}"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
               </ul>
             </div>
           </div>
@@ -140,10 +141,10 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Company</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+                <li><a href="{% url 'about' %}"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+                <li><a href="{% url 'contact' %}"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
+                <li><a href="{% url 'contact' %}"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+                
               </ul>
             </div>
           </div>
@@ -152,13 +153,14 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon fa fa-map"></span><span class="text">Uzbekistan</span></li>
+	                <li><a href="tel://{{foo.email}}"><span class="icon fa fa-phone"></span><span class="text">{{foo.phone}}</span></a></li>
+	                <li><a href="mailto:{{foo.email}}"><span class="icon fa fa-envelope pr-4"></span><span class="text">{{foo.email}}</span></a></li>
 	              </ul>
 	            </div>
             </div>
           </div>
+          {% endfor %}
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
@@ -191,6 +193,42 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+
+    $(document).ready(function(event){
+      $('.reply-btn').click(function()
+      {
+        $(this).parent().parent().next('.replied-comments').fadeToggle()
+      });
+    });
+
+    $(document).on('submit','comment-form', function(event){
+      event.prevenDefault();
+      console.log($(this).serialize());
+      $.ajax({
+        type:'POST',
+        url:$(this).attr(action),
+        data:$(this).serialize(),
+        dataType: 'json',
+        success: function(response){
+          $('main-comment-section').html(response['form']);
+          $('textarea').val('');
+          $('.reply-btn').click(function()
+          {
+            $(this).parent().parent().next('.replied-comments').fadeToggle()
+            $('textarea').val('');
+          });
+          
+        },
+        error: function(rs,e){
+          console.log(rs.responseText)
+        }        
+      })
+    })
+  </script>
   
   </body>
 </html>

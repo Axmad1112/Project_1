@@ -18,7 +18,6 @@ urlpatterns = [
     path('Region/<int:pk>', views.RegionDetailView.as_view(), name="region-detail"),
     path('Agent/<int:pk>', views.AgentDetailView.as_view(), name="agent-detail"),
     path('search/', views.SearchResultsView.as_view(), name='search'),
-    path('', views.HomePageView.as_view(), name='home'),
 ]
 
                                                 

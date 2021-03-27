@@ -32,6 +32,8 @@ class Post(models.Model, HitCountMixin):
     time        = models.TimeField(auto_now_add=True, null=True)
     slug        = models.SlugField(unique=True, blank=True)
     tags        = TaggableManager()
+    post_view   = models.IntegerField(default=0)
+
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
      related_query_name='hit_count_generic_relation')
     
@@ -49,6 +51,7 @@ class Comment(models.Model):
     author   = models.ForeignKey(User, on_delete=models.CASCADE)
     date     = models.DateTimeField(auto_now_add=True)
     post     = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
+    reply    = models.ForeignKey('self',on_delete=models.SET_NULL, null=True, related_name="replies")
     name     = models.CharField(max_length=20)
     email    = models.EmailField()
     content  = models.TextField()

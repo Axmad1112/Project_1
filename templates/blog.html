@@ -27,12 +27,11 @@
                 <a href="{% url 'blog-single' post.slug %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
 	              </a>
 	              <div class="meta mb-3">
-                  <div><a href="#">{{ post.date }}</a></div>
-                  <div><a href="#">{{post.agent}}</a></div>
-
-                  <div><a href="#" class="meta-chat"><span class="fa fa-eye"> {% get_hit_count for post %}</span></a></div>
+                  <div>{{ post.date }}</div>
+                  <div>{{post.agent}}</div>
+                  <div><span class="fa fa-eye"> {{ post.post_view }}</span></div>
                 </div>
-	              <h3 class="heading"><a href="">{{ post.title }}</a></h3>
+	              <h3 class="heading"><a href="{% url 'blog-single' post.slug %}">{{ post.title }}</a></h3>
               </div>
             </div>
           </div>
@@ -42,14 +41,14 @@
               <div class="col-md-3 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
                   <div class="text">
-                    <a href="#" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
+                    <a href="{% url 'blog-single' post.slug %}" class="block-20 img" style="background-image: url('{{ post.post_image.url }}');">
                     </a>
                     <div class="meta mb-3">
-                      <div><a href="#">{{ post.date }}</a></div>
-                      <div><a href="#">{{post.agent}}</a></div>
-                      <div><a href="#" ><span class="fa fa-eye"></span></a></div>
+                      <div>{{ post.date }}</div>
+                      <div>{{post.agent}}</div>
+                      <div><span class="fa fa-eye"> {{ post.post_view }}</span></div>
                     </div>
-                    <h3 class="heading"><a href="">{{ post.title }}</a></h3>
+                    <h3 class="heading"><a href="{% url 'blog-single' post.slug %}">{{ post.title }}</a></h3>
                   </div>
                 </div>
               </div>
@@ -59,7 +58,6 @@
           {% endif %}
 
         </div> 
-        
         {% if posts.has_other_pages %}
         <div class="row mt-5">
           <div class="col text-center">

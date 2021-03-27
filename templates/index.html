@@ -42,36 +42,28 @@
 		        					<label for="#">Property Type</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
-									  <div class="icon"><span class="fa fa-chevron-down"></span></div>
-									  <select name="Type" id="type_id" class="form-control">
-												<option class="bg-dark" disabled selected>Type</option>
-												<option class="bg-dark" value="1">Residence</option>
-												<option class="bg-dark" value="2">Offices</option>
-												<option class="bg-dark" value="3">Commercial</option>
-												<option class="bg-dark" value="4">Hotel</option>
-												<option class="bg-dark" value="5">House</option>												
-										</select>
-										<input type="hidden" id="Property" name="type_query" />
-		                      		{% comment %} <select name="type" id="tur_id" class="form-control">
-										
-										<option style="background-color: #21243D;" selected disabled>Type</option>
-										<option style="background-color: #21243D;" value="1">Residence</option>
-										<option style="background-color: #21243D;" value="2">Offices</option>
-										<option style="background-color: #21243D;" value="3">Commercial</option>
-										<option style="background-color: #21243D;" value="4">Hotel</option>
-										<option style="background-color: #21243D;" value="5">House</option>
-									</select>
-									<input type="hidden" id="Property" name="type_id" /> {% endcomment %}
-		                    	</div>
-				            </div>
-			              </div>
+									  	<div class="icon"><span class="fa fa-chevron-down"></span></div>
+											<select name="type_query" id="type_id" class="form-control">
+												<option disabled selected style="background: #20233C;">Select type</option>
+												{% for type in types %}
+												<option value="{{type.id}}" style="background: #20233C;">{{type.name}}</option>
+												{% endfor %}
+											</select>
+		                    		</div>
+				            		</div>
+			              		</div>
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="address">Location</label>
+		        					<label for="address">Region</label>
 		          				<div class="form-field">
-								  	<div class="icon"><span class="fa fa-search"></span></div>
-									<input type="text" name="location" id="address" class="form-control" placeholder="Location">
+								  	<div class="icon"><span class="fa fa-chevron-down"></span></div>
+									  <select name="region" id="region_id" class="form-control px-3">
+										<option disabled selected style="background: #20233C;">Select the region</option>
+										{% for region in regions %}
+										<option value="{{region.id}}" style="background: #20233C;">{{region.name}}</option>
+										{% endfor %}
+									</select>
 				              </div>
 			              </div>
 		        			</div>
@@ -81,21 +73,22 @@
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-		                      <select name="price" id="" class="form-control">
-		                        <option value="5000" >$5,000</option>
-		                        <option value="10000" >$10,000</option>
-		                        <option value="50000" >$50,000</option>
-		                        <option value="100000" >$100,000</option>
-		                        <option value="200000" >$200,000</option>
-		                        <option value="300000" >$300,000</option>
-		                        <option value="400000" >$400,000</option>
-		                        <option value="500000" >$500,000</option>
-		                        <option value="600000" >$600,000</option>
-		                        <option value="700000" >$700,000</option>
-		                        <option value="800000" >$800,000</option>
-		                        <option value="900000" >$900,000</option>
-		                        <option value="1000000" >$1,000,000</option>
-		                        <option value="2000000" >$2,000,000</option>
+		                      <select name="price_limit" id="" class="form-control">
+							  	<option value="" style="background: #20233C;">0 $</option>
+		                        <option value="5000" style="background: #20233C;">$5,000</option>
+		                        <option value="10000" style="background: #20233C;">$10,000</option>
+		                        <option value="50000" style="background: #20233C;">$50,000</option>
+		                        <option value="100000" style="background: #20233C;">$100,000</option>
+		                        <option value="200000" style="background: #20233C;">$200,000</option>
+		                        <option value="300000" style="background: #20233C;">$300,000</option>
+		                        <option value="400000" style="background: #20233C;">$400,000</option>
+		                        <option value="500000" style="background: #20233C;">$500,000</option>
+		                        <option value="600000" style="background: #20233C;">$600,000</option>
+		                        <option value="700000" style="background: #20233C;">$700,000</option>
+		                        <option value="800000" style="background: #20233C;">$800,000</option>
+		                        <option value="900000" style="background: #20233C;">$900,000</option>
+		                        <option value="1000000" style="background: #20233C;">$1,000,000</option>
+		                        <option value="2000000" style="background: #20233C;">$2,000,000</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -307,7 +300,7 @@
     	</div>
     </section>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt">
+    	<section class="ftco-section ftco-no-pb ftco-no-pt">
 			<div class="container mt-4">
 				<div class="row">
 				 {% for about in abouts %}
@@ -328,49 +321,49 @@
 		</section>
 
 		<section class="ftco-counter img" id="section-counter">
-    	<div class="container">
-    		<div class="row pt-md-5">
-				{% for about in abouts %}
-				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 py-5 mb-4">
-					<div class="text text-border d-flex align-items-center">
-					
-						<strong class="number" data-number="{{user.count}}">0</strong>
-					
-						<span>Area <br>Population</span>
+			<div class="container">
+				<div class="row pt-md-5">
+					{% for about in abouts %}
+					<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 py-5 mb-4">
+						<div class="text text-border d-flex align-items-center">
+						
+							<strong class="number" data-number="{{user.count}}">0</strong>
+						
+							<span>Area <br>Population</span>
+						</div>
+						</div>
 					</div>
+					<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 py-5 mb-4">
+						<div class="text text-border d-flex align-items-center">
+							<strong class="number" data-number="{{announcement.count}}">0</strong>
+							<span>Total <br>Properties</span>
+						</div>
+						</div>
 					</div>
+					<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 py-5 mb-4">
+						<div class="text text-border d-flex align-items-center">
+						
+							<strong class="number" data-number="{{type}}">0</strong>
+						
+							<span>Average <br>House</span>
+						</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 py-5 mb-4">
+						<div class="text d-flex align-items-center">
+							<strong class="number" data-number="{{about.branches}}">0</strong>
+							<span>Total <br>Branches</span>
+						</div>
+						</div>
+					</div>
+					{% endfor %}
 				</div>
-				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 py-5 mb-4">
-					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="{{announcement.count}}">0</strong>
-						<span>Total <br>Properties</span>
-					</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 py-5 mb-4">
-					<div class="text text-border d-flex align-items-center">
-					
-						<strong class="number" data-number="{{type}}">0</strong>
-					
-						<span>Average <br>House</span>
-					</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 py-5 mb-4">
-					<div class="text d-flex align-items-center">
-						<strong class="number" data-number="{{about.branches}}">0</strong>
-						<span>Total <br>Branches</span>
-					</div>
-					</div>
-				</div>
-        		{% endfor %}
-        	</div>
-    	</div>
-    </section>
+			</div>
+    	</section>
 
     <section class="ftco-section testimony-section bg-light">
       <div class="container">
@@ -448,14 +441,14 @@
           <div class="col-md-3 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <div class="text">
-                <a href="{% url 'blog-single' blog.id %}" class="block-20 img" style="background-image: url('{{blog.post_image.url}}');">
+                <a href="{% url 'blog-single' blog.slug %}" class="block-20 img" style="background-image: url('{{blog.post_image.url}}');">
 	              </a>
 	              <div class="meta mb-3">
-                  <div><a href="#">{{ blog.date }}</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> </a></div>
+                  	  <div>{{blog.date }}</div>
+                      <div>{{blog.agent}}</div>
+                      <div><span class="fa fa-eye"> {{ blog.post_view }}</span></div>
                 </div>
-	              <h3 class="heading"><a href="#">{{ blog.title }}</a></h3>
+	              <h3 class="heading"><a href="{% url 'blog-single' blog.slug %}">{{ blog.title }}</a></h3>
               </div>
             </div>
           </div>
@@ -466,18 +459,5 @@
       </div>
     </section>		
 
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script>
-        
-        $(function () {
-			$("#Property").keyup(function () {
-				var value = $(this).val();
-				$("#type_id option[selected]").removeAttr("selected");
-				$("#type_id option[value=" + value + "]").attr("selected", "selected");
-			});
-			$("#type_id").change(function () {
-				$("#Property").val($(this).val());
-			});
-		});
-    </script>
+
 {% endblock content %}

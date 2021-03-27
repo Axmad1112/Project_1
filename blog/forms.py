@@ -31,8 +31,8 @@ class CommentForm(forms.ModelForm):
     content = forms.CharField(widget = Textarea(attrs={
         'class':'form-control',
         'id':'message',
-        'cols':'30',
-        'rows':'10'
+        'cols':'40',
+        'rows':'2'
     }))
 
 
