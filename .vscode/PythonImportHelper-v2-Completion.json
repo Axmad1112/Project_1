@@ -40,6 +40,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -553,6 +561,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -610,6 +626,14 @@
     },
     {
         "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "template",
         "importPath": "django",
         "description": "django",
         "isExtraImport": true,
@@ -779,6 +803,14 @@
     },
     {
         "label": "Group",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
@@ -1119,6 +1151,14 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -1512,6 +1552,14 @@
         "documentation": {}
     },
     {
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -1759,7 +1807,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('blog/', views.blog, name='blog'),\n    path('blog-single/<slug:slug>/', views.blog_single, name='blog-single'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n    path('post-search/', views.SearchResultsView.as_view(), name='post-search'),\n    # path('blog/<slug:slug>/', views.PostDetailView.as_view(), name='detail'),\n    path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.blog, name='blog'),\n    path('blog-single/<slug:slug>/', views.blog_single, name='blog-single'),\n    path('Categories/<int:pk>', views.BlogCategoriesDetailView.as_view(), name=\"categories-detail\"),\n    path('tag/<slug:slug>/', views.tagged, name=\"tagged\"),\n    path('post-search/', views.SearchResultsView.as_view(), name='post-search'),\n    # path('blog/<slug:slug>/', views.PostDetailView.as_view(), name='detail'),\n    path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),\n]",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -1998,6 +2046,24 @@
         "documentation": {}
     },
     {
+        "label": "my_url",
+        "kind": 2,
+        "importPath": "ecover.templatetags.templatehelpers",
+        "description": "ecover.templatetags.templatehelpers",
+        "peekOfCode": "def my_url(value, field_name, urlencode=None):\n    url = '?{}={}'.format(field_name, value)\n    if urlencode:\n        querystring = urlencode.split('&')\n        filtered_querystring = filter(lambda p: p.split('=')[0] != field_name, querystring)\n        encoded_querystring = '&'.join(filtered_querystring)\n        url = '{}&{}'.format(url, encoded_querystring)\n    return url",
+        "detail": "ecover.templatetags.templatehelpers",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "ecover.templatetags.templatehelpers",
+        "description": "ecover.templatetags.templatehelpers",
+        "peekOfCode": "register = template.Library()\n@register.simple_tag\ndef my_url(value, field_name, urlencode=None):\n    url = '?{}={}'.format(field_name, value)\n    if urlencode:\n        querystring = urlencode.split('&')\n        filtered_querystring = filter(lambda p: p.split('=')[0] != field_name, querystring)\n        encoded_querystring = '&'.join(filtered_querystring)\n        url = '{}&{}'.format(url, encoded_querystring)\n    return url",
+        "detail": "ecover.templatetags.templatehelpers",
+        "documentation": {}
+    },
+    {
         "label": "EcoverConfig",
         "kind": 6,
         "importPath": "ecover.apps",
@@ -2200,7 +2266,7 @@
         "kind": 2,
         "importPath": "ecover.views",
         "description": "ecover.views",
-        "peekOfCode": "def contact(request):\n    footer = BaseFooter.objects.all()\n    if request.method == 'POST':\n        first_name = request.POST['first_name']\n        last_name  = request.POST['last_name']\n        email      = request.POST['email']\n        message    = request.POST['message']\n        msg = first_name + \" \" + last_name + \"\\n\" + message\n        send_mail(\n            \"Yangi xabar\",",
+        "peekOfCode": "def contact(request):\n    footer = BaseFooter.objects.all()\n    if request.method == 'POST':\n        first_name = request.POST['first_name']\n        last_name  = request.POST['last_name']\n        email      = request.POST['email']\n        message    = request.POST['message']\n        msg = 'Sizga ***** saytidan '+ first_name +' xabar yubordi. '+ '\\n' + 'elektron pochtasi: ' + email + '\\n' + 'xabar mazmuni: '+'\\n'+message\n        send_mail(\n            'Yangi xabar',",
         "detail": "ecover.views",
         "documentation": {}
     },
@@ -2407,7 +2473,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1112@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2416,7 +2482,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1112@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2425,7 +2491,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1112@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2434,7 +2500,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1112@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2443,7 +2509,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST_USER = \"ahmad.togayev.1112@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2452,7 +2518,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_HOST_USER = \"ahmad.togayev.1996.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "EMAIL_HOST_USER = \"ahmad.togayev.1112@gmail.com\"\nEMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2461,7 +2527,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'\nEMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2470,7 +2536,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "EMAIL_PORT = 587\nEMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2479,7 +2545,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "EMAIL_USE_TLS = True\nEMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2488,7 +2554,7 @@
         "kind": 5,
         "importPath": "Ecoverde.settings",
         "description": "Ecoverde.settings",
-        "peekOfCode": "EMAIL_HOST_PASSWORD = 'mister5771112'",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = 'gangster1112'",
         "detail": "Ecoverde.settings",
         "documentation": {}
     },
@@ -2497,7 +2563,7 @@
         "kind": 5,
         "importPath": "Ecoverde.urls",
         "description": "Ecoverde.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('ecover.urls')),\n    path('', include('blog.urls')),\n    path('accounts/', include('accounts.urls')),\n    path('<username>/', include('personal_area.urls')),\n]\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('ecover.urls')),\n    path('blog/', include('blog.urls')),\n    path('accounts/', include('accounts.urls')),\n    path('<str:username>/', include('personal_area.urls')),\n]\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "Ecoverde.urls",
         "documentation": {}
     },
@@ -2524,7 +2590,7 @@
         "kind": 5,
         "importPath": "personal_area.urls",
         "description": "personal_area.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.personal, name = 'personal'),\n    path('add', views.add, name='add'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('cabinet/', views.personal, name='personal'),\n    path('add/', views.add, name='add'),\n]",
         "detail": "personal_area.urls",
         "documentation": {}
     },
@@ -2533,7 +2599,7 @@
         "kind": 2,
         "importPath": "personal_area.views",
         "description": "personal_area.views",
-        "peekOfCode": "def personal(request, username):\n    if request.user.is_authenticated:\n        announcements = Announcement.objects.filter(person_name=request.user)\n        user = User.objects.filter(username=username)\n        footer = BaseFooter.objects.all()\n        announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,6)\n        try:\n            announcements = paginator.page(page)",
+        "peekOfCode": "def personal(request, username):\n    if request.user.is_staff:\n        user = User.objects.filter(username=username)\n        announcements = Announcement.objects.filter(person_name=request.user)\n        footer = BaseFooter.objects.all()\n        announcement_list = Announcement.objects.filter(person_name=request.user).order_by('-date')\n        page = request.GET.get('page',1)\n        paginator = Paginator(announcement_list,6)\n        try:\n            announcements = paginator.page(page)",
         "detail": "personal_area.views",
         "documentation": {}
     },
@@ -2542,7 +2608,7 @@
         "kind": 2,
         "importPath": "personal_area.views",
         "description": "personal_area.views",
-        "peekOfCode": "def add(request, username):\n    footer = BaseFooter.objects.all()\n    regions = Region.objects.all()\n    json_serializer = serializers.get_serializer(\"json\")()\n    districts = json_serializer.serialize(District.objects.all(), ensure_ascii=False)\n    statuses = Status.objects.all()\n    types = Type.objects.all()\n    views = View.objects.all()\n    agents = Agent.objects.all()\n    if request.method=='POST':",
+        "peekOfCode": "def add(request, username):\n    if request.user.is_staff:\n        user = User.objects.get(username=username)\n        footer = BaseFooter.objects.all()\n        regions = Region.objects.all()\n        json_serializer = serializers.get_serializer(\"json\")()\n        districts = json_serializer.serialize(District.objects.all(), ensure_ascii=False)\n        statuses = Status.objects.all()\n        types = Type.objects.all()\n        views = View.objects.all()",
         "detail": "personal_area.views",
         "documentation": {}
     },

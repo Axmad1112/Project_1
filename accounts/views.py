@@ -37,7 +37,10 @@ def sign_up(request):
             user = auth.authenticate(username=username, password=password1)
             auth.login(request, user)
                
-            return redirect('../../' + username)
+            if request.user.is_staff:
+                return redirect('../' + username)
+            else:
+                return redirect('../')
     else:
         register_form = registerForm()   
     return render(request, 'accounts/sign_up.html', {'form': register_form })
@@ -54,7 +57,7 @@ def sign_in(request):
             if user is not None:
                 auth.login(request, user)
                 if request.user.is_staff:
-                    return redirect('../' + username)
+                    return redirect('../' + username + 'cabinet')
                 else:
                     return redirect('../')
             else:

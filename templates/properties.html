@@ -13,7 +13,7 @@
         </div>
       </div>
     </section>
-
+	{% load templatehelpers %}
     <section class="ftco-section ftco-no-pb ftco-no-pt search-bg">
     	<div class="container">
 	    	<div class="row">
@@ -255,17 +255,17 @@
 				<div class="block-27">
 				<ul>
 					{% if results.has_previous %}
-						<li><a href="?page={{ results.previous_page_number }}">&lt;</a></li>
+						<li><a href="{% my_url results.previous_page_number 'page' request.GET.urlencode %}">&lt;</a></li>
 					{% endif %}
 					{% for i in results.paginator.page_range %}
 						{% if results.number == i %}
 							<li class="active"><span>{{ i }}</span></li>
 						{% elif i > results.number|add:'-2' and i < results.number|add:'2' %}
-							<li><a href="?page={{ i }}">{{ i }}</a></li>
+							<li><a href="{% my_url i 'page' request.GET.urlencode %}">{{ i }}</a></li>
 						{% endif %}
 					{% endfor %}
 					{% if results.has_next %}
-						<li><a href="?page={{ results.next_page_number }}">&gt;</a></li>
+						<li><a href="{% my_url results.next_page_number 'page' request.GET.urlencode %}">&gt;</a></li>
 					{% endif %}
 				</ul>
 				</div>

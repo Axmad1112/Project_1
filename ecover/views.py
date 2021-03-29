@@ -9,7 +9,8 @@ import json
 from django.core.mail import send_mail
 from .forms import UpdateAddForm, SearchForm
 from django.views.generic import DetailView, ListView, TemplateView
-
+from django.conf import settings
+from django.contrib import messages
 
 
 
@@ -79,13 +80,13 @@ def contact(request):
         last_name  = request.POST['last_name']
         email      = request.POST['email']
         message    = request.POST['message']
-        msg = first_name + " " + last_name + "\n" + message
+        msg = 'Sizga ***** saytidan '+ first_name +' xabar yubordi. '+ '\n' + 'elektron pochtasi: ' + email + '\n' + 'xabar mazmuni: '+'\n'+message
         send_mail(
-            "Yangi xabar",
+            'Yangi xabar',
             msg,
-            "ahmad.togayev.1996@gmail.com",
-            [email], 
-            fail_silently = False,
+            settings.EMAIL_HOST_USER,
+            ['ahmad.togayev.1112@gmail.com'],
+            fail_silently=False,
         )
         
         contact_user = Contact(
@@ -96,8 +97,10 @@ def contact(request):
             message=message
         )
         contact_user.save()
-    return render(request, "contact.html",{'footer':footer})
-
+        messages.info(request,"Xabaringiz muvaffaqiyatli yuborildi!")
+        return redirect('contact')
+    else:
+        return render(request, "contact.html",{'footer':footer})
 
 def properties_single(request,id):
     announcement = get_object_or_404(Announcement, pk=id)
@@ -287,7 +290,8 @@ class SearchResultsView(ListView):
         else:
             results = Announcement.objects.all()
             
-
+        print(results,"===========")
+        
         
         print(query, "bu keyvalue")
         print(type_query, "manabu type id")

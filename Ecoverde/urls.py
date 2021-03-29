@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.models import User
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ecover.urls')),
-    path('', include('blog.urls')),
+    path('blog/', include('blog.urls')),
     path('accounts/', include('accounts.urls')),
-    path('<username>/', include('personal_area.urls')),
+    path('<str:username>/', include('personal_area.urls')),
     
 ]
 
